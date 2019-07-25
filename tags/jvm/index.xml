@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JVM on spilledyear</title>
+    <link>https://www.spilledyear.cn/tags/jvm/</link>
+    <description>Recent content in JVM on spilledyear</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 22 Jul 2018 18:49:01 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.spilledyear.cn/tags/jvm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JVM</title>
+      <link>https://www.spilledyear.cn/post/jvm/</link>
+      <pubDate>Sun, 22 Jul 2018 18:49:01 +0000</pubDate>
+      
+      <guid>https://www.spilledyear.cn/post/jvm/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.spilledyear.cn/pictures/home/297.jpg&#34; alt=&#34;index&#34; /&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

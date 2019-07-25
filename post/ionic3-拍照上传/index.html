@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Ionic3 拍照上传 - spilledyear</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="spilledyear" />
+  <meta name="description" content="" />
+
+  <meta name="keywords" content="Hugo, theme, spilledyear" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.6" />
+
+
+<link rel="canonical" href="https://www.spilledyear.cn/post/ionic3-%E6%8B%8D%E7%85%A7%E4%B8%8A%E4%BC%A0/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.31c4b7729c8d71cc152f8de4203d90bfd8a04f7eab69372de7234ebf55b7701b.css" integrity="sha256-McS3cpyNccwVL43kID2Qv9igT36raTct5yNOv1W3cBs=" media="screen" crossorigin="anonymous">
+
+
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+
+<meta property="og:title" content="Ionic3 拍照上传" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.spilledyear.cn/post/ionic3-%E6%8B%8D%E7%85%A7%E4%B8%8A%E4%BC%A0/" />
+<meta property="article:published_time" content="2017-10-29T17:38:59&#43;00:00"/>
+<meta property="article:modified_time" content="2017-10-29T17:38:59&#43;00:00"/>
+
+<meta itemprop="name" content="Ionic3 拍照上传">
+<meta itemprop="description" content="">
+
+
+<meta itemprop="datePublished" content="2017-10-29T17:38:59&#43;00:00" />
+<meta itemprop="dateModified" content="2017-10-29T17:38:59&#43;00:00" />
+<meta itemprop="wordCount" content="1838">
+
+
+
+<meta itemprop="keywords" content="Ionic," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ionic3 拍照上传"/>
+<meta name="twitter:description" content=""/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">spilledyear</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/">主页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/post/">文章</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/categories/">分类</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/%E5%85%B3%E4%BA%8E%E6%88%91/">关于我</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://github.com/spilledyear" rel="noopener" target="_blank">
+              外部链接
+              
+              <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92 0 0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"></path>
+  <path d="M841.152 457.152c-30.528 0-54.784 24.512-54.784 54.656l0 274.752L237.696 786.56 237.696 237.696l206.016 0c6.656 0 10.752 0 13.248 0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128L183.04 128C153.216 128 128 152.576 128 182.848c0 3.136 0.256 6.272 0.768 9.28C128.256 195.136 128 198.272 128 201.408l0 639.488c0 0.064 0 0.192 0 0.256 0 0.128 0 0.192 0 0.32 0 30.528 24.512 54.784 54.784 54.784l646.976 0c6.592 0 9.728 0 11.712 0 28.736 0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344l0-20.352L896 561.408 896 512.128C896 481.792 871.424 457.152 841.152 457.152z"></path>
+</svg>
+
+              </i>
+            </a>
+          
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      spilledyear
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/">主页</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/post/">文章</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/categories/">分类</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/%E5%85%B3%E4%BA%8E%E6%88%91/">关于我</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://github.com/spilledyear" rel="noopener" target="_blank">
+              外部链接
+            </a>
+          
+
+        
+
+      </li>
+    
+
+    
+    
+
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">Ionic3 拍照上传</h1>
+      
+      <div class="post-meta">
+        <time datetime="2017-10-29" class="post-time">
+          2017-10-29
+        </time>
+        <div class="post-category">
+            <a href="https://www.spilledyear.cn/categories/webapp/"> webapp </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#界面预览">界面预览</a></li>
+<li><a href="#环境准备">环境准备</a></li>
+<li><a href="#主要代码">主要代码</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p><img src="/pictures/home/238.jpg" alt="index" /></p>
+
+<p>本文主要介绍使用cordova实现拍照上传，走通 “拍照 》预览 》上传 》 下载 ”这个流程。为了方便查看测试结果，需要了解Ionic应用调试的基本方法，有关于Ionic项目Android 调试的详细教程，请参考以下文章：<a href="http://www.jianshu.com/p/d873b831e207">Ionic3 Android调试</a></p>
+
+<p><a href="https://github.com/spilledyear/igStart">源码地址</a>
+&gt;<img src="http://upload-images.jianshu.io/upload_images/3744244-f8e307232af1f7a8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
+<a href="https://ionicframework.com/docs/native/file/">ionicAPI</a>
+<a href="https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-file/index.html">cordovaAPI</a></p>
+
+<h2 id="界面预览">界面预览</h2>
+
+<p>项目是基于ionic 提供的 tabs模板创建的，除了添加一个 camera page，在camera里面做测试，其它地方基本没有修改过。主要涉及到的demo：拍照 》 预览 》 上传 》 下载
+&gt;<img src="http://upload-images.jianshu.io/upload_images/3744244-6ebb5254016f26eb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<h2 id="环境准备">环境准备</h2>
+
+<p><strong>安装 cordova-plugin-camera 插件</strong>
+该插件用于调用设备摄像，cordova-plugin-camera  这是比较新版本的插件，老版本的插件是这个：‘org.apache.cordova.camera’，不过官方已经不推荐使用了。</p>
+
+<pre><code>cordova plugin add cordova-plugin-camera
+npm install --save @ionic-native/camera
+</code></pre>
+
+<p><strong>安装File插件</strong>
+File 插件基于HTML5 File API规范，提供了一些列的方法用于用于操作文件、目录。</p>
+
+<pre><code>ionic cordova plugin add cordova-plugin-file
+npm install --save @ionic-native/file
+</code></pre>
+
+<p><strong>安装File Transfer插件</strong>
+File Transfer 插件提供上传和下载文件的方法，使用上很便利</p>
+
+<pre><code>ionic cordova plugin add cordova-plugin-file-transfer
+npm install --save @ionic-native/file-transfer
+</code></pre>
+
+<h2 id="主要代码">主要代码</h2>
+
+<p>app.module.ts，需要引入这几个插件的provider</p>
+
+<pre><code>import { NgModule, ErrorHandler } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { HttpModule } from '@angular/http';
+
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { Dialogs } from &quot;@ionic-native/dialogs&quot;;
+import { Camera } from '@ionic-native/camera';
+import {File} from '@ionic-native/file';
+import { FileTransfer } from '@ionic-native/file-transfer';
+
+
+import { AppComponent } from './app.component';
+import { StorageService } from &quot;../providers/StorageService&quot;;
+import { HttpService } from &quot;../providers/HttpService&quot;;
+
+
+
+@NgModule({
+  declarations: [
+    AppComponent,
+  ],
+  imports: [
+    BrowserModule,
+    HttpModule,
+    IonicModule.forRoot(AppComponent,{
+      mode: 'md',         //ios是'ios'
+      backButtonText: '',
+    }),
+  ],
+  bootstrap: [IonicApp],
+  entryComponents: [
+    AppComponent,
+  ],
+  providers: [
+    StatusBar,
+    SplashScreen,
+    StorageService,
+    HttpService,
+    Dialogs,
+    Camera,
+    File,
+    FileTransfer,
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
+  ]
+})
+export class AppModule {}
+</code></pre>
+
+<blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/3744244-d06c5885556d8639.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+</blockquote>
+
+<p>camera.html，界面布局，这里主要就是三个测试button，分别对应 拍照、上传、下载功能。还有一个 <img>标签，用于将拍照的照片显示在界面上。</p>
+
+<pre><code>&lt;ion-header&gt;
+
+  &lt;ion-navbar&gt;
+    &lt;ion-title&gt;camera&lt;/ion-title&gt;
+  &lt;/ion-navbar&gt;
+
+&lt;/ion-header&gt;
+
+
+&lt;ion-content padding&gt;
+
+  &lt;button ion-button (click)=&quot;openCamera()&quot;&gt;打开摄像头&lt;/button&gt;
+  &lt;button ion-button (click)=&quot;upload()&quot;&gt;文件上传&lt;/button&gt;
+  &lt;button ion-button (click)=&quot;download()&quot;&gt;文件下载&lt;/button&gt;
+
+  &lt;div&gt;
+    &lt;img [src]=&quot;path&quot; /&gt;
+  &lt;/div&gt;
+
+&lt;/ion-content&gt;
+</code></pre>
+
+<p>camera.ts，逻辑代码</p>
+
+<pre><code>import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {Camera, CameraOptions} from '@ionic-native/camera';
+import {FileTransfer, FileUploadOptions, FileTransferObject} from '@ionic-native/file-transfer';
+import {File} from '@ionic-native/file';
+import {stringify} from 'qs';
+
+@IonicPage()
+@Component({
+  selector: 'page-camera',
+  templateUrl: 'camera.html',
+})
+export class CameraPage {
+
+  path: string;
+  access_token: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiYXBpLXJlc291cmNlIl0sInVzZXJfbmFtZSI6ImFkbWluIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIiwidHJ1c3QiXSwiZXhwIjoxNTA5MTk2OTcyLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwianRpIjoiOWFmYmIyYWItMzdiYi00MTIyLTg2NDAtY2FmMDc1OTRmOGZkIiwiY2xpZW50X2lkIjoiY2xpZW50MiJ9.bJOpK0UjCI1ym32uerR_jKp4pv8aLaOxnTeK_DBjYZU';
+  fileTransfer: FileTransferObject = this.transfer.create();
+
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              private camera: Camera,
+              private transfer: FileTransfer, private file: File,) {
+  }
+
+
+  /**
+   * 打开摄像头
+   */
+  openCamera() {
+    const options: CameraOptions = {
+      quality: 90,                                                   //相片质量 0 -100
+      destinationType: this.camera.DestinationType.DATA_URL,        //DATA_URL 是 base64   FILE_URL 是文件路径
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE,
+      saveToPhotoAlbum: true,                                       //是否保存到相册
+      // sourceType: this.camera.PictureSourceType.CAMERA ,         //是打开相机拍照还是打开相册选择  PHOTOLIBRARY : 相册选择, CAMERA : 拍照,
+    }
+
+    this.camera.getPicture(options).then((imageData) =&gt; {
+      console.log(&quot;got file: &quot; + imageData);
+
+      // If it's base64:
+      let base64Image = 'data:image/jpeg;base64,' + imageData;
+      this.path = base64Image;
+
+      //If it's file URI
+      // this.path = imageData;
+
+      this.upload();
+
+    }, (err) =&gt; {
+      // Handle error
+    });
+  }
+
+
+  /**
+   * 文件上传
+   */
+  upload() {
+    const apiPath = &quot;http://192.168.0.104:9090/api/commons/attach?&quot; + stringify({access_token: this.access_token});
+    let options: FileUploadOptions = {
+      fileKey: 'file',
+      fileName: 'name.jpg',   //文件名称
+      headers: {},
+      // 如果要传参数，写这里
+      params: {
+        maxSize: 5000000,
+        modularName: 'CNL',
+        allowType: 'jpg;png;pdf;doc;xls;xlsx;docx',
+      }
+    };
+
+    this.fileTransfer.upload(this.path, apiPath, options)
+      .then((data) =&gt; {
+        console.log(data);
+
+      }, (err) =&gt; {
+        console.log(err);
+      });
+  }
+
+
+  /**
+   * 文件下载
+   */
+  download() {
+    const url = &quot;http://192.168.0.104:9090/api/fms/sys/attach/file/detail?&quot; + stringify({
+      fileId: 17161,
+      access_token: this.access_token
+    });
+    this.fileTransfer.download(url, this.file.externalApplicationStorageDirectory + 'Mac.png').then((entry) =&gt; {
+      console.log('download complete: ' + entry.toURL());
+    }, (error) =&gt; {
+      console.log(error);
+    });
+  }
+
+}
+</code></pre>
+
+<p><strong>代码分析</strong></p>
+
+<pre><code>文件上传调用 File Transfer 插件的 upload方法
+文件下载调用 File Transfer 的 download方法
+通过调用 Camera 插件的getPicture方法获取照片
+</code></pre>
+
+<pre><code>filePath = this.file.externalApplicationStorageDirectory + 'Mac.png';
+这里为了测试方便写死了的路径，代表设备下的一个文件，这个文件名字叫做Mac.png。
+this.file.externalApplicationStorageDirectory 代表了设备上的一个路径。
+以安卓设备为例，我的项目app_id是 com.xxx.aaa，那么this.file.externalApplicationStorageDirectory最终代表的就是这个路径
+ “file:///storage/emulated/0/Android/data/com.xxx.aaa/ ”
+
+</code></pre>
+
+<pre><code>const access_token = xxx;
+为了测试了方便，这里直接将用户登录通过验证之后返回的access_token 写到代码里面。在测试中，以实际情况为准，可以没有这个验证，一切看你的后台。
+</code></pre>
+
+<pre><code>params: {
+    maxSize: 5000000,
+    modularName: 'CNL',
+    allowType: 'jpg;png;pdf;doc;xls;xlsx;docx',
+}
+这也是后台接口需要的参数，具体需要什么参数，要不要传参数，都是以你的后台接口为依据，在测试过程中如果不太如意，看看是不是后台接口的问题。
+之后会写一篇文章专门介绍一个简单的后台接口。
+</code></pre>
+
+<p>测试文件上传功能，因为在测试文件上传的时候，需要访问设备的原生功能，比如读取文件，因此需要在真机上调试。可是在真机上调试会又一个问题：无法查看日志。这对调试而言是非常不方便的。不过强大的chrom为我们提供了方法，具体方法请参上面给出的链接。</p>
+
+<p>在上面的代码中， 在拍照完成的回调的函数中，直接调用了 this.upload() 方法，该方法负责上传文件，所以在拍照完成后，就会直接将图片上传到服务器，同时图片展示在界面。在本例中，图片是以 base64 的形式上传的，也可以用File URL的形式上传文件。</p>
+    </div>
+
+    
+    
+
+    
+    
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/weixin.jpg">
+        <span>微信打赏</span>
+      </label>
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div>
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://www.spilledyear.cn/tags/ionic/">Ionic</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/ionic3-%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8F%91%E5%B8%83/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">Ionic3 自动化发布</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/ionic3-android%E7%AD%BE%E5%90%8D/">
+            <span class="next-text nav-default">Ionic3 Android签名</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+    
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+
+<div class="copyright">
+  
+
+  <span class="copyright-year">
+    &copy;
+    2019
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        spilledyear
+        
+      </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" crossorigin="anonymous"></script>
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

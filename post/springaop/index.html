@@ -1,0 +1,2371 @@
+<!DOCTYPE html>
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>SpringAOP - spilledyear</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="spilledyear" />
+  <meta name="description" content="" />
+
+  <meta name="keywords" content="Hugo, theme, spilledyear" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.6" />
+
+
+<link rel="canonical" href="https://www.spilledyear.cn/post/springaop/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.31c4b7729c8d71cc152f8de4203d90bfd8a04f7eab69372de7234ebf55b7701b.css" integrity="sha256-McS3cpyNccwVL43kID2Qv9igT36raTct5yNOv1W3cBs=" media="screen" crossorigin="anonymous">
+
+
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+
+<meta property="og:title" content="SpringAOP" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.spilledyear.cn/post/springaop/" />
+<meta property="article:published_time" content="2018-08-05T18:49:01&#43;00:00"/>
+<meta property="article:modified_time" content="2018-08-05T18:49:01&#43;00:00"/>
+
+<meta itemprop="name" content="SpringAOP">
+<meta itemprop="description" content="">
+
+
+<meta itemprop="datePublished" content="2018-08-05T18:49:01&#43;00:00" />
+<meta itemprop="dateModified" content="2018-08-05T18:49:01&#43;00:00" />
+<meta itemprop="wordCount" content="15320">
+
+
+
+<meta itemprop="keywords" content="Spring," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SpringAOP"/>
+<meta name="twitter:description" content=""/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">spilledyear</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/">主页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/post/">文章</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/categories/">分类</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/%E5%85%B3%E4%BA%8E%E6%88%91/">关于我</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://github.com/spilledyear" rel="noopener" target="_blank">
+              外部链接
+              
+              <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92 0 0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"></path>
+  <path d="M841.152 457.152c-30.528 0-54.784 24.512-54.784 54.656l0 274.752L237.696 786.56 237.696 237.696l206.016 0c6.656 0 10.752 0 13.248 0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128L183.04 128C153.216 128 128 152.576 128 182.848c0 3.136 0.256 6.272 0.768 9.28C128.256 195.136 128 198.272 128 201.408l0 639.488c0 0.064 0 0.192 0 0.256 0 0.128 0 0.192 0 0.32 0 30.528 24.512 54.784 54.784 54.784l646.976 0c6.592 0 9.728 0 11.712 0 28.736 0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344l0-20.352L896 561.408 896 512.128C896 481.792 871.424 457.152 841.152 457.152z"></path>
+</svg>
+
+              </i>
+            </a>
+          
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      spilledyear
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/">主页</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/post/">文章</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/categories/">分类</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/%E5%85%B3%E4%BA%8E%E6%88%91/">关于我</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://github.com/spilledyear" rel="noopener" target="_blank">
+              外部链接
+            </a>
+          
+
+        
+
+      </li>
+    
+
+    
+    
+
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">SpringAOP</h1>
+      
+      <div class="post-meta">
+        <time datetime="2018-08-05" class="post-time">
+          2018-08-05
+        </time>
+        <div class="post-category">
+            <a href="https://www.spilledyear.cn/categories/java/"> Java </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#aspectj">AspectJ</a>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#前置条件">前置条件</a></li>
+<li><a href="#工程准备">工程准备</a>
+<ul>
+<li><a href="#基本概念">基本概念</a></li>
+</ul></li>
+<li><a href="#测试案例">测试案例</a></li>
+<li><a href="#工作原理">工作原理</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#spring-aop">Spring AOP</a>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#整体流程">整体流程</a></li>
+<li><a href="#项目准备">项目准备</a></li>
+<li><a href="#xml解析">XML解析</a></li>
+<li><a href="#所有通知器-1">所有通知器(1)</a></li>
+<li><a href="#所有通知器-2">所有通知器(2)</a></li>
+<li><a href="#筛选通知器">筛选通知器</a></li>
+<li><a href="#创建代理">创建代理</a></li>
+<li><a href="#代理调用过程">代理调用过程</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p><img src="/pictures/home/267.jpg" alt="index" /></p>
+
+<p>本文主要是解析Spring AOP的运作流程。
+上次讲到Java中的两种动态代理技术：JDK动态代理和CGLIB动态代理，也简单分析了他们的实现原理，这篇文章主要是介绍基于动态代理的Spring AOP 技术。AOP是一个规范，Spring AOP仅仅是AOP的一种实现，是为了方便我们在spring应用中使用AOP技术。相对应的，AspectJ是另一个由Java实现的AOP框架，它更专业，功能也更强大，可以与Java无缝对接，因此我们需要简单了解一下AspectJ，但这并不代表Spring AOP和AspectJ有什么必然联系，事实上，Spring AOP的底层实现和AspectJ没有任何关系，只是他们在使用的时候有一些相似的地方罢了，使用过就能体会到了。</p>
+
+<h1 id="aspectj">AspectJ</h1>
+
+<h4 id="前置条件">前置条件</h4>
+
+<ul>
+<li>aspectjtools-1.9.0.jar</li>
+<li>aspectjrt-1.5.3.jar</li>
+<li>IDEA 2018.2</li>
+</ul>
+
+<h4 id="工程准备">工程准备</h4>
+
+<p>这里很有必要提一下IDEA的版本：2018.2，如果你用的是这个版本，那么IDEA自带了AspectJ Support 插件 和 Spring AOP/@AspectJ 插件，其他的版本我不知道，如果没有的话就自己安装，如图：</p>
+
+<p><img src="/pictures/SpringAOP/post_002.png" alt="post_002" /></p>
+
+<p>aspectjtools-1.9.0.jar 和 aspectjrt-1.5.3.jar 这两个jar包分别有不同的作用。aspectjtools-1.9.0.jar里面有Ajc编译器，而aspectjrt-1.5.3.jar是一个依赖包。
+装好这两个插件之后，修改以下配置：</p>
+
+<p><img src="/pictures/SpringAOP/post_003.png" alt="post_003" /></p>
+
+<p>这里我们使用Ajc编译器，因为Ajc编译器既能编译AspectJ语法，又可以编译java语法，而Javac只能编译java语法。</p>
+
+<h5 id="基本概念">基本概念</h5>
+
+<p>这部分内容我不想过多说明，如果不理解的可以网上查一下资料，主要有以下概念：
+- JoinPoint：连接点，即哪些目标函数可以被拦截。
+- PointCut：切点，对哪些连接点进行切入。
+- Advice：通知，在切点上要执行的动作。前置、后置、环绕、后置返回、异常。
+- Aspect：切面，切点和通知的组合体。
+- Weaving：织入，把切面代码织入到目标函数的过程。</p>
+
+<h4 id="测试案例">测试案例</h4>
+
+<p>我们首先新建一个Java工程，然后引入我们刚刚下载aspectjrt-1.5.3.jar，怎么引入不限制，你直接下载jar包然后引入，也可以通过maven，也可以通过其他手段。
+为了测试，我这里新建了以下几个类：Hello、AspectGrammar、AspectJJava</p>
+
+<p>Hello是我们的目标类，剩下的是两个切面，一个用AspectJ语法实现，一个用Java语法实现。</p>
+
+<pre><code>public class Hello {
+    public void sayHello(){
+        System.out.println(&quot;目标方法 say hello&quot;);
+    }
+
+    public static void main(String[] args) {
+        Hello h = new Hello();
+        h.sayHello();
+    }
+}
+</code></pre>
+
+<p>//切面1</p>
+
+<pre><code>public aspect AspectGrammar {
+
+    /**
+     * 第一种写法，不通过pointcut
+     */
+    void around():call(void Hello.sayHello()){
+        System.out.println(&quot;【AspectJ语法添加通知】 sayHello方法环绕通知&quot;);
+        proceed();
+        System.out.println(&quot;【AspectJ语法添加通知】 sayHello方法环绕通知&quot;);
+    }
+
+
+
+    /**
+     * 第二种写法，通过pointcut
+     */
+    pointcut recordLog():call(* Hello.sayHello(..));
+
+
+    /**
+     * 定义前置通知!
+     */
+    before():recordLog(){
+        System.out.println(&quot;【AspectJ语法添加通知】 sayHello方法执行前 输出日志&quot;);
+    }
+
+    /**
+     * 定义后置通知
+     */
+    after():recordLog(){
+        System.out.println(&quot;【AspectJ语法添加通知】 sayHello方法执行后 输出日志&quot;);
+    }
+}
+</code></pre>
+
+<p>//切面2</p>
+
+<pre><code>import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
+
+@Aspect
+public class AspectJJava {
+    @Pointcut(&quot;execution(* *.sayHello(..))&quot;)
+    private void pointcut(){}
+
+    @Before(value=&quot;pointcut()&quot;)
+    public void beforeAdvice(){
+        System.out.println(&quot;【AspectJ语法添加通知】 前置通知&quot;);
+    }
+}
+</code></pre>
+
+<p>直接执行 Hello的main方法，结果如下：</p>
+
+<p><img src="/pictures/SpringAOP/post_004.png" alt="post_004" /></p>
+
+<h4 id="工作原理">工作原理</h4>
+
+<p>网上找到的一张图：</p>
+
+<p><img src="/pictures/SpringAOP/post_005.png" alt="post_005" /></p>
+
+<p>ApectJ主要采用的是编译期织入，在这个期间使用AspectJAjc编译器aspect类编译成clas字节码后，在java目标类编译时织入，即先编aspect类再编译目标类。
+我们可以看一下编译后的class文件，很明显被修改过了。</p>
+
+<p><img src="/pictures/SpringAOP/post_006.png" alt="post_006" /></p>
+
+<p>显然AspectJ的织入原理已很明朗了，当然除了编译期织入，还存在链接期(编译后)织入，即将aspect类和java目标类同时编译成字节码文件后，再进行织入处理，这种方式比较有助于已编译好的第三方jar和Class文件进行织入操作，有兴趣的同学可以了解一下。</p>
+
+<p>AspectJ的这种织入方式我们称之为静态植入，与之对应的还有动态织入，Sring AOP就是采用的动态织入。动态织入的方式是在运行时动态将要增强的代码织入到目标类中，这样往往是通过动态代理技术完成的，如Java JDK的动态代理或者是CGLIB动态代理。至于这两种动态代理之间的区别，我们前面的文章已经介绍过了，Spring AOP为了满足不同场景下的代理需求，两种动态代理技术都用到了，下面详细介绍Spring AOP的实现原理。</p>
+
+<h1 id="spring-aop">Spring AOP</h1>
+
+<p>Spring AOP的使用有两种方法，一种是基于XML配置文件，一种是基于注解。可以根据自己的兴趣来选择，不过一般是选择使用注解的方式，简单直观，XML太繁琐了。Spring AOP一般是结合IOC一起使用的，如果想全面了解Spring AOP的原理，对IOC的掌握也需要有一定要求。</p>
+
+<h4 id="整体流程">整体流程</h4>
+
+<p>我觉得Spring AOP整体上可以分为4个流程：
+1.  XML解析。
+这部分我感觉和第二部分还是有点相同的地方的。针对XML解析，主要就是将各个不同的标签，解析成一个个BeanDefinition，同时给BeanDefinition设置其对应的beanClass属性，然后维护到Bean容器中。如果你在项目中是基于XML的方式使用Spring AOP，那么在这个过程中就会解析完所有相关的Bean，然后在第二流程中(筛选通知器)，就不会去创建通知器了。而如果你是使用是注解的方式只用Spring AOP，那么在这个过程不会做什么处理，然后会在筛选通知器的时候根据各个注解创建对应的Bean。</p>
+
+<ol>
+<li><p>筛选通知器。
+初始化之后，需要为每个Bean筛选出这个Bean对应的通知器。通知器（Advisor）是Spring AOP中非常重要的一个概念，如果你暂时不理解什么是通知器，就把它当作通知和切面的组合吧，通知器里面维护了通知和切面的属性。和切面不同的地方在于，一个切面里面可以有多个通知，而一个通知器里面只有一个通知，并且有该通知对应的切面信息。有关于通知器我下面会有介绍。
+我们知道Spring AOP底层是通过动态代理来实现的，也就是说在运行时创建一个代理类，那么我们能够想到通过代理实现AOP技术的方式有两种：一种是在生成代理类的时候，把所有通知的逻辑放到那个代理类中，根据我们对JDK基于接口的动态代理和CGLIB基于父的动态代理的了解，这应该不太可能把，通知可以有很多很多，如果真这样做，到时候生成的代理类不是非常混乱吗？第二种方法就是，在执行动态代理方法的时候，在代理方法内部调用那些通知逻辑，至于怎么调用，这也算是一个很Sring AOP中一个较为复杂的过程。这个想法不错，实际上Spring AOP也是这么干的。
+既然是在代理类执行方法的时候调用通知链的逻辑，那么就存在这样一个问题，有哪些通知链？也就是说，要实现上面说的那样，Spring 必须知道每个Bean对应的通知链。这其实就是所谓的筛选通知器。
+那么这里就引出一堆问题，怎么组织通知，即通知在Spring中该怎么表示？什么时候筛选？怎么筛选？我觉得这是Spring AOP中最复杂的一个过程，因为这里面还涉及到Spring IOC的部分内容，而IOC作为Spring的根基，挺复杂的，虽然知道它的大体流程，但是对于具体细节一无所知。</p></li>
+
+<li><p>创建代理对象
+即为目标类创建代理对象，采用哪种方式？JDK动态代理还是CGLIB动态代理。</p></li>
+
+<li><p>代理调用过程
+这可能是我们最感兴趣的一个过程，即：代理类是怎么调用这些通知链的逻辑的，然后又是怎么有规律的调用的，很有趣。</p></li>
+</ol>
+
+<p>但是我在接下来讲解的时候不会将每个流程当作一个小节来讲解，因为每个流程都太长了，所以多分几个章节。</p>
+
+<h4 id="项目准备">项目准备</h4>
+
+<p>IDEA可以很方便Debug，这是学习源码的一个好方式。准备一个Maven工程，并添加Spring中的一些核心模块，把常见的模块加上去就好了，然后准备测试代码。</p>
+
+<h4 id="xml解析">XML解析</h4>
+
+<p>aop名称空间的解析器是AopNamespaceHandler</p>
+
+<pre><code>public class AopNamespaceHandler extends NamespaceHandlerSupport {
+
+   /**
+    * Register the {@link BeanDefinitionParser BeanDefinitionParsers} for the
+    * '{@code config}', '{@code spring-configured}', '{@code aspectj-autoproxy}'
+    * and '{@code scoped-proxy}' tags.
+    */
+   @Override
+   public void init() {
+      // In 2.0 XSD as well as in 2.1 XSD.
+      registerBeanDefinitionParser(&quot;config&quot;, new ConfigBeanDefinitionParser());
+      registerBeanDefinitionParser(&quot;aspectj-autoproxy&quot;, new AspectJAutoProxyBeanDefinitionParser());
+      registerBeanDefinitionDecorator(&quot;scoped-proxy&quot;, new ScopedProxyBeanDefinitionDecorator());
+
+      // Only in 2.0 XSD: moved to context namespace as of 2.1
+      registerBeanDefinitionParser(&quot;spring-configured&quot;, new SpringConfiguredBeanDefinitionParser());
+   }
+
+}
+</code></pre>
+
+<p>在ConfigBeanDefinitionParser的parse方法中对aop:config下面的三个直接子标签pointcut、advisor、aspect分别进行解析</p>
+
+<pre><code>@Override
+public BeanDefinition parse(Element element, ParserContext parserContext) {
+   CompositeComponentDefinition compositeDef =
+         new CompositeComponentDefinition(element.getTagName(), parserContext.extractSource(element));
+   parserContext.pushContainingComponent(compositeDef);
+
+   configureAutoProxyCreator(parserContext, element);
+
+   List&lt;Element&gt; childElts = DomUtils.getChildElements(element);
+   for (Element elt: childElts) {
+      String localName = parserContext.getDelegate().getLocalName(elt);
+      if (POINTCUT.equals(localName)) {
+         parsePointcut(elt, parserContext);
+      }
+      else if (ADVISOR.equals(localName)) {
+         parseAdvisor(elt, parserContext);
+      }
+      else if (ASPECT.equals(localName)) {
+         parseAspect(elt, parserContext);
+      }
+   }
+
+   parserContext.popAndRegisterContainingComponent();
+   return null;
+}
+</code></pre>
+
+<p>在解析的时候，会将一个个标封装成一个个BeanDefinition，其实这属于IOC的内容，对于这些细节我并不是很清楚，只能了解它的大致意图。
+比如现在有这样一段XML配置文件</p>
+
+<pre><code>&lt;context:component-scan base-package=&quot;aop&quot;/&gt;
+
+&lt;!-- 启动@aspectj的自动代理支持--&gt;
+&lt;aop:aspectj-autoproxy /&gt;
+
+&lt;bean id=&quot;simpleMethodInterceptor&quot; class=&quot;aop.SimpleMethodInterceptor&quot; /&gt;
+
+&lt;bean class=&quot;aop.SimpleAopBean&quot; /&gt;
+
+&lt;aop:config expose-proxy=&quot;true&quot;&gt;
+    &lt;aop:pointcut id=&quot;xxx&quot; expression=&quot;execution(* aop.SimpleAopBean.*(..))&quot;/&gt;
+    &lt;aop:aspect&gt;
+        &lt;aop:before method=&quot;yyy&quot; pointcut-ref=&quot;xxx&quot;&gt;&lt;/aop:before&gt;
+        &lt;aop:after method=&quot;yyy&quot; pointcut-ref=&quot;xxx&quot;&gt;&lt;/aop:after&gt;
+        &lt;aop:around method=&quot;yyy&quot; pointcut-ref=&quot;xxx&quot;&gt;&lt;/aop:around&gt;
+        &lt;!-- 还有各种通知 --&gt;
+    &lt;/aop:aspect&gt;
+&lt;/aop:config&gt;
+
+&lt;aop:config expose-proxy=&quot;true&quot;&gt;
+    &lt;aop:advisor advice-ref=&quot;simpleMethodInterceptor&quot; pointcut=&quot;execution(* aop.SimpleAopBean.*(..))&quot; /&gt;
+    &lt;aop:aspect ref=&quot;simpleMethodInterceptor&quot; /&gt;
+&lt;/aop:config&gt;
+</code></pre>
+
+<p>最终pointcut、aspect、advisor解析之后变成了一个个BeanDefinition，但是在生成BeanDefinition时给它设置的beanClass属性才是关键，这个beanClass也代表每个标签实际对应的Clas类型，下面分别看看这三个标签对应的Class类型。</p>
+
+<ul>
+<li><p>Pointcut：AspectJExpressionPointcut</p>
+
+<pre><code>expression) {
+RootBeanDefinition beanDefinition = new RootBeanDefinition(AspectJExpressionPointcut.class);
+beanDefinition.setScope(BeanDefinition.SCOPE_PROTOTYPE);
+beanDefinition.setSynthetic(true);
+beanDefinition.getPropertyValues().add(EXPRESSION, expression);
+return beanDefinition;
+}
+</code></pre></li>
+
+<li><p>advisor：DefaultBeanFactoryPointcutAdvisor</p>
+
+<pre><code>private AbstractBeanDefinition createAdvisorBeanDefinition(Element advisorElement, ParserContext parserContext) {
+RootBeanDefinition advisorDefinition = new RootBeanDefinition(DefaultBeanFactoryPointcutAdvisor.class);
+advisorDefinition.setSource(parserContext.extractSource(advisorElement));
+
+String adviceRef = advisorElement.getAttribute(ADVICE_REF);
+if (!StringUtils.hasText(adviceRef)) {
+  parserContext.getReaderContext().error(
+        &quot;'advice-ref' attribute contains empty value.&quot;, advisorElement, this.parseState.snapshot());
+}
+else {
+  advisorDefinition.getPropertyValues().add(
+        ADVICE_BEAN_NAME, new RuntimeBeanNameReference(adviceRef));
+}
+
+if (advisorElement.hasAttribute(ORDER_PROPERTY)) {
+  advisorDefinition.getPropertyValues().add(
+        ORDER_PROPERTY, advisorElement.getAttribute(ORDER_PROPERTY));
+}
+
+return advisorDefinition;
+}
+</code></pre></li>
+</ul>
+
+<p>有关于DefaultBeanFactoryPointcutAdvisor，可以看看它的继承关系，发现它实现了顶层的Advisor接口</p>
+
+<p><img src="/pictures/SpringAOP/post_007.png" alt="post_007" /></p>
+
+<ul>
+<li><p>aspect：DefaultBeanFactoryPointcutAdvisor
+aspect的解析会复杂一些，因为除了它本身，aspect下面还有很多子标签，即：各种通知。比如：before、after等。</p>
+
+<pre><code>private void parseAspect(Element aspectElement, ParserContext parserContext) {
+String aspectId = aspectElement.getAttribute(ID);
+String aspectName = aspectElement.getAttribute(REF);
+
+try {
+  this.parseState.push(new AspectEntry(aspectId, aspectName));
+  List&lt;BeanDefinition&gt; beanDefinitions = new ArrayList&lt;BeanDefinition&gt;();
+  List&lt;BeanReference&gt; beanReferences = new ArrayList&lt;BeanReference&gt;();
+
+  List&lt;Element&gt; declareParents = DomUtils.getChildElementsByTagName(aspectElement, DECLARE_PARENTS);
+  for (int i = METHOD_INDEX; i &lt; declareParents.size(); i++) {
+     Element declareParentsElement = declareParents.get(i);
+     beanDefinitions.add(parseDeclareParents(declareParentsElement, parserContext));
+  }
+
+  // We have to parse &quot;advice&quot; and all the advice kinds in one loop, to get the
+  // ordering semantics right.
+  NodeList nodeList = aspectElement.getChildNodes();
+  boolean adviceFoundAlready = false;
+  for (int i = 0; i &lt; nodeList.getLength(); i++) {
+     Node node = nodeList.item(i);
+     if (isAdviceNode(node, parserContext)) {
+        if (!adviceFoundAlready) {
+           adviceFoundAlready = true;
+           if (!StringUtils.hasText(aspectName)) {
+              parserContext.getReaderContext().error(
+                    &quot;&lt;aspect&gt; tag needs aspect bean reference via 'ref' attribute when declaring advices.&quot;,
+                    aspectElement, this.parseState.snapshot());
+              return;
+           }
+           beanReferences.add(new RuntimeBeanReference(aspectName));
+        }
+        AbstractBeanDefinition advisorDefinition = parseAdvice(
+              aspectName, i, aspectElement, (Element) node, parserContext, beanDefinitions, beanReferences);
+        beanDefinitions.add(advisorDefinition);
+     }
+  }
+
+  AspectComponentDefinition aspectComponentDefinition = createAspectComponentDefinition(
+        aspectElement, aspectId, beanDefinitions, beanReferences, parserContext);
+  parserContext.pushContainingComponent(aspectComponentDefinition);
+
+  List&lt;Element&gt; pointcuts = DomUtils.getChildElementsByTagName(aspectElement, POINTCUT);
+  for (Element pointcutElement : pointcuts) {
+     parsePointcut(pointcutElement, parserContext);
+  }
+
+  parserContext.popAndRegisterContainingComponent();
+}
+finally {
+  this.parseState.pop();
+}
+}
+</code></pre></li>
+</ul>
+
+<p>大体思路如下：先获取aspect标签下面的所有子标签，然后遍历，在遍历的时候判断该子标签是否是通知类型的标签，如果是，就解析子标签。
+判断是否是通知标签的逻辑比较简单</p>
+
+<pre><code>private boolean isAdviceNode(Node aNode, ParserContext parserContext) {
+   if (!(aNode instanceof Element)) {
+      return false;
+   }
+   else {
+      String name = parserContext.getDelegate().getLocalName(aNode);
+      return (BEFORE.equals(name) || AFTER.equals(name) || AFTER_RETURNING_ELEMENT.equals(name) ||
+            AFTER_THROWING_ELEMENT.equals(name) || AROUND.equals(name));
+   }
+}
+</code></pre>
+
+<p>下面重点来关注一下对aspect子标签的解析过程</p>
+
+<pre><code>private AbstractBeanDefinition parseAdvice(
+      String aspectName, int order, Element aspectElement, Element adviceElement, ParserContext parserContext,
+      List&lt;BeanDefinition&gt; beanDefinitions, List&lt;BeanReference&gt; beanReferences) {
+
+   try {
+      this.parseState.push(new AdviceEntry(parserContext.getDelegate().getLocalName(adviceElement)));
+
+      // create the method factory bean
+      RootBeanDefinition methodDefinition = new RootBeanDefinition(MethodLocatingFactoryBean.class);
+      methodDefinition.getPropertyValues().add(&quot;targetBeanName&quot;, aspectName);
+      methodDefinition.getPropertyValues().add(&quot;methodName&quot;, adviceElement.getAttribute(&quot;method&quot;));
+      methodDefinition.setSynthetic(true);
+
+      // create instance factory definition
+      RootBeanDefinition aspectFactoryDef =
+            new RootBeanDefinition(SimpleBeanFactoryAwareAspectInstanceFactory.class);
+      aspectFactoryDef.getPropertyValues().add(&quot;aspectBeanName&quot;, aspectName);
+      aspectFactoryDef.setSynthetic(true);
+
+      // register the pointcut
+      AbstractBeanDefinition adviceDef = createAdviceDefinition(
+            adviceElement, parserContext, aspectName, order, methodDefinition, aspectFactoryDef,
+            beanDefinitions, beanReferences);
+
+      // configure the advisor
+      RootBeanDefinition advisorDefinition = new RootBeanDefinition(AspectJPointcutAdvisor.class);
+      advisorDefinition.setSource(parserContext.extractSource(adviceElement));
+      advisorDefinition.getConstructorArgumentValues().addGenericArgumentValue(adviceDef);
+      if (aspectElement.hasAttribute(ORDER_PROPERTY)) {
+         advisorDefinition.getPropertyValues().add(
+               ORDER_PROPERTY, aspectElement.getAttribute(ORDER_PROPERTY));
+      }
+
+      // register the final advisor
+      parserContext.getReaderContext().registerWithGeneratedName(advisorDefinition);
+
+      return advisorDefinition;
+   }
+   finally {
+      this.parseState.pop();
+   }
+}
+</code></pre>
+
+<p>1、创建一个class类型为MethodLocatingFactoryBean的BeanDefinition，关联上aspectName 和 methodName。注意，targetName就是取aspect标签上ref的值，methodName 就是子标签上对应的methon属性值！以下的也是类似。</p>
+
+<p>2、创建一个class类型为SimpleBeanFactoryAwareAspectInstanceFactory的BeanDefinition，关联上aspectName 和 methodName。</p>
+
+<p>3、重点来了。这一步才是对子标签真正的解析，即：每个标签对应什么类型。这里会创建根据子标签的类型创建一个class类型为对对应类型的BeanDefinition，至于具体有哪些类型，下面会有详细介绍。创建这个BeanDefinition的时候需要依赖到前面创建的那两个BeanDefinition，至于Spring这里这样处理的意图，不好意思，我还不太清楚。</p>
+
+<p>4、创建以class类型为AspectJPointcutAdvisor的BeanDefinition，这也是最终真正的返回值，这里需要依赖第三部创建的BeanDefinition。从这里我们可以看出，aspect下的每个通知标签，最终都会转换成Advisor(AspectJPointcutAdvisor)，而每个通知标签都是aspect的子标签，也就是说，每个Advisor，可以堪称是Aspect和Advice的组合，这就是通知器！这句话很重要！</p>
+
+<p>5、注册最终生成的AspectJPointcutAdvisor。</p>
+
+<p>这就是一个个通知标签的解析过程，在第三个步骤中，提到了有一些class类型，这里可以看看</p>
+
+<pre><code>private Class&lt;?&gt; getAdviceClass(Element adviceElement, ParserContext parserContext) {
+   String elementName = parserContext.getDelegate().getLocalName(adviceElement);
+   if (BEFORE.equals(elementName)) {
+      return AspectJMethodBeforeAdvice.class;
+   }
+   else if (AFTER.equals(elementName)) {
+      return AspectJAfterAdvice.class;
+   }
+   else if (AFTER_RETURNING_ELEMENT.equals(elementName)) {
+      return AspectJAfterReturningAdvice.class;
+   }
+   else if (AFTER_THROWING_ELEMENT.equals(elementName)) {
+      return AspectJAfterThrowingAdvice.class;
+   }
+   else if (AROUND.equals(elementName)) {
+      return AspectJAroundAdvice.class;
+   }
+   else {
+      throw new IllegalArgumentException(&quot;Unknown advice kind [&quot; + elementName + &quot;].&quot;);
+   }
+}
+</code></pre>
+
+<p>这个关系应该很明显了，下面来看看通知类的继承关系</p>
+
+<p><img src="/pictures/SpringAOP/post_008.png" alt="post_008" /></p>
+
+<p>有关于解析aspect子标签，即：解析通知到这里基本可以结束了，还有很多不太清楚的地方，能力有限，但现在对我们研究Spring AOP影响不大，这里花大把时间解释子标签的解析过程，就是为了让大家了解Advisor，这在Spring AOP里面是一个非常重要的概念。其实，现在不是很清楚的一些东西，在下面的解析过程中，都会一个显现出来，都是很就可以知它们这样做的意义了。</p>
+
+<p>当aspect下的所有通知子标签解析完成之后，还有一个过程要处理：</p>
+
+<pre><code>AspectComponentDefinition aspectComponentDefinition = createAspectComponentDefinition(
+      aspectElement, aspectId, beanDefinitions, beanReferences, parserContext);
+parserContext.pushContainingComponent(aspectComponentDefinition);
+
+private AspectComponentDefinition createAspectComponentDefinition(
+      Element aspectElement, String aspectId, List&lt;BeanDefinition&gt; beanDefs,
+      List&lt;BeanReference&gt; beanRefs, ParserContext parserContext) {
+
+   BeanDefinition[] beanDefArray = beanDefs.toArray(new BeanDefinition[beanDefs.size()]);
+   BeanReference[] beanRefArray = beanRefs.toArray(new BeanReference[beanRefs.size()]);
+   Object source = parserContext.extractSource(aspectElement);
+   return new AspectComponentDefinition(aspectId, beanDefArray, beanRefArray, source);
+}
+</code></pre>
+
+<p>这是做啥用的？可以看看AspectComponentDefinition这个类是干嘛的</p>
+
+<pre><code>/**
+ * {@link org.springframework.beans.factory.parsing.ComponentDefinition}
+ * that holds an aspect definition, including its nested pointcuts.
+ *
+ * @author Rob Harrop
+ * @author Juergen Hoeller
+ * @since 2.0
+ * @see #getNestedComponents()
+ * @see PointcutComponentDefinition
+ */
+public class AspectComponentDefin
+……
+}
+</code></pre>
+
+<p>其实就是维护每个aspect和它下面哪些通知的关系，aspec 和 advice的关系是1-N</p>
+
+<p>通知类标签解析完成之后，还有一个小流程，解析aspect下面的pointcut标签，pointcut标签可以和aspect标签同级，也可以是它的子级，解析方法是一样，不多说了。</p>
+
+<pre><code>List&lt;Element&gt; pointcuts = DomUtils.getChildElementsByTagName(aspectElement, POINTCUT);
+for (Element pointcutElement : pointcuts) {
+   parsePointcut(pointcutElement, parserContext);
+}
+</code></pre>
+
+<p>有关于Spring AOP中解析XML的内容就到这里了，其实这里主要是针对我们使用XML的方式使用Spring AOP，与之对应的，还有基于注解的解析，这是我们接下来要讲的内容。对于这一部分内容跟，最重要的就是理解那些标签经过转换之后的表示方式，因为不管是XML还是注解，最终都是对应的一个Class，理解这一点非常重要。</p>
+
+<h4 id="所有通知器-1">所有通知器(1)</h4>
+
+<p>在网上找了一些资料，大部分说是在 bean初始化后置处理过程中为Bean筛选通知器，但是我在前置方法里面也看到对应的操作，两个方法的实现基本一致，只是判断条件不同，不知道具体的用意是什么。AbstractAutoProxyCreator.java</p>
+
+<pre><code>@Override
+public Object postProcessBeforeInstantiation(Class&lt;?&gt; beanClass, String beanName) throws BeansException {
+   Object cacheKey = getCacheKey(beanClass, beanName);
+
+   if (beanName == null || !this.targetSourcedBeans.contains(beanName)) {
+      if (this.advisedBeans.containsKey(cacheKey)) {
+         return null;
+      }
+      if (isInfrastructureClass(beanClass) || shouldSkip(beanClass, beanName)) {
+         this.advisedBeans.put(cacheKey, Boolean.FALSE);
+         return null;
+      }
+   }
+
+   // Create proxy here if we have a custom TargetSource.
+   // Suppresses unnecessary default instantiation of the target bean:
+   // The TargetSource will handle target instances in a custom fashion.
+   if (beanName != null) {
+      TargetSource targetSource = getCustomTargetSource(beanClass, beanName);
+      if (targetSource != null) {
+         this.targetSourcedBeans.add(beanName);
+         Object[] specificInterceptors = getAdvicesAndAdvisorsForBean(beanClass, beanName, targetSource);
+         Object proxy = createProxy(beanClass, beanName, specificInterceptors, targetSource);
+         this.proxyTypes.put(cacheKey, proxy.getClass());
+         return proxy;
+      }
+   }
+
+   return null;
+}
+
+@Override
+public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
+   if (bean != null) {
+      Object cacheKey = getCacheKey(bean.getClass(), beanName);
+      if (!this.earlyProxyReferences.contains(cacheKey)) {
+         return wrapIfNecessary(bean, beanName, cacheKey);
+      }
+   }
+   return bean;
+}
+
+</code></pre>
+
+<p>在前置中多了一个判断，即判断用户是否自定义了custom TargetSource，暂时不太清楚这里的用意，先跳过，直接介绍那个后置方法吧。</p>
+
+<p>Spring AOP通过实现BeanPostProcessor 接口，在 bean初始化后置处理过程中需寻找Bean对应的通知器，该实现类是 AbstractAutoProxyCreator。</p>
+
+<pre><code>public abstract class AbstractAutoProxyCreator extends ProxyProcessorSupport
+      implements SmartInstantiationAwareBeanPostProcessor, BeanFactoryAware {
+/**
+ * Create a proxy with the configured interceptors if the bean is
+ * identified as one to proxy by the subclass.
+ * @see #getAdvicesAndAdvisorsForBean
+ */
+@Override
+public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
+   if (bean != null) {
+      Object cacheKey = getCacheKey(bean.getClass(), beanName);
+      if (!this.earlyProxyReferences.contains(cacheKey)) {
+         return wrapIfNecessary(bean, beanName, cacheKey);
+      }
+   }
+   return bean;
+}
+
+}
+</code></pre>
+
+<p>this.earlyProxyReferences是一个Set集合，估计是缓存的作用，至于它在哪里初始化的，我还不太清楚。主要关注点就是wrapIfNecessary方法，所有主要流程都在这个方法里面可以看到，但千万别认为它很简单，这个方法里面的每个方法调用 ，都很复杂。</p>
+
+<pre><code>/**
+ * Wrap the given bean if necessary, i.e. if it is eligible for being proxied.
+ * @param bean the raw bean instance
+ * @param beanName the name of the bean
+ * @param cacheKey the cache key for metadata access
+ * @return a proxy wrapping the bean, or the raw bean instance as-is
+ */
+protected Object wrapIfNecessary(Object bean, String beanName, Object cacheKey) {
+   if (beanName != null &amp;&amp; this.targetSourcedBeans.contains(beanName)) {
+      return bean;
+   }
+   if (Boolean.FALSE.equals(this.advisedBeans.get(cacheKey))) {
+      return bean;
+   }
+   if (isInfrastructureClass(bean.getClass()) || shouldSkip(bean.getClass(), beanName)) {
+      this.advisedBeans.put(cacheKey, Boolean.FALSE);
+      return bean;
+   }
+
+   // Create proxy if we have advice.
+   Object[] specificInterceptors = getAdvicesAndAdvisorsForBean(bean.getClass(), beanName, null);
+   if (specificInterceptors != DO_NOT_PROXY) {
+      this.advisedBeans.put(cacheKey, Boolean.TRUE);
+      Object proxy = createProxy(
+            bean.getClass(), beanName, specificInterceptors, new SingletonTargetSource(bean));
+      this.proxyTypes.put(cacheKey, proxy.getClass());
+      return proxy;
+   }
+
+   this.advisedBeans.put(cacheKey, Boolean.FALSE);
+   return bean;
+}
+</code></pre>
+
+<p>这个方法里面其实包括了筛选通知器和创建代理两个过程，但我还是觉得把他们分开来讲解更好一些，这个地方注意以下。</p>
+
+<p>前面这几个判断，主要是筛选一下有没有必要为当前的bean创建代理。每个bean进这个方法的时候，都会将这个bean放到 this.advisedBeans 中，这是一个Map集合</p>
+
+<pre><code>private final Map&lt;Object, Boolean&gt; advisedBeans = new ConcurrentHashMap&lt;Object, Boolean&gt;(256);
+</code></pre>
+
+<p>如果当前bean不需要创建代理，就设置为false；如果需要创建代理，创建代理之后就就设置为true，this.advisedBeans可以把它当作是一个缓存，当下次有相同的bean跑进来的时候，就可以快速判断了。</p>
+
+<p>这个主要是判断当前bean是否基础设施类（Pointcut、Advice、Advisor 等接口的实现类），或是应该跳过的类，如果是就不创建代理</p>
+
+<pre><code>if (isInfrastructureClass(bean.getClass()) || shouldSkip(bean.getClass(), beanName)) {
+   this.advisedBeans.put(cacheKey, Boolean.FALSE);
+   return bean;
+}
+
+protected boolean isInfrastructureClass(Class&lt;?&gt; beanClass) {
+   boolean retVal = Advice.class.isAssignableFrom(beanClass) ||
+         Pointcut.class.isAssignableFrom(beanClass) ||
+         Advisor.class.isAssignableFrom(beanClass) ||
+         AopInfrastructureBean.class.isAssignableFrom(beanClass);
+   if (retVal &amp;&amp; logger.isTraceEnabled()) {
+      logger.trace(&quot;Did not attempt to auto-proxy infrastructure class [&quot; + beanClass.getName() + &quot;]&quot;);
+   }
+   return retVal;
+}
+
+// shouldSkip默认是返回 false的，子类可以覆盖这个方法
+protected boolean shouldSkip(Class&lt;?&gt; beanClass, String beanName) {
+   return false;
+}
+</code></pre>
+
+<p>接下来就是筛选通知器的核心了</p>
+
+<pre><code>Object[] specificInterceptors = getAdvicesAndAdvisorsForBean(bean.getClass(), beanName, null);
+</code></pre>
+
+<p>所有相关的细节都在这个方法里面。这个方法的作用就是为当前bean找到合适的通知器。它的默认实现在其父类方法中  AbstractAdvisorAutoProxyCreator</p>
+
+<pre><code>Override
+protected Object[] getAdvicesAndAdvisorsForBean(Class&lt;?&gt; beanClass, String beanName, TargetSource targetSource) {
+   List&lt;Advisor&gt; advisors = findEligibleAdvisors(beanClass, beanName);
+   if (advisors.isEmpty()) {
+      return DO_NOT_PROXY;
+   }
+   return advisors.toArray();
+}
+
+protected List&lt;Advisor&gt; findEligibleAdvisors(Class&lt;?&gt; beanClass, String beanName) {
+   List&lt;Advisor&gt; candidateAdvisors = findCandidateAdvisors();
+   List&lt;Advisor&gt; eligibleAdvisors = findAdvisorsThatCanApply(candidateAdvisors, beanClass, beanName);
+   extendAdvisors(eligibleAdvisors);
+   if (!eligibleAdvisors.isEmpty()) {
+      eligibleAdvisors = sortAdvisors(eligibleAdvisors);
+   }
+   return eligibleAdvisors;
+}
+</code></pre>
+
+<p>从以上代码可以看出，为当前bean寻找通知器的大体流程如下
+- 查找所有的通知器，findCandidateAdvisors()
+- 在上一步的基础上，筛选出符合当前bean的通知器，findAdvisorsThatCanApply(…..)</p>
+
+<p>有关于findCandidateAdvisors方法，这里分两部分。处理AbstractAdvisorAutoProxyCreator类中的默认实现外，他还有一个子类，AnnotationAwareAspectJAutoProxyCreator，并且这个子类重写了这个方法，根据类名可以看出，主要是处理注解相关的。</p>
+
+<p>先看默认实现</p>
+
+<pre><code>protected List&lt;Advisor&gt; findCandidateAdvisors() {
+   return this.advisorRetrievalHelper.findAdvisorBeans();
+}
+</code></pre>
+
+<p>很明显这里是通过BeanFactoryAdvisorRetrievalHelper的findAdvisorBeans方法找到所有的通知器</p>
+
+<pre><code>public List&lt;Advisor&gt; findAdvisorBeans() {
+   // Determine list of advisor bean names, if not cached already.
+   String[] advisorNames = null;
+   synchronized (this) {
+      advisorNames = this.cachedAdvisorBeanNames;
+      if (advisorNames == null) {
+         // Do not initialize FactoryBeans here: We need to leave all regular beans
+         // uninitialized to let the auto-proxy creator apply to them!
+         advisorNames = BeanFactoryUtils.beanNamesForTypeIncludingAncestors(
+               this.beanFactory, Advisor.class, true, false);
+         this.cachedAdvisorBeanNames = advisorNames;
+      }
+   }
+   if (advisorNames.length == 0) {
+      return new LinkedList&lt;Advisor&gt;();
+   }
+
+   List&lt;Advisor&gt; advisors = new LinkedList&lt;Advisor&gt;();
+   for (String name : advisorNames) {
+      if (isEligibleBean(name)) {
+         if (this.beanFactory.isCurrentlyInCreation(name)) {
+            if (logger.isDebugEnabled()) {
+               logger.debug(&quot;Skipping currently created advisor '&quot; + name + &quot;'&quot;);
+            }
+         }
+         else {
+            try {
+               advisors.add(this.beanFactory.getBean(name, Advisor.class));
+            }
+            catch (BeanCreationException ex) {
+               Throwable rootCause = ex.getMostSpecificCause();
+               if (rootCause instanceof BeanCurrentlyInCreationException) {
+                  BeanCreationException bce = (BeanCreationException) rootCause;
+                  if (this.beanFactory.isCurrentlyInCreation(bce.getBeanName())) {
+                     if (logger.isDebugEnabled()) {
+                        logger.debug(&quot;Skipping advisor '&quot; + name +
+                              &quot;' with dependency on currently created bean: &quot; + ex.getMessage());
+                     }
+                     // Ignore: indicates a reference back to the bean we're trying to advise.
+                     // We want to find advisors other than the currently created bean itself.
+                     continue;
+                  }
+               }
+               throw ex;
+            }
+         }
+      }
+   }
+   return advisors;
+}
+</code></pre>
+
+<p>下面对上面的方法分开来解析</p>
+
+<p>首先，这里使用了单例模式的双重校验，this.cachedAdvisorBeanNames就是所有通知器名称的缓存，只需要查找一次就可以了，如果对每个bean都查找一次所有的通知器，那不是慢死了。所以，查找逻辑全在beanNamesForTypeIncludingAncestors方法中</p>
+
+<pre><code>String[] advisorNames = null;
+synchronized (this) {
+   advisorNames = this.cachedAdvisorBeanNames;
+   if (advisorNames == null) {
+      // Do not initialize FactoryBeans here: We need to leave all regular beans
+      // uninitialized to let the auto-proxy creator apply to them!
+      advisorNames = BeanFactoryUtils.beanNamesForTypeIncludingAncestors(
+            this.beanFactory, Advisor.class, true, false);
+      this.cachedAdvisorBeanNames = advisorNames;
+   }
+}
+</code></pre>
+
+<p>可以看到这里使用了递归查找，查找的主要逻辑就是getBeanNamesForType方法，这是Spring为我们封装好的方法，就不再深究了。其实就是就是找到所有的Advisor，因为这是通知器的顶级接口，前面的继承关系图中已经展示过了。</p>
+
+<pre><code>public static String[] beanNamesForTypeIncludingAncestors(
+      ListableBeanFactory lbf, Class&lt;?&gt; type, boolean includeNonSingletons, boolean allowEagerInit) {
+
+   Assert.notNull(lbf, &quot;ListableBeanFactory must not be null&quot;);
+   String[] result = lbf.getBeanNamesForType(type, includeNonSingletons, allowEagerInit);
+   if (lbf instanceof HierarchicalBeanFactory) {
+      HierarchicalBeanFactory hbf = (HierarchicalBeanFactory) lbf;
+      if (hbf.getParentBeanFactory() instanceof ListableBeanFactory) {
+         String[] parentResult = beanNamesForTypeIncludingAncestors(
+               (ListableBeanFactory) hbf.getParentBeanFactory(), type, includeNonSingletons, allowEagerInit);
+         List&lt;String&gt; resultList = new ArrayList&lt;String&gt;();
+         resultList.addAll(Arrays.asList(result));
+         for (String beanName : parentResult) {
+            if (!resultList.contains(beanName) &amp;&amp; !hbf.containsLocalBean(beanName)) {
+               resultList.add(beanName);
+            }
+         }
+         result = StringUtils.toStringArray(resultList);
+      }
+   }
+   return result;
+}
+</code></pre>
+
+<p>在获取所有通知器名称之后，进行遍历，找到所有名称对应的Bean</p>
+
+<pre><code>List&lt;Advisor&gt; advisors = new LinkedList&lt;Advisor&gt;();
+for (String name : advisorNames) {
+   if (isEligibleBean(name)) {
+      if (this.beanFactory.isCurrentlyInCreation(name)) {
+         if (logger.isDebugEnabled()) {
+            logger.debug(&quot;Skipping currently created advisor '&quot; + name + &quot;'&quot;);
+         }
+      }
+      else {
+         try {
+            advisors.add(this.beanFactory.getBean(name, Advisor.class));
+         }
+……
+      }
+   }
+}
+</code></pre>
+
+<p>isEligibleBean也是一个可以被子类覆盖的方法，默认返回true。this.beanFactory.isCurrentlyInCreation(name)用于忽略当前正在创建的Bean。然后就是根据name找到对应的Bean放到list中，最后返回list。</p>
+
+<h4 id="所有通知器-2">所有通知器(2)</h4>
+
+<p>上面是默认实现，接下来看看AnnotationAwareAspectJAutoProxyCreator中该方法的实现</p>
+
+<p>先调用了父类的方法，它的实现我们在上面已经讲解过了， 然后再调用BeanFactoryAspectJAdvisorsBuilder的buildAspectJAdvisors方法。</p>
+
+<pre><code>protected List&lt;Advisor&gt; findCandidateAdvisors() {
+   // Add all the Spring advisors found according to superclass rules.
+   List&lt;Advisor&gt; advisors = super.findCandidateAdvisors();
+   // Build Advisors for all AspectJ aspects in the bean factory.
+   advisors.addAll(this.aspectJAdvisorsBuilder.buildAspectJAdvisors());
+   return advi
+</code></pre>
+
+<pre><code>public List&lt;Advisor&gt; buildAspectJAdvisors() {
+   List&lt;String&gt; aspectNames = null;
+
+   synchronized (this) {
+      aspectNames = this.aspectBeanNames;
+      if (aspectNames == null) {
+         List&lt;Advisor&gt; advisors = new LinkedList&lt;Advisor&gt;();
+         aspectNames = new LinkedList&lt;String&gt;();
+         String[] beanNames =
+               BeanFactoryUtils.beanNamesForTypeIncludingAncestors(this.beanFactory, Object.class, true, false);
+         for (String beanName : beanNames) {
+            if (!isEligibleBean(beanName)) {
+               continue;
+            }
+            // We must be careful not to instantiate beans eagerly as in this
+            // case they would be cached by the Spring container but would not
+            // have been weaved
+            Class&lt;?&gt; beanType = this.beanFactory.getType(beanName);
+            if (beanType == null) {
+               continue;
+            }
+            if (this.advisorFactory.isAspect(beanType)) {
+               aspectNames.add(beanName);
+               AspectMetadata amd = new AspectMetadata(beanType, beanName);
+               if (amd.getAjType().getPerClause().getKind() == PerClauseKind.SINGLETON) {
+                  MetadataAwareAspectInstanceFactory factory =
+                        new BeanFactoryAspectInstanceFactory(this.beanFactory, beanName);
+                  List&lt;Advisor&gt; classAdvisors = this.advisorFactory.getAdvisors(factory);
+                  if (this.beanFactory.isSingleton(beanName)) {
+                     this.advisorsCache.put(beanName, classAdvisors);
+                  }
+                  else {
+                     this.aspectFactoryCache.put(beanName, factory);
+                  }
+                  advisors.addAll(classAdvisors);
+               }
+               else {
+                  // Per target or per this.
+                  if (this.beanFactory.isSingleton(beanName)) {
+                     throw new IllegalArgumentException(&quot;Bean with name '&quot; + beanName +
+                           &quot;' is a singleton, but aspect instantiation model is not singleton&quot;);
+                  }
+                  MetadataAwareAspectInstanceFactory factory =
+                        new PrototypeAspectInstanceFactory(this.beanFactory, beanName);
+                  this.aspectFactoryCache.put(beanName, factory);
+                  advisors.addAll(this.advisorFactory.getAdvisors(factory));
+               }
+            }
+         }
+         this.aspectBeanNames = aspectNames;
+         return advisors;
+      }
+   }
+
+   if (aspectNames.isEmpty()) {
+      return Collections.emptyList();
+   }
+   List&lt;Advisor&gt; advisors = new LinkedList&lt;Advisor&gt;();
+   for (String aspectName : aspectNames) {
+      List&lt;Advisor&gt; cachedAdvisors = this.advisorsCache.get(aspectName);
+      if (cachedAdvisors != null) {
+         advisors.addAll(cachedAdvisors);
+      }
+      else {
+         MetadataAwareAspectInstanceFactory factory = this.aspectFactoryCache.get(aspectName);
+         advisors.addAll(this.advisorFactory.getAdvisors(factory));
+      }
+   }
+   return advisors;
+}
+</code></pre>
+
+<p>它的大致流程如下：</p>
+
+<ul>
+<li><p>获取IOC容器中所有Bean的名称</p>
+
+<pre><code>String[] beanNames =
+  BeanFactoryUtils.beanNamesForTypeIncludingAncestors(this.beanFactory, Object.class, true, false);
+</code></pre></li>
+
+<li><p>遍历这些名称并根据名称找到对应的bean，筛选出含有@Aspect注解的 Bean</p>
+
+<pre><code>his.advisorFactory.isAspect(beanType)
+
+
+@Override
+public boolean isAspect(Class&lt;?&gt; clazz) {
+return (hasAspectAnnotation(clazz) &amp;&amp; !compiledByAjc(clazz));
+}
+
+private boolean hasAspectAnnotation(Class&lt;?&gt; clazz) {
+return (AnnotationUtils.findAnnotation(clazz, Aspect.class) != null);
+}
+</code></pre></li>
+
+<li><p>根据含有@Aspect注解的Bean获取通知器</p>
+
+<pre><code>List&lt;Advisor&gt; classAdvisors = this.advisorFactory.getAdvisors(factory);
+</code></pre></li>
+</ul>
+
+<p>所以，现在主要是看看根据@Aspec注解获取通知器的逻辑。</p>
+
+<pre><code>@Override
+public List&lt;Advisor&gt; getAdvisors(MetadataAwareAspectInstanceFactory aspectInstanceFactory) {
+   Class&lt;?&gt; aspectClass = aspectInstanceFactory.getAspectMetadata().getAspectClass();
+   String aspectName = aspectInstanceFactory.getAspectMetadata().getAspectName();
+   validate(aspectClass);
+
+   // We need to wrap the MetadataAwareAspectInstanceFactory with a decorator
+   // so that it will only instantiate once.
+   MetadataAwareAspectInstanceFactory lazySingletonAspectInstanceFactory =
+         new LazySingletonAspectInstanceFactoryDecorator(aspectInstanceFactory);
+
+   List&lt;Advisor&gt; advisors = new LinkedList&lt;Advisor&gt;();
+   for (Method method : getAdvisorMethods(aspectClass)) {
+      Advisor advisor = getAdvisor(method, lazySingletonAspectInstanceFactory, advisors.size(), aspectName);
+      if (advisor != null) {
+         advisors.add(advisor);
+      }
+   }
+
+   // If it's a per target aspect, emit the dummy instantiating aspect.
+   if (!advisors.isEmpty() &amp;&amp; lazySingletonAspectInstanceFactory.getAspectMetadata().isLazilyInstantiated()) {
+      Advisor instantiationAdvisor = new SyntheticInstantiationAdvisor(lazySingletonAspectInstanceFactory);
+      advisors.add(0, instantiationAdvisor);
+   }
+
+   // Find introduction fields.
+   for (Field field : aspectClass.getDeclaredFields()) {
+      Advisor advisor = getDeclareParentsAdvisor(field);
+      if (advisor != null) {
+         advisors.add(advisor);
+      }
+   }
+
+   return advisors;
+}
+</code></pre>
+
+<p>大概步骤如下
+- 找到所有不包含@Pointcut的注解进行遍历</p>
+
+<pre><code>for (Method method : getAdvisorMethods(aspectClass))
+</code></pre>
+
+<ul>
+<li><p>在遍历的时候根据方法名获取通知器</p>
+
+<pre><code>Advisor advisor = getAdvisor(method, lazySingletonAspectInstanceFactory, advisors.size(), aspectName);
+</code></pre>
+
+<p>有关于根据方法名获取通知的代码如下：</p>
+
+<pre><code>@Override
+public Advisor getAdvisor(Method candidateAdviceMethod, MetadataAwareAspectInstanceFactory aspectInstanceFactory,
+  int declarationOrderInAspect, String aspectName) {
+
+validate(aspectInstanceFactory.getAspectMetadata().getAspectClass());
+
+AspectJExpressionPointcut expressionPointcut = getPointcut(
+     candidateAdviceMethod, aspectInstanceFactory.getAspectMetadata().getAspectClass());
+if (expressionPointcut == null) {
+  return null;
+}
+
+return new InstantiationModelAwarePointcutAdvisorImpl(expressionPointcut, candidateAdviceMethod,
+     this, aspectInstanceFactory, declarationOrderInAspect, aspectName);
+}
+</code></pre></li>
+</ul>
+
+<p>先创建AspectJExpressionPointcut对象，其实这里仅仅是获取注解后面的那串值并把它封装成AspectJExpressionPointcut。
+例如</p>
+
+<pre><code>@Component
+@Aspect
+public class LogAspect {
+    @Pointcut(&quot;execution(* *.testB(..))&quot;)
+    private void pointcut(){}
+
+    @Before(value=&quot;pointcut()&quot;)
+    public void beforeAdvice(){
+        System.out.println(&quot;【AspectJ Java语法添加通知】 前置通知&quot;);
+    }
+
+    public void tttttt(){
+
+    }
+}
+</code></pre>
+
+<p>假如现在获取beforeAdvice的通知器，这里的AspectJExpressionPointcut仅仅是@Before注解中 vlue 的值，即 “pooint()”，并不是@Pointcut上真正的值。
+获取了AspectJExpressionPointcut之后，接下来就是创建Adviso实现类了</p>
+
+<pre><code>public InstantiationModelAwarePointcutAdvisorImpl(AspectJExpressionPointcut declaredPointcut,
+      Method aspectJAdviceMethod, AspectJAdvisorFactory aspectJAdvisorFactory,
+      MetadataAwareAspectInstanceFactory aspectInstanceFactory, int declarationOrder, String aspectName) {
+
+   if (aspectInstanceFactory.getAspectMetadata().isLazilyInstantiated()) {
+      // Static part of the pointcut is a lazy type.
+      Pointcut preInstantiationPointcut = Pointcuts.union(
+            aspectInstanceFactory.getAspectMetadata().getPerClausePointcut(), this.declaredPointcut);
+
+      this.pointcut = new PerTargetInstantiationModelPointcut(
+            this.declaredPointcut, preInstantiationPointcut, aspectInstanceFactory);
+      this.lazy = true;
+   }
+   else {
+      // A singleton aspect.
+      this.pointcut = this.declaredPointcut;
+      this.lazy = false;
+      this.instantiatedAdvice = instantiateAdvice(this.declaredPointcut);
+   }
+}
+</code></pre>
+
+<p>上面的一些初始化代码被我删了，直接关注instantiateAdvice(this.declaredPointcut)这个方法把</p>
+
+<pre><code>private Advice instantiateAdvice(AspectJExpressionPointcut pcut) {
+   return this.aspectJAdvisorFactory.getAdvice(this.aspectJAdviceMethod, pcut,
+         this.aspectInstanceFactory, this.declarationOrder, this.aspectName);
+}
+
+@Override
+public Advice getAdvice(Method candidateAdviceMethod, AspectJExpressionPointcut expressionPointcut,
+      MetadataAwareAspectInstanceFactory aspectInstanceFactory, int declarationOrder, String aspectName) {
+
+   Class&lt;?&gt; candidateAspectClass = aspectInstanceFactory.getAspectMetadata().getAspectClass();
+   validate(candidateAspectClass);
+
+   AspectJAnnotation&lt;?&gt; aspectJAnnotation =
+         AbstractAspectJAdvisorFactory.findAspectJAnnotationOnMethod(candidateAdviceMethod);
+   if (aspectJAnnotation == null) {
+      return null;
+   }
+
+   // If we get here, we know we have an AspectJ method.
+   // Check that it's an AspectJ-annotated class
+   if (!isAspect(candidateAspectClass)) {
+      throw new AopConfigException(&quot;Advice must be declared inside an aspect type: &quot; +
+            &quot;Offending method '&quot; + candidateAdviceMethod + &quot;' in class [&quot; +
+            candidateAspectClass.getName() + &quot;]&quot;);
+   }
+
+   if (logger.isDebugEnabled()) {
+      logger.debug(&quot;Found AspectJ method: &quot; + candidateAdviceMethod);
+   }
+
+   AbstractAspectJAdvice springAdvice;
+
+   switch (aspectJAnnotation.getAnnotationType()) {
+      case AtBefore:
+         springAdvice = new AspectJMethodBeforeAdvice(
+               candidateAdviceMethod, expressionPointcut, aspectInstanceFactory);
+         break;
+      case AtAfter:
+         springAdvice = new AspectJAfterAdvice(
+               candidateAdviceMethod, expressionPointcut, aspectInstanceFactory);
+         break;
+      case AtAfterReturning:
+         springAdvice = new AspectJAfterReturningAdvice(
+               candidateAdviceMethod, expressionPointcut, aspectInstanceFactory);
+         AfterReturning afterReturningAnnotation = (AfterReturning) aspectJAnnotation.getAnnotation();
+         if (StringUtils.hasText(afterReturningAnnotation.returning())) {
+            springAdvice.setReturningName(afterReturningAnnotation.returning());
+         }
+         break;
+      case AtAfterThrowing:
+         springAdvice = new AspectJAfterThrowingAdvice(
+               candidateAdviceMethod, expressionPointcut, aspectInstanceFactory);
+         AfterThrowing afterThrowingAnnotation = (AfterThrowing) aspectJAnnotation.getAnnotation();
+         if (StringUtils.hasText(afterThrowingAnnotation.throwing())) {
+            springAdvice.setThrowingName(afterThrowingAnnotation.throwing());
+         }
+         break;
+      case AtAround:
+         springAdvice = new AspectJAroundAdvice(
+               candidateAdviceMethod, expressionPointcut, aspectInstanceFactory);
+         break;
+      case AtPointcut:
+         if (logger.isDebugEnabled()) {
+            logger.debug(&quot;Processing pointcut '&quot; + candidateAdviceMethod.getName() + &quot;'&quot;);
+         }
+         return null;
+      default:
+         throw new UnsupportedOperationException(
+               &quot;Unsupported advice type on method: &quot; + candidateAdviceMethod);
+   }
+
+   // Now to configure the advice...
+   springAdvice.setAspectName(aspectName);
+   springAdvice.setDeclarationOrder(declarationOrder);
+   String[] argNames = this.parameterNameDiscoverer.getParameterNames(candidateAdviceMethod);
+   if (argNames != null) {
+      springAdvice.setArgumentNamesFromStringArray(argNames);
+   }
+   springAdvice.calculateArgumentBindings();
+   return springAdvice;
+}
+</code></pre>
+
+<p>根据不同的注解，创建不同的通知类型，然后关联到Advisor上。</p>
+
+<h4 id="筛选通知器">筛选通知器</h4>
+
+<p>找到所有的通知器之后，接下来就是从这些通知器里面找到和当前Bean相关的通知器了。</p>
+
+<pre><code>protected List&lt;Advisor&gt; findAdvisorsThatCanApply(
+      List&lt;Advisor&gt; candidateAdvisors, Class&lt;?&gt; beanClass, String beanName) {
+
+   ProxyCreationContext.setCurrentProxiedBeanName(beanName);
+   try {
+      return AopUtils.findAdvisorsThatCanApply(candidateAdvisors, beanClass);
+   }
+   finally {
+      ProxyCreationContext.setCurrentProxiedBeanName(null);
+   }
+}
+
+public static List&lt;Advisor&gt; findAdvisorsThatCanApply(List&lt;Advisor&gt; candidateAdvisors, Class&lt;?&gt; clazz) {
+   if (candidateAdvisors.isEmpty()) {
+      return candidateAdvisors;
+   }
+   List&lt;Advisor&gt; eligibleAdvisors = new LinkedList&lt;Advisor&gt;();
+   for (Advisor candidate : candidateAdvisors) {
+      if (candidate instanceof IntroductionAdvisor &amp;&amp; canApply(candidate, clazz)) {
+         eligibleAdvisors.add(candidate);
+      }
+   }
+   boolean hasIntroductions = !eligibleAdvisors.isEmpty();
+   for (Advisor candidate : candidateAdvisors) {
+      if (candidate instanceof IntroductionAdvisor) {
+         // already processed
+         continue;
+      }
+      if (canApply(candidate, clazz, hasIntroductions)) {
+         eligibleAdvisors.add(candidate);
+      }
+   }
+   return eligibleAdvisors;
+}
+</code></pre>
+
+<p>这里有引出一个概念：引介。
+前面我们说了Spring AOP中有前置、后置等集中增强，其实还有一种引介增强。引介增强是一种比较特殊的增强类型，它不是在目标方法周围织入增强，而是为目标创建新的方法和属性，所以它的连接点是类级别的而非方法级别的 。
+通过引介增强我们可以为目标类添加一个接口的实现即原来目标类未实现某个接口,那么通过引介增强可以为目标类创建实现某接口的代理。
+Spring定义了引介增强接口IntroductionInterceptor以及为该接口提供了DelegatingIntroductionInterceptor实现类。</p>
+
+<p><img src="/pictures/SpringAOP/post_009.png" alt="post_009" /></p>
+
+<p>假如现在有这么一个类</p>
+
+<pre><code>package aop;
+
+public class PreBook {
+    public void selfMethod(){
+        System.out.println(&quot;这是目标类自己的方法&quot;);
+    }
+}
+
+</code></pre>
+
+<p>有这么一个接口</p>
+
+<pre><code>package aop;
+
+public interface IBook {
+    void newMethd();
+}
+
+</code></pre>
+
+<p>现在希望在不修改PreBook的前提下，为PreBook类添加 newMethod() 方法，这时候就可以用到引介增强。可以实现这么一个类</p>
+
+<pre><code>package aop;
+
+import org.aopalliance.intercept.MethodInvocation;
+import org.springframework.aop.support.DelegatingIntroductionInterceptor;
+
+public class BookInterceptor extends DelegatingIntroductionInterceptor implements IBook {
+    @Override
+    public void newMethd() {
+        System.out.println(&quot;没有改变原始类，却为它添加的一个新方法&quot;);
+    }
+
+    public Object invoke(MethodInvocation mi) throws Throwable {
+
+        Object obj = super.invoke(mi);
+        return obj;
+    }
+
+}
+</code></pre>
+
+<p>这样，在代理对象调用目标方法的时候，就会执行newMethod()方法。好像还需要特别配置一下，暂时不知道这样增强有什么用，暂时不考虑吧。
+而如果我们要使用引介增强，对应的通知器只是使用IntroductionAdvisor。</p>
+
+<p>所以，上述的
+findAdvisorsThatCanApply的方法中，此段代码就是用于判断是不是印介增强，并且这里通过两个循环将引介增强通知器放在了前面。</p>
+
+<pre><code>or (Advisor candidate : candidateAdvisors) {
+   if (candidate instanceof IntroductionAdvisor &amp;&amp; canApply(candidate, clazz)) {
+      eligibleAdvisors.add(candidate);
+   }
+}
+</code></pre>
+
+<p>所以，最终需要关注的方法就是 canApply，canApply(candidate, clazz)相当于是调用了canApply(advisor, targetClass, false)方法。</p>
+
+<pre><code>public static boolean canApply(Advisor advisor, Class&lt;?&gt; targetClass, boolean hasIntroductions) {
+   if (advisor instanceof IntroductionAdvisor) {
+      return ((IntroductionAdvisor) advisor).getClassFilter().matches(targetClass);
+   }
+   else if (advisor instanceof PointcutAdvisor) {
+      PointcutAdvisor pca = (PointcutAdvisor) advisor;
+      return canApply(pca.getPointcut(), targetClass, hasIntroductions);
+   }
+   else {
+      // It doesn't have a pointcut so we assume it applies.
+      return true;
+   }
+}
+</code></pre>
+
+<p>从这里可以看出，Spring AOP把通知器当作了两种类型来处理。</p>
+
+<p><img src="/pictures/SpringAOP/post_010.png" alt="post_010" /></p>
+
+<p>根据我们前面提到的，各种前置、后置、环绕通知，最终都是解析成AspectJPointcutAdvisor，因此这里的IntroductionAdvisor就是为了处理增强通知的。</p>
+
+<p>至此，可以看出真正执行筛选的逻辑，是放在getClassFilter().matches 中进行处理的，这里引出了ClassFilter的概念。</p>
+
+<p><img src="/pictures/SpringAOP/post_011.png" alt="post_011" /></p>
+
+<p>可以看出，AspectJExpressionPointcut也是一个ClassFilter，而XML中的pointcut标签经过解析之后，正是一个AspectJExpressionPointcut对象。</p>
+
+<pre><code>public static boolean canApply(Pointcut pc, Class&lt;?&gt; targetClass, boolean hasIntroductions) {
+   Assert.notNull(pc, &quot;Pointcut must not be null&quot;);
+   if (!pc.getClassFilter().matches(targetClass)) {
+      return false;
+   }
+
+   MethodMatcher methodMatcher = pc.getMethodMatcher();
+   if (methodMatcher == MethodMatcher.TRUE) {
+      // No need to iterate the methods if we're matching any method anyway...
+      return true;
+   }
+
+   IntroductionAwareMethodMatcher introductionAwareMethodMatcher = null;
+   if (methodMatcher instanceof IntroductionAwareMethodMatcher) {
+      introductionAwareMethodMatcher = (IntroductionAwareMethodMatcher) methodMatcher;
+   }
+
+   Set&lt;Class&lt;?&gt;&gt; classes = new LinkedHashSet&lt;Class&lt;?&gt;&gt;(ClassUtils.getAllInterfacesForClassAsSet(targetClass));
+   classes.add(targetClass);
+   for (Class&lt;?&gt; clazz : classes) {
+      Method[] methods = ReflectionUtils.getAllDeclaredMethods(clazz);
+      for (Method method : methods) {
+         if ((introductionAwareMethodMatcher != null &amp;&amp;
+               introductionAwareMethodMatcher.matches(method, targetClass, hasIntroductions)) ||
+               methodMatcher.matches(method, targetClass)) {
+            return true;
+         }
+      }
+   }
+
+   return false;
+}
+</code></pre>
+
+<p>有关于matches方法的具体逻辑，有点复杂，就不看了。</p>
+
+<h4 id="创建代理">创建代理</h4>
+
+<p>创建代理也是在wrapIfNecessary方法中被调用</p>
+
+<pre><code>Object proxy = createProxy(
+      bean.getClass(), beanName, specificInterceptors, new SingletonTargetSource(bean));
+
+protected Object createProxy(
+      Class&lt;?&gt; beanClass, String beanName, Object[] specificInterceptors, TargetSource targetSource) {
+
+   if (this.beanFactory instanceof ConfigurableListableBeanFactory) {
+      AutoProxyUtils.exposeTargetClass((ConfigurableListableBeanFactory) this.beanFactory, beanName, beanClass);
+   }
+
+   ProxyFactory proxyFactory = new ProxyFactory();
+   proxyFactory.copyFrom(this);
+
+   if (!proxyFactory.isProxyTargetClass()) {
+      if (shouldProxyTargetClass(beanClass, beanName)) {
+         proxyFactory.setProxyTargetClass(true);
+      }
+      else {
+         evaluateProxyInterfaces(beanClass, proxyFactory);
+      }
+   }
+
+   Advisor[] advisors = buildAdvisors(beanName, specificInterceptors);
+   for (Advisor advisor : advisors) {
+      proxyFactory.addAdvisor(advisor);
+   }
+
+   proxyFactory.setTargetSource(targetSource);
+   customizeProxyFactory(proxyFactory);
+
+   proxyFactory.setFrozen(this.freezeProxy);
+   if (advisorsPreFiltered()) {
+      proxyFactory.setPreFiltered(true);
+   }
+
+   return proxyFactory.getProxy(getProxyClassLoader());
+}
+</code></pre>
+
+<p>中间会有一些校验，比如proxyFactory.isProxyTargetClass()，到时候会根据这个属性来判断使用JDK动态代理还是CGLIB动态代理。这个属性可以在配置文件中配置，proxy-target-class = &ldquo;false&rdquo;，默认是false;
+Advisor[] advisors = buildAdvisors(beanName, specificInterceptors);是将一些Advie转换成Advisor，应该没有了吧？
+然后调用ProxyFactory类的getProxy(getProxyClassLoader())创建代理对象。ProxyFactory的继承关系如下，一些常用方法都在ProxyCreatorSupport中</p>
+
+<p><img src="/pictures/SpringAOP/post_012.png" alt="post_012" /></p>
+
+<p>先是调用了ProxyCreatorSupport中的createAopProxy()方法获得一个Spring  AOP中的AopProxy对象，然后再调用getProxy(…)方法获得目标Bean的一个代理对象。</p>
+
+<pre><code>public Object getProxy(ClassLoader classLoader) {
+   return createAopProxy().getProxy(classLoader);
+}
+</code></pre>
+
+<p>有关于AopProxy的继承关系图如下</p>
+
+<p><img src="/pictures/SpringAOP/post_013.png" alt="post_013" /></p>
+
+<p>先看一下createAopProxy()方法的实现</p>
+
+<pre><code>protected final synchronized AopProxy createAopProxy() {
+   if (!this.active) {
+      activate();
+   }
+   return getAopProxyFactory().createAopProxy(this);
+}
+</code></pre>
+
+<p>// DefaultAopProxyFactory.java</p>
+
+<pre><code>@Override
+public AopProxy createAopProxy(AdvisedSupport config) throws AopConfigException {
+   if (config.isOptimize() || config.isProxyTargetClass() || hasNoUserSuppliedProxyInterfaces(config)) {
+      Class&lt;?&gt; targetClass = config.getTargetClass();
+      if (targetClass == null) {
+         throw new AopConfigException(&quot;TargetSource cannot determine target class: &quot; +
+               &quot;Either an interface or a target is required for proxy creation.&quot;);
+      }
+      if (targetClass.isInterface() || Proxy.isProxyClass(targetClass)) {
+         return new JdkDynamicAopProxy(config);
+      }
+      return new ObjenesisCglibAopProxy(config);
+   }
+   else {
+      return new JdkDynamicAopProxy(config);
+   }
+}
+
+final class JdkDynamicAopProxy implements AopProxy, InvocationHandler, Serializable {
+
+……
+
+   public JdkDynamicAopProxy(AdvisedSupport config) throws AopConfigException {
+      Assert.notNull(config, &quot;AdvisedSupport must not be null&quot;);
+      if (config.getAdvisors().length == 0 &amp;&amp; config.getTargetSource() == AdvisedSupport.EMPTY_TARGET_SOURCE) {
+         throw new AopConfigException(&quot;No advisors and no TargetSource specified&quot;);
+      }
+      this.advised = config;
+   }
+}
+</code></pre>
+
+<p>config.isOptimize()用于判断是否要优化创建代理，如果为true，就是使用CGLIB创建代理。然后就是判断一下用户是否配置了proxy-target-class那个属性，判断目标类是否有接口等等。默认就是使用JDK动态创建代理。</p>
+
+<p>AdvisedSupport的继承关系如下图</p>
+
+<p><img src="/pictures/SpringAOP/post_014.png" alt="post_014" /></p>
+
+<p>创建AopProxy 对象之后，接下来就是调用 getProxy()方法获取目标Bean的代理对象，其实到这里才算是真正开始为目标Bean创建代理对象。这里以JdkDynamicAopProxy的getProxy方法为例</p>
+
+<p>// JdkDynamicAopProxy</p>
+
+<pre><code>@Override
+public Object getProxy() {
+   return getProxy(ClassUtils.getDefaultClassLoader());
+}
+
+
+
+@Override
+public Object getProxy(ClassLoader classLoader) {
+   if (logger.isDebugEnabled()) {
+      logger.debug(&quot;Creating JDK dynamic proxy: target source is &quot; + this.advised.getTargetSource());
+   }
+   Class&lt;?&gt;[] proxiedInterfaces = AopProxyUtils.completeProxiedInterfaces(this.advised, true);
+   findDefinedEqualsAndHashCodeMethods(proxiedInterfaces);
+   return Proxy.newProxyInstance(classLoader, proxiedInterfaces, this);
+}
+</code></pre>
+
+<p>到这里已经很明显了，JdkDynamicAopProxy实现了InvocationHandler接口，调用了JDK的Proxy.newProxyInstance方法创建代理。有关于CGLIB也是类似，这里就不过多说明了。</p>
+
+<h4 id="代理调用过程">代理调用过程</h4>
+
+<p>前面所介绍的所有内容，都是在Spring应用启动的时候完成，都是为了创建能够正常工作的代理对象。那么在代理对象调用方法的时候，是怎么对通知上的逻辑进行调用呢？这就是本节所要讲解的内容，这里以JdkDynamicAopProxy为利，其实CglibAopProxy也基本上是一样的。</p>
+
+<p>我们知道，由JDK动态代理创建的代理对象，在调用目标方法的时候，实际上是调用实现了InvocationHandler 接口 那个类的 invoke 方法，前面已经知道，JdkDynamicAopProxy实现了InvocationHandler接口，也就是说，在代理对象调用方法的时候，会执行JdkDynamicAopProxy的invoke 方法。</p>
+
+<pre><code>@Override
+public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+   MethodInvocation invocation;
+   Object oldProxy = null;
+   boolean setProxyContext = false;
+
+   TargetSource targetSource = this.advised.targetSource;
+   Class&lt;?&gt; targetClass = null;
+   Object target = null;
+
+   try {
+      if (!this.equalsDefined &amp;&amp; AopUtils.isEqualsMethod(method)) {
+         // The target does not implement the equals(Object) method itself.
+         return equals(args[0]);
+      }
+      else if (!this.hashCodeDefined &amp;&amp; AopUtils.isHashCodeMethod(method)) {
+         // The target does not implement the hashCode() method itself.
+         return hashCode();
+      }
+      else if (method.getDeclaringClass() == DecoratingProxy.class) {
+         // There is only getDecoratedClass() declared -&gt; dispatch to proxy config.
+         return AopProxyUtils.ultimateTargetClass(this.advised);
+      }
+      else if (!this.advised.opaque &amp;&amp; method.getDeclaringClass().isInterface() &amp;&amp;
+            method.getDeclaringClass().isAssignableFrom(Advised.class)) {
+         // Service invocations on ProxyConfig with the proxy config...
+         return AopUtils.invokeJoinpointUsingReflection(this.advised, method, args);
+      }
+
+      Object retVal;
+
+      if (this.advised.exposeProxy) {
+         // Make invocation available if necessary.
+         oldProxy = AopContext.setCurrentProxy(proxy);
+         setProxyContext = true;
+      }
+
+      // May be null. Get as late as possible to minimize the time we &quot;own&quot; the target,
+      // in case it comes from a pool.
+      target = targetSource.getTarget();
+      if (target != null) {
+         targetClass = target.getClass();
+      }
+
+      // Get the interception chain for this method.
+      List&lt;Object&gt; chain = this.advised.getInterceptorsAndDynamicInterceptionAdvice(method, targetClass);
+
+      // Check whether we have any advice. If we don't, we can fallback on direct
+      // reflective invocation of the target, and avoid creating a MethodInvocation.
+      if (chain.isEmpty()) {
+         // We can skip creating a MethodInvocation: just invoke the target directly
+         // Note that the final invoker must be an InvokerInterceptor so we know it does
+         // nothing but a reflective operation on the target, and no hot swapping or fancy proxying.
+         Object[] argsToUse = AopProxyUtils.adaptArgumentsIfNecessary(method, args);
+         retVal = AopUtils.invokeJoinpointUsingReflection(target, method, argsToUse);
+      }
+      else {
+         // We need to create a method invocation...
+         invocation = new ReflectiveMethodInvocation(proxy, target, method, args, targetClass, chain);
+         // Proceed to the joinpoint through the interceptor chain.
+         retVal = invocation.proceed();
+      }
+
+      // Massage return value if necessary.
+      Class&lt;?&gt; returnType = method.getReturnType();
+      if (retVal != null &amp;&amp; retVal == target &amp;&amp; returnType.isInstance(proxy) &amp;&amp;
+            !RawTargetAccess.class.isAssignableFrom(method.getDeclaringClass())) {
+         // Special case: it returned &quot;this&quot; and the return type of the method
+         // is type-compatible. Note that we can't help if the target sets
+         // a reference to itself in another returned object.
+         retVal = proxy;
+      }
+      else if (retVal == null &amp;&amp; returnType != Void.TYPE &amp;&amp; returnType.isPrimitive()) {
+         throw new AopInvocationException(
+               &quot;Null return value from advice does not match primitive return type for: &quot; + method);
+      }
+      return retVal;
+   }
+   finally {
+      if (target != null &amp;&amp; !targetSource.isStatic()) {
+         // Must have come from TargetSource.
+         targetSource.releaseTarget(target);
+      }
+      if (setProxyContext) {
+         // Restore old proxy.
+         AopContext.setCurrentProxy(oldProxy);
+      }
+   }
+}
+</code></pre>
+
+<p>先是判断一下是否为 equals  和hashCode方法，如果是就执行 自己的逻辑。
+然后判断是否expose-proxy 属性是否为 true，是就暴露代理对象。</p>
+
+<pre><code>if (this.advised.exposeProxy) {
+   // Make invocation available if necessary.
+   oldProxy = AopContext.setCurrentProxy(proxy);
+   setProxyContext = true;
+}
+</code></pre>
+
+<p>为什么要设置这个呢？因为代理对象中如果方法调用了方法，里面的方法就没办法插入增强逻辑，如果想让里面的方法也插入增强逻辑，就要暴露代理对象，然后再调用的时候使用代理对象调用就可以了，比如：</p>
+
+<pre><code>public void boo() {
+    System.out.println(&quot;testA执行&quot;);
+    testB();
+}
+
+public void testB() {
+    System.out.println(&quot;testB执行&quot;);
+    ((ISimpleAopBean) AopContext.currentProxy()).testC();
+}
+
+public void testC() {
+    System.out.println(&quot;testC执行&quot;);
+}
+</code></pre>
+
+<p>然后，关键的内容来了，获取拦截器链</p>
+
+<pre><code>List&lt;Object&gt; chain = this.advised.getInterceptorsAndDynamicInterceptionAdvice(method, targetClass);
+</code></pre>
+
+<p>这里大家第拦截器可能会有点不理解，好像前面都没说到这个，其实这个没什么关系，只是在通知器上取出来通知，然后再通知上包装了一层而已。看下面的图就可以知道，MethodInterceptor也实现了通知的接口。</p>
+
+<p><img src="/pictures/SpringAOP/post_015.png" alt="post_015" /></p>
+
+<pre><code>public List&lt;Object&gt; getInterceptorsAndDynamicInterceptionAdvice(Method method, Class&lt;?&gt; targetClass) {
+   MethodCacheKey cacheKey = new MethodCacheKey(method);
+   List&lt;Object&gt; cached = this.methodCache.get(cacheKey);
+   if (cached == null) {
+      cached = this.advisorChainFactory.getInterceptorsAndDynamicInterceptionAdvice(
+            this, method, targetClass);
+      this.methodCache.put(cacheKey, cached);
+   }
+   return cached;
+}
+</code></pre>
+
+<p>还是做了一下缓存，所以主要的逻辑是在下面这个方法中</p>
+
+<pre><code>@Override
+public List&lt;Object&gt; getInterceptorsAndDynamicInterceptionAdvice(
+      Advised config, Method method, Class&lt;?&gt; targetClass) {
+
+   // This is somewhat tricky... We have to process introductions first,
+   // but we need to preserve order in the ultimate list.
+   List&lt;Object&gt; interceptorList = new ArrayList&lt;Object&gt;(config.getAdvisors().length);
+   Class&lt;?&gt; actualClass = (targetClass != null ? targetClass : method.getDeclaringClass());
+   boolean hasIntroductions = hasMatchingIntroductions(config, actualClass);
+   AdvisorAdapterRegistry registry = GlobalAdvisorAdapterRegistry.getInstance();
+
+   for (Advisor advisor : config.getAdvisors()) {
+      if (advisor instanceof PointcutAdvisor) {
+         // Add it conditionally.
+         PointcutAdvisor pointcutAdvisor = (PointcutAdvisor) advisor;
+         if (config.isPreFiltered() || pointcutAdvisor.getPointcut().getClassFilter().matches(actualClass)) {
+            MethodInterceptor[] interceptors = registry.getInterceptors(advisor);
+            MethodMatcher mm = pointcutAdvisor.getPointcut().getMethodMatcher();
+            if (MethodMatchers.matches(mm, method, actualClass, hasIntroductions)) {
+               if (mm.isRuntime()) {
+                  // Creating a new object instance in the getInterceptors() method
+                  // isn't a problem as we normally cache created chains.
+                  for (MethodInterceptor interceptor : interceptors) {
+                     interceptorList.add(new InterceptorAndDynamicMethodMatcher(interceptor, mm));
+                  }
+               }
+               else {
+                  interceptorList.addAll(Arrays.asList(interceptors));
+               }
+            }
+         }
+      }
+      else if (advisor instanceof IntroductionAdvisor) {
+         IntroductionAdvisor ia = (IntroductionAdvisor) advisor;
+         if (config.isPreFiltered() || ia.getClassFilter().matches(actualClass)) {
+            Interceptor[] interceptors = registry.getInterceptors(advisor);
+            interceptorList.addAll(Arrays.asList(interceptors));
+         }
+      }
+      else {
+         Interceptor[] interceptors = registry.getInterceptors(advisor);
+         interceptorList.addAll(Arrays.asList(interceptors));
+      }
+   }
+
+   return interceptorList;
+}
+</code></pre>
+
+<p>这里对引介通增强和非非引介增强做了不同处理，如果不是引介增强，就转换为MethodInterceptor，这里就暂时不讨论引介增强了。
+- 遍历所有的通知器
+- 调用AdvisorAdapterRegistry的getInterceptors方法将通知器里面的通知转换成MethodInterceptor</p>
+
+<pre><code>@Override
+public MethodInterceptor[] getInterceptors(Advisor advisor) throws UnknownAdviceTypeException {
+   List&lt;MethodInterceptor&gt; interceptors = new ArrayList&lt;MethodInterceptor&gt;(3);
+   Advice advice = advisor.getAdvice();
+   if (advice instanceof MethodInterceptor) {
+      interceptors.add((MethodInterceptor) advice);
+   }
+   for (AdvisorAdapter adapter : this.adapters) {
+      if (adapter.supportsAdvice(advice)) {
+         interceptors.add(adapter.getInterceptor(advisor));
+      }
+   }
+   if (interceptors.isEmpty()) {
+      throw new UnknownAdviceTypeException(advisor.getAdvice());
+   }
+   return interceptors.toArray(new MethodInterceptor[interceptors.size()]);
+}
+</code></pre>
+
+<p>如果通知是MethodInterceptor类型，就直接转换为MethodInterceptor。由于部分通知没有是实现MethodInterceptor接口，所以这时候需要用对应的适配器转换成MethodInterceptor，这里以MethodBeforeAdviceAdapter为例</p>
+
+<pre><code>class MethodBeforeAdviceAdapter implements AdvisorAdapter, Serializable {
+
+   @Override
+   public boolean supportsAdvice(Advice advice) {
+      return (advice instanceof MethodBeforeAdvice);
+   }
+
+   @Override
+   public MethodInterceptor getInterceptor(Advisor advisor) {
+      MethodBeforeAdvice advice = (MethodBeforeAdvice) advisor.getAdvice();
+      return new MethodBeforeAdviceInterceptor(advice);
+   }
+
+}
+</code></pre>
+
+<p>获取到拦截器链之后
+如果拦截器链为空，直接通过反射执行目标类的对应方法</p>
+
+<pre><code>if (chain.isEmpty()) {
+   // We can skip creating a MethodInvocation: just invoke the target directly
+   // Note that the final invoker must be an InvokerInterceptor so we know it does
+   // nothing but a reflective operation on the target, and no hot swapping or fancy proxying.
+   Object[] argsToUse = AopProxyUtils.adaptArgumentsIfNecessary(method, args);
+   retVal = AopUtils.invokeJoinpointUsingReflection(target, method, argsToUse);
+}
+</code></pre>
+
+<p>如果拦截器链不为空，通过MethodInvocation对象来调用拦截器链</p>
+
+<pre><code>invocation = new ReflectiveMethodInvocation(proxy, target, method, args, targetClass, chain);
+// Proceed to the joinpoint through the interceptor chain.
+retVal = invocation.proceed();
+</code></pre>
+
+<p>ReflectiveMethodInvocation是MethodInvocation的一个实现，在这里用的真的很巧妙，就是通过它的proceed()方法，完成了对拦截器链的调用，proceed()方法源码如下：</p>
+
+<pre><code>@Override
+public Object proceed() throws Throwable {
+   // We start with an index of -1 and increment early.
+   if (this.currentInterceptorIndex == this.interceptorsAndDynamicMethodMatchers.size() - 1) {
+      return invokeJoinpoint();
+   }
+
+   Object interceptorOrInterceptionAdvice =
+         this.interceptorsAndDynamicMethodMatchers.get(++this.currentInterceptorIndex);
+   if (interceptorOrInterceptionAdvice instanceof InterceptorAndDynamicMethodMatcher) {
+      // Evaluate dynamic method matcher here: static part will already have
+      // been evaluated and found to match.
+      InterceptorAndDynamicMethodMatcher dm =
+            (InterceptorAndDynamicMethodMatcher) interceptorOrInterceptionAdvice;
+      if (dm.methodMatcher.matches(this.method, this.targetClass, this.arguments)) {
+         return dm.interceptor.invoke(this);
+      }
+      else {
+         // Dynamic matching failed.
+         // Skip this interceptor and invoke the next in the chain.
+         return proceed();
+      }
+   }
+   else {
+      // It's an interceptor, so we just invoke it: The pointcut will have
+      // been evaluated statically before this object was constructed.
+      return ((MethodInterceptor) interceptorOrInterceptionAdvice).invoke(this);
+   }
+}
+</code></pre>
+
+<p>this.currentInterceptorIndex代表拦截器链数组的下标，如果拦截器链执行完毕，就调用invokeJoinpoint()方法，其实就是通过反射执行目标方法。</p>
+
+<pre><code>private int currentInterceptorIndex = -1;
+
+protected Object invokeJoinpoint() throws Throwable {
+   return AopUtils.invokeJoinpointUsingReflection(this.target, this.method, this.arguments);
+}
+</code></pre>
+
+<p>如果拦截器链没有执行完毕，就判断一下这个拦截器能不能在当前目前方法上增强，如果判断通过，就调用该拦截器的invoke的方法，其实这就是调用通知的逻辑代码；否则的话，继续执行下一个拦截器。</p>
+
+<pre><code>InterceptorAndDynamicMethodMatcher dm =
+      (InterceptorAndDynamicMethodMatcher) interceptorOrInterceptionAdvice;
+if (dm.methodMatcher.matches(this.method, this.targetClass, this.arguments)) {
+   return dm.interceptor.invoke(this);
+}
+else {
+   // Dynamic matching failed.
+   // Skip this interceptor and invoke the next in the chain.
+   return proceed();
+}
+</code></pre>
+
+<p>这里以MethodBeforeAdviceInterceptor为例，看看它的invoke方法</p>
+
+<pre><code>public class MethodBeforeAdviceInterceptor implements MethodInterceptor, Serializable {
+
+   private MethodBeforeAdvice advice;
+
+
+   /**
+    * Create a new MethodBeforeAdviceInterceptor for the given advice.
+    * @param advice the MethodBeforeAdvice to wrap
+    */
+   public MethodBeforeAdviceInterceptor(MethodBeforeAdvice advice) {
+      Assert.notNull(advice, &quot;Advice must not be null&quot;);
+      this.advice = advice;
+   }
+
+   @Override
+   public Object invoke(MethodInvocation mi) throws Throwable {
+      this.advice.before(mi.getMethod(), mi.getArguments(), mi.getThis() );
+      return mi.proceed();
+   }
+
+}
+</code></pre>
+
+<p>发现里面先调用了this.advice.before(mi.getMethod(), mi.getArguments(), mi.getThis() );也就是 AspectJMethodBeforeAdvice的before方法</p>
+
+<pre><code>@Override
+public void before(Method method, Object[] args, Object target) throws Throwable {
+   invokeAdviceMethod(getJoinPointMatch(), null, null);
+}
+</code></pre>
+
+<p>invokeAdviceMethod方法是在AbstractAspectJAdvice抽象类中实现的</p>
+
+<pre><code>protected Object invokeAdviceMethod(JoinPointMatch jpMatch, Object returnValue, Throwable ex) throws Throwable {
+   return invokeAdviceMethodWithGivenArgs(argBinding(getJoinPoint(), jpMatch, returnValue, ex));
+}
+
+
+
+protected Object invokeAdviceMethodWithGivenArgs(Object[] args) throws Throwable {
+   Object[] actualArgs = args;
+   if (this.aspectJAdviceMethod.getParameterTypes().length == 0) {
+      actualArgs = null;
+   }
+   try {
+      ReflectionUtils.makeAccessible(this.aspectJAdviceMethod);
+      // TODO AopUtils.invokeJoinpointUsingReflection
+      return this.aspectJAdviceMethod.invoke(this.aspectInstanceFactory.getAspectInstance(), actualArgs);
+   }
+   catch (IllegalArgumentException ex) {
+      throw new AopInvocationException(&quot;Mismatch on arguments to advice method [&quot; +
+            this.aspectJAdviceMethod + &quot;]; pointcut expression [&quot; +
+            this.pointcut.getPointcutExpression() + &quot;]&quot;, ex);
+   }
+   catch (InvocationTargetException ex) {
+      throw ex.getTargetException();
+   }
+}
+</code></pre>
+
+<p>注意这一句，其实通过反射调用对应通知的方法。</p>
+
+<pre><code>return this.aspectJAdviceMethod.invoke(this.aspectInstanceFactory.getAspectInstance(), actualArgs);
+</code></pre>
+
+<p>至此有关于通知的调用完成，然后执行一条语句，正是我们刚刚在调用拦截器的invoke方法时传过来的ReflectiveMethodInvocation对象，也就是说，这里继续调用下一个拦截器的invoke方法，知道所有的拦截器调用完毕，然后执行目标方法。</p>
+
+<pre><code>return mi.proceed();
+</code></pre>
+
+<p>至此，代理对象方法调用过程讲解完毕。当然，还是有一些细节不太清楚它的用意， 但整体脉络已经非常清楚了，影响不大，在使用的时候慢慢体会也行。</p>
+    </div>
+
+    
+    
+
+    
+    
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/weixin.jpg">
+        <span>微信打赏</span>
+      </label>
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div>
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://www.spilledyear.cn/tags/spring/">Spring</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/springmvc/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">SpringMVC</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/springioc/">
+            <span class="next-text nav-default">SpringIOC</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+    
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+
+<div class="copyright">
+  
+
+  <span class="copyright-year">
+    &copy;
+    2019
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        spilledyear
+        
+      </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" crossorigin="anonymous"></script>
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

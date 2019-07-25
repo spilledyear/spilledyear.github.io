@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>SpringMVC - spilledyear</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="spilledyear" />
+  <meta name="description" content="" />
+
+  <meta name="keywords" content="Hugo, theme, spilledyear" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.6" />
+
+
+<link rel="canonical" href="https://www.spilledyear.cn/post/springmvc/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.31c4b7729c8d71cc152f8de4203d90bfd8a04f7eab69372de7234ebf55b7701b.css" integrity="sha256-McS3cpyNccwVL43kID2Qv9igT36raTct5yNOv1W3cBs=" media="screen" crossorigin="anonymous">
+
+
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+
+<meta property="og:title" content="SpringMVC" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.spilledyear.cn/post/springmvc/" />
+<meta property="article:published_time" content="2018-08-12T18:49:01&#43;00:00"/>
+<meta property="article:modified_time" content="2018-08-12T18:49:01&#43;00:00"/>
+
+<meta itemprop="name" content="SpringMVC">
+<meta itemprop="description" content="">
+
+
+<meta itemprop="datePublished" content="2018-08-12T18:49:01&#43;00:00" />
+<meta itemprop="dateModified" content="2018-08-12T18:49:01&#43;00:00" />
+<meta itemprop="wordCount" content="5284">
+
+
+
+<meta itemprop="keywords" content="Spring," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SpringMVC"/>
+<meta name="twitter:description" content=""/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">spilledyear</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/">主页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/post/">文章</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/categories/">分类</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/%E5%85%B3%E4%BA%8E%E6%88%91/">关于我</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://github.com/spilledyear" rel="noopener" target="_blank">
+              外部链接
+              
+              <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92 0 0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"></path>
+  <path d="M841.152 457.152c-30.528 0-54.784 24.512-54.784 54.656l0 274.752L237.696 786.56 237.696 237.696l206.016 0c6.656 0 10.752 0 13.248 0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128L183.04 128C153.216 128 128 152.576 128 182.848c0 3.136 0.256 6.272 0.768 9.28C128.256 195.136 128 198.272 128 201.408l0 639.488c0 0.064 0 0.192 0 0.256 0 0.128 0 0.192 0 0.32 0 30.528 24.512 54.784 54.784 54.784l646.976 0c6.592 0 9.728 0 11.712 0 28.736 0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344l0-20.352L896 561.408 896 512.128C896 481.792 871.424 457.152 841.152 457.152z"></path>
+</svg>
+
+              </i>
+            </a>
+          
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      spilledyear
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/">主页</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/post/">文章</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/categories/">分类</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/%E5%85%B3%E4%BA%8E%E6%88%91/">关于我</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://github.com/spilledyear" rel="noopener" target="_blank">
+              外部链接
+            </a>
+          
+
+        
+
+      </li>
+    
+
+    
+    
+
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">SpringMVC</h1>
+      
+      <div class="post-meta">
+        <time datetime="2018-08-12" class="post-time">
+          2018-08-12
+        </time>
+        <div class="post-category">
+            <a href="https://www.spilledyear.cn/categories/java/"> Java </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#contextloaderlistener">ContextLoaderListener</a></li>
+<li><a href="#dispatcherservlet">DispatcherServlet</a>
+<ul>
+<li>
+<ul>
+<li><a href="#dispatcherservlet对请求的处理">DispatcherServlet对请求的处理</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p><img src="/pictures/home/202.jpg" alt="index" /></p>
+
+<h1 id="contextloaderlistener">ContextLoaderListener</h1>
+
+<p>新建一个SSM应用的时候，一般会在web.xml文件中添加以下内容</p>
+
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;web-app version=&quot;3.0&quot; xmlns=&quot;http://java.sun.com/xml/ns/javaee&quot;
+         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+         xsi:schemaLocation=&quot;http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd&quot;&gt;
+    &lt;display-name&gt;hand-hap&lt;/display-name&gt;
+    &lt;description&gt;hand-hap&lt;/description&gt;
+    &lt;context-param&gt;
+        &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+        &lt;param-value&gt;classpath*:/spring/applicationContext*.xml&lt;/param-value&gt;
+    &lt;/context-param&gt;
+    &lt;context-param&gt;
+        &lt;param-name&gt;spring.profiles.default&lt;/param-name&gt;
+        &lt;param-value&gt;default&lt;/param-value&gt;
+    &lt;/context-param&gt;
+    &lt;context-param&gt;
+        &lt;param-name&gt;contextInitializerClasses&lt;/param-name&gt;
+        &lt;param-value&gt;com.hand.hap.core.CustomApplicationContextInitializer&lt;/param-value&gt;
+    &lt;/context-param&gt;
+
+    &lt;!-- 和整合Spring相关 --&gt;
+    &lt;listener&gt;
+        &lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;
+    &lt;/listener&gt;
+
+    &lt;!-- 和SpringMVC相关 --&gt;
+    &lt;servlet&gt;
+        &lt;servlet-name&gt;appServlet&lt;/servlet-name&gt;
+        &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
+        &lt;init-param&gt;
+            &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+            &lt;param-value&gt;classpath:/spring/appServlet/servlet*.xml&lt;/param-value&gt;
+        &lt;/init-param&gt;
+        &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
+        &lt;async-supported&gt;true&lt;/async-supported&gt;
+    &lt;/servlet&gt;
+
+    &lt;servlet-mapping&gt;
+        &lt;servlet-name&gt;appServlet&lt;/servlet-name&gt;
+        &lt;url-pattern&gt;/&lt;/url-pattern&gt;
+    &lt;/servlet-mapping&gt;
+    
+&lt;/web-app&gt;
+</code></pre>
+
+<p>初始化顺寻：Listene &gt; Filter &gt; Servlet</p>
+
+<p>ContextLoaderListener实现了Servlet标准中的ServletContextListener接口，说明它会监听ServletContext对象的创建和销毁</p>
+
+<pre><code>public class ContextLoaderListener extends ContextLoader implements ServletContextListener {
+	@Override
+	public void contextInitialized(ServletContextEvent event) {
+		initWebApplicationContext(event.getServletContext());
+	}
+
+
+	/**
+	 * Close the root web application context.
+	 */
+	@Override
+	public void contextDestroyed(ServletContextEvent event) {
+		closeWebApplicationContext(event.getServletContext());
+		ContextCleanupListener.cleanupAttributes(event.getServletContext());
+	}
+}
+</code></pre>
+
+<p>在应用启动的时候，会执行contextInitialized方法，从而调用initWebApplicationContext方法创建spring容器。initWebApplicationContext方法在父类ContextLoader中</p>
+
+<pre><code>public WebApplicationContext initWebApplicationContext(ServletContext servletContext) {
+    // 如果servletContext中已经有spring上下文了，则抛出异常
+    if (servletContext.getAttribute(WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE) != null) {
+        throw new IllegalStateException(
+                &quot;Cannot initialize context because there is already a root application context present - &quot; +
+                &quot;check whether you have multiple ContextLoader* definitions in your web.xml!&quot;);
+    }
+
+    long startTime = System.currentTimeMillis();
+    try {
+        if (this.context == null) {
+            // 创建WebApplicationContext
+            this.context = createWebApplicationContext(servletContext);
+        }
+
+        if (this.context instanceof ConfigurableWebApplicationContext) {
+            ConfigurableWebApplicationContext cwac = (ConfigurableWebApplicationContext) this.context;
+            if (!cwac.isActive()) {
+                // The context has not yet been refreshed -&gt; provide services such as
+                // setting the parent context, setting the application context id, etc
+                if (cwac.getParent() == null) {
+                    // 设置父容器
+                    ApplicationContext parent = loadParentContext(servletContext);
+                    cwac.setParent(parent);
+                }
+                // 配置WebApplicationContext，即执行refresh方法，前面仅仅是创建了一个WebApplicationContext，这里相当于是配置
+                configureAndRefreshWebApplicationContext(cwac, servletContext);
+            }
+        }
+
+// 将创建的WebApplicationContext放到ServletContext中，key为WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE；
+servletContext.setAttribute(WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE, this.context);
+
+        ClassLoader ccl = Thread.currentThread().getContextClassLoader();
+        if (ccl == ContextLoader.class.getClassLoader()) {
+            currentContext = this.context;
+        }
+        else if (ccl != null) {
+            // 将创建的WebApplicationContext放到currentContextPerThread中
+            currentContextPerThread.put(ccl, this.context);
+        }
+
+        if (logger.isDebugEnabled()) {
+            logger.debug(&quot;Published root WebApplicationContext as ServletContext attribute with name [&quot; +
+                    WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE + &quot;]&quot;);
+        }
+        if (logger.isInfoEnabled()) {
+            long elapsedTime = System.currentTimeMillis() - startTime;
+            logger.info(&quot;Root WebApplicationContext: initialization completed in &quot; + elapsedTime + &quot; ms&quot;);
+        }
+
+        return this.context;
+    }
+    catch (RuntimeException ex) {
+        logger.error(&quot;Context initialization failed&quot;, ex);
+        servletContext.setAttribute(WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE, ex);
+        throw ex;
+    }
+    catch (Error err) {
+        logger.error(&quot;Context initialization failed&quot;, err);
+        servletContext.setAttribute(WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE, err);
+        throw err;
+    }
+}
+</code></pre>
+
+<p>接下来看看createWebApplicationContext方法</p>
+
+<pre><code>protected WebApplicationContext createWebApplicationContext(ServletContext sc) {
+    Class&lt;?&gt; contextClass = determineContextClass(sc);
+    if (!ConfigurableWebApplicationContext.class.isAssignableFrom(contextClass)) {
+        throw new ApplicationContextException(&quot;Custom context class [&quot; + contextClass.getName() +
+                &quot;] is not of type [&quot; + ConfigurableWebApplicationContext.class.getName() + &quot;]&quot;);
+    }
+    return (ConfigurableWebApplicationContext) BeanUtils.instantiateClass(contextClass);
+}
+
+protected Class&lt;?&gt; determineContextClass(ServletContext servletContext) {
+    // 先尝试从配置文件的初始化参数CONTEXT_CLASS_PARAM(即&quot;contextClass&quot;)中获取contextClassName
+    String contextClassName = servletContext.getInitParameter(CONTEXT_CLASS_PARAM);
+
+    // 如果配置了contextClass，就用配置的类实例化
+    if (contextClassName != null) {
+        try {
+            return ClassUtils.forName(contextClassName, ClassUtils.getDefaultClassLoader());
+        }
+        catch (ClassNotFoundException ex) {
+            throw new ApplicationContextException(
+                    &quot;Failed to load custom context class [&quot; + contextClassName + &quot;]&quot;, ex);
+        }
+    }
+
+    // 如果没有配置contextClass，就就默认的org.springframework.web.context.support.XmlWebApplicationContext实例化
+    else {
+        contextClassName = defaultStrategies.getProperty(WebApplicationContext.class.getName());
+        try {
+            return ClassUtils.forName(contextClassName, ContextLoader.class.getClassLoader());
+        }
+        catch (ClassNotFoundException ex) {
+            throw new ApplicationContextException(
+                    &quot;Failed to load default context class [&quot; + contextClassName + &quot;]&quot;, ex);
+        }
+    }
+}
+</code></pre>
+
+<p>在上面用到了一个defaultStrategies，可以看看相关的代码</p>
+
+<pre><code>private static final String DEFAULT_STRATEGIES_PATH = &quot;ContextLoader.properties&quot;;
+private static final Properties defaultStrategies;
+static {
+    try {
+        ClassPathResource resource = new ClassPathResource(DEFAULT_STRATEGIES_PATH, ContextLoader.class);
+        defaultStrategies = PropertiesLoaderUtils.loadProperties(resource);
+    }
+    catch (IOException ex) {
+        throw new IllegalStateException(&quot;Could not load 'ContextLoader.properties': &quot; + ex.getMessage());
+    }
+}
+</code></pre>
+
+<p>如果没有配置contextClass，就使用默认的在ContextLoader.properties文件中的XmlWebApplicationContext</p>
+
+<pre><code>org.springframework.web.context.WebApplicationContext=org.springframework.web.context.support.XmlWebApplicationContext
+</code></pre>
+
+<p>主要对容器进行一些配置的操作还是在configureAndRefreshWebApplicationContext方法中</p>
+
+<pre><code>protected void configureAndRefreshWebApplicationContext(ConfigurableWebApplicationContext wac, ServletContext sc) {
+    if (ObjectUtils.identityToString(wac).equals(wac.getId())) {
+        // 如果配置了context id，就设置context id
+        String idParam = sc.getInitParameter(CONTEXT_ID_PARAM);
+        if (idParam != null) {
+            wac.setId(idParam);
+        }
+
+        // 如果没有配置context id，则自动生成一个context id
+        else {
+            // Generate default id...
+            wac.setId(ConfigurableWebApplicationContext.APPLICATION_CONTEXT_ID_PREFIX +
+                    ObjectUtils.getDisplayString(sc.getContextPath()));
+        }
+    }
+
+    // ServletContext 和 WebApplicationContext好像是相互引用的
+    wac.setServletContext(sc);
+
+    // 读取web.xml中配置的配置文件位置
+    String configLocationParam = sc.getInitParameter(CONFIG_LOCATION_PARAM);
+    if (configLocationParam != null) {
+        wac.setConfigLocation(configLocationParam);
+    }
+  
+    ConfigurableEnvironment env = wac.getEnvironment();
+    if (env instanceof ConfigurableWebEnvironment) {
+        // 获取当前环境ConfigurableEnvironment，便于后续根据profiles来解析属性
+        ((ConfigurableWebEnvironment) env).initPropertySources(sc, null);
+    }
+    // 执行refresh方法之前的一些初始化工作
+    customizeContext(sc, wac);
+
+    // AbstractApplicationContext中的refresh方法，最关键的方法，执行完这个方法spring容器就完成了
+    wac.refresh();
+}
+</code></pre>
+
+<h1 id="dispatcherservlet">DispatcherServlet</h1>
+
+<p>首先看看的继承关系图
+<img src="https://upload-images.jianshu.io/upload_images/3744244-5d1c2961ca7cade3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>根据我们对Servlet的了解，Servlet主要有3个阶段：初始化、运行、销毁。
+1. 初始化阶段
+Servlet容器加载Servlet类，把Servlet类的.class文件读到内存中；
+Servlet容器拆个那就一个ServletConfig对象，ServletConfig对象包含了Servlet的初始化配置信息；
+Servlet创建一个Servlet对象；
+Servlet容器调用Servlet对象的init方法进行初始化；</p>
+
+<ol>
+<li><p>运行阶段
+当Servlet容器接收到一个请求时，Servlet容器会针对这个请求创建ServletRequest和ServletResponse对象，然后调用service方法。service方法根据ServletRequest获取请求信息，然后再通过ServletResponse对象生成请求的响应结果，然后销毁ServletRequest和ServletResponse对象。</p></li>
+
+<li><p>销毁阶段
+当web应用被终止时，Servlet容器会先调用servlet对象的destroy方法，然后再销毁Servlet对象，同时也会销毁与Servlet对象相关的ServletConfig对象。</p></li>
+</ol>
+
+<p>根据上面的继承关系图和对源码的跟踪，init方法其实是在HttpServletBean方法中
+HttpServletBean#init</p>
+
+<pre><code>public final void init() throws ServletException {
+    if (logger.isDebugEnabled()) {
+        logger.debug(&quot;Initializing servlet '&quot; + getServletName() + &quot;'&quot;);
+    }
+
+    // Set bean properties from init parameters.
+    try {
+        // 解析 init-param 并封装在 pvs 中
+        PropertyValues pvs = new ServletConfigPropertyValues(getServletConfig(), this.requiredProperties);
+ 
+        // 将当前的servlet类转化成一个BeanWrapper，从而能够以Spring的方式对 init-param 的值进行注入
+        BeanWrapper bw = PropertyAccessorFactory.forBeanPropertyAccess(this);
+        ResourceLoader resourceLoader = new ServletContextResourceLoader(getServletContext());
+
+        // 注册自定义属性编辑器，一旦遇到Resource类型的属性将会使用ResourceEditor进行解析
+        bw.registerCustomEditor(Resource.class, new ResourceEditor(resourceLoader, getEnvironment()));
+
+        // 空实现，留给子类覆盖
+        initBeanWrapper(bw);
+
+        // 属性注入
+        bw.setPropertyValues(pvs, true);
+    }
+    catch (BeansException ex) {
+        logger.error(&quot;Failed to set bean properties on servlet '&quot; + getServletName() + &quot;'&quot;, ex);
+        throw ex;
+    }
+
+    // Let subclasses do whatever initialization they like.
+    // 留给子类扩展，FrameworkServlet覆盖了这个方法，实际上，初始化主要逻辑就在FrameworkServlet的initServletBean方法中
+    initServletBean();
+
+    if (logger.isDebugEnabled()) {
+        logger.debug(&quot;Servlet '&quot; + getServletName() + &quot;' configured successfully&quot;);
+    }
+}
+</code></pre>
+
+<p>FrameworkServlet#initServletBean</p>
+
+<pre><code>protected final void initServletBean() throws ServletException {
+    getServletContext().log(&quot;Initializing Spring FrameworkServlet '&quot; + getServletName() + &quot;'&quot;);
+    if (this.logger.isInfoEnabled()) {
+        this.logger.info(&quot;FrameworkServlet '&quot; + getServletName() + &quot;': initialization started&quot;);
+    }
+    long startTime = System.currentTimeMillis();
+
+    try {
+        // 关键的初始化逻辑，对ContextloaderListener中创建的webApplicationContext进一步补充初始化
+        this.webApplicationContext = initWebApplicationContext();
+
+        // 用于子类覆盖
+        initFrameworkServlet();
+    }
+    catch (ServletException ex) {
+        this.logger.error(&quot;Context initialization failed&quot;, ex);
+        throw ex;
+    }
+    catch (RuntimeException ex) {
+        this.logger.error(&quot;Context initialization failed&quot;, ex);
+        throw ex;
+    }
+
+    if (this.logger.isInfoEnabled()) {
+        long elapsedTime = System.currentTimeMillis() - startTime;
+        this.logger.info(&quot;FrameworkServlet '&quot; + getServletName() + &quot;': initialization completed in &quot; +
+                elapsedTime + &quot; ms&quot;);
+    }
+}
+</code></pre>
+
+<p>FrameworkServlet#initWebApplicationContext</p>
+
+<pre><code>protected WebApplicationContext initWebApplicationContext() {
+    WebApplicationContext rootContext =
+            WebApplicationContextUtils.getWebApplicationContext(getServletContext());
+    WebApplicationContext wac = null;
+
+    if (this.webApplicationContext != null) {
+        // A context instance was injected at construction time -&gt; use it
+        // context 实例在构造函数中注入
+        wac = this.webApplicationContext;
+        if (wac instanceof ConfigurableWebApplicationContext) {
+            ConfigurableWebApplicationContext cwac = (ConfigurableWebApplicationContext) wac;
+            if (!cwac.isActive()) {
+                // The context has not yet been refreshed -&gt; provide services such as
+                // setting the parent context, setting the application context id, etc
+                if (cwac.getParent() == null) {
+                    // The context instance was injected without an explicit parent -&gt; set
+                    // the root application context (if any; may be null) as the parent
+                    cwac.setParent(rootContext);
+                }
+
+                // 配置和刷新上下文环境
+                configureAndRefreshWebApplicationContext(cwac);
+            }
+        }
+    }
+    if (wac == null) {
+        // No context instance was injected at construction time -&gt; see if one
+        // has been registered in the servlet context. If one exists, it is assumed
+        // that the parent context (if any) has already been set and that the
+        // user has performed any initialization such as setting the context id
+
+        // 根据 contextAttribute 属性加载 webApplicationContext
+        wac = findWebApplicationContext();
+    }
+    if (wac == null) {
+        // No context instance is defined for this servlet -&gt; create a local one
+        // 如果以上两种方式都没有找到 webApplicationContext 实例，则在这里创建一个
+        wac = createWebApplicationContext(rootContext);
+    }
+
+    if (!this.refreshEventReceived) {
+        // Either the context is not a ConfigurableApplicationContext with refresh
+        // support or the context injected at construction time had already been
+        // refreshed -&gt; trigger initial onRefresh manually here.
+
+        // 提供的模板方法，在 DispatcherServlet 重写了该方法主要用于刷新Spring在web功能中锁必须实现的全局变量
+        onRefresh(wac);
+    }
+
+    if (this.publishContext) {
+        // Publish the context as a servlet context attribute.
+        String attrName = getServletContextAttributeName();
+        getServletContext().setAttribute(attrName, wac);
+        if (this.logger.isDebugEnabled()) {
+            this.logger.debug(&quot;Published WebApplicationContext of servlet '&quot; + getServletName() +
+                    &quot;' as ServletContext attribute with name [&quot; + attrName + &quot;]&quot;);
+        }
+    }
+
+    return wac;
+}
+</code></pre>
+
+<p>DispatcherServlet#onRefresh</p>
+
+<pre><code>@Override
+protected void onRefresh(ApplicationContext context) {
+    initStrategies(context);
+}
+
+/**
+ * Initialize the strategy objects that this servlet uses.
+ * &lt;p&gt;May be overridden in subclasses in order to initialize further strategy objects.
+ */
+protected void initStrategies(ApplicationContext context) {
+    // 初始化MultipartResolver，用于处理文件上传
+    initMultipartResolver(context);
+    // 初始化LocaleResolver，国际化
+    initLocaleResolver(context);
+    // 初始化ThemeResolver，通过主题ThemeResolver来控制网页风格
+    initThemeResolver(context);
+    // 初始化HandlerMappings，当客户端发出Request时，DispatcherServlet将Resuest交给HandlerMapping，然后HandlerMapping根据WebApplicationContext的配置来回传给DispatcherServlet相应的Controller
+    initHandlerMappings(context);
+    // 初始化HandlerAdapters，适配当前的Http请求
+    initHandlerAdapters(context);
+    // 初始化HandlerExceptionResolvers，Spring会搜索所有注册在其环境中的实现了HandlerExceptionResolvers接口的bean，逐个执行，直到返回一个ModelAndView对象
+    initHandlerExceptionResolvers(context);
+    // 初始化RequestToViewNameTranslator，当在Controller中没有返回一个View对象或逻辑视图名称，并且在该方法中没有直接往response的输出流里写数据时，Spring就会采用约定好的提供一个逻辑视图名称
+    initRequestToViewNameTranslator(context);
+    // 初始化ViewResolvers，当Controller将请求处理结果放入ModelAndView中以后，DispatcherServlet会根据ModelAndView选择合适的试图进行渲染
+    initViewResolvers(context);
+    // 初始化FlashMapManager，Flash Attribute提供了一个请求存储属性，可供其它请求使用，在重定向时非常必要
+    initFlashMapManager(context);
+}
+</code></pre>
+
+<h3 id="dispatcherservlet对请求的处理">DispatcherServlet对请求的处理</h3>
+
+<p>doGet方法和doPost方法都在FrameworkServlet中</p>
+
+<pre><code>@Override
+protected final void doGet(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
+
+    processRequest(request, response);
+}
+
+/**
+    * Delegate POST requests to {@link #processRequest}.
+    * @see #doService
+    */
+@Override
+protected final void doPost(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
+
+    processRequest(request, response);
+}
+</code></pre>
+
+<p><strong>FrameworkServlet#processRequest</strong></p>
+
+<pre><code>protected final void processRequest(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
+
+    // 记录当前时间，用于计算web请求的处理时间       
+    long startTime = System.currentTimeMillis();
+    Throwable failureCause = null;
+
+    // 为了保证当前线程的LocaleContext以及RequestAttributes可以在当前请求后还能恢复，体取当前线程得了两个属性
+    LocaleContext previousLocaleContext = LocaleContextHolder.getLocaleContext();
+    // 根据当前request创建对应的LocaleContext以及RequestAttributes，并绑定到当前线程
+    LocaleContext localeContext = buildLocaleContext(request);
+
+    RequestAttributes previousAttributes = RequestContextHolder.getRequestAttributes();
+    ServletRequestAttributes requestAttributes = buildRequestAttributes(request, response, previousAttributes);
+
+    WebAsyncManager asyncManager = WebAsyncUtils.getAsyncManager(request);
+    asyncManager.registerCallableInterceptor(FrameworkServlet.class.getName(), new RequestBindingInterceptor());
+
+    initContextHolders(request, localeContext, requestAttributes);
+
+    try {
+        // 委托doService方法进行处理
+        doService(request, response);
+    }
+    catch (ServletException ex) {
+        failureCause = ex;
+        throw ex;
+    }
+    catch (IOException ex) {
+        failureCause = ex;
+        throw ex;
+    }
+    catch (Throwable ex) {
+        failureCause = ex;
+        throw new NestedServletException(&quot;Request processing failed&quot;, ex);
+    }
+
+    finally {
+        resetContextHolders(request, previousLocaleContext, previousAttributes);
+        if (requestAttributes != null) {
+            requestAttributes.requestCompleted();
+        }
+
+        if (logger.isDebugEnabled()) {
+            if (failureCause != null) {
+                this.logger.debug(&quot;Could not complete request&quot;, failureCause);
+            }
+            else {
+                if (asyncManager.isConcurrentHandlingStarted()) {
+                    logger.debug(&quot;Leaving response open for concurrent processing&quot;);
+                }
+                else {
+                    this.logger.debug(&quot;Successfully completed request&quot;);
+                }
+            }
+        }
+        // 无论请求成功失败，发通知
+        publishRequestHandledEvent(request, response, startTime, failureCause);
+    }
+}
+</code></pre>
+
+<p><strong>DispatcherServlet#doService</strong>
+这个方法主要时做一些准备工作，比如将 localResolver 、 themeResolveer 等设置在request属性中，真正的逻辑在doDispatch方法中</p>
+
+<pre><code>protected void doService(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    if (logger.isDebugEnabled()) {
+        String resumed = WebAsyncUtils.getAsyncManager(request).hasConcurrentResult() ? &quot; resumed&quot; : &quot;&quot;;
+        logger.debug(&quot;DispatcherServlet with name '&quot; + getServletName() + &quot;'&quot; + resumed +
+                &quot; processing &quot; + request.getMethod() + &quot; request for [&quot; + getRequestUri(request) + &quot;]&quot;);
+    }
+
+    // Keep a snapshot of the request attributes in case of an include,
+    // to be able to restore the original attributes after the include.
+    Map&lt;String, Object&gt; attributesSnapshot = null;
+    if (WebUtils.isIncludeRequest(request)) {
+        attributesSnapshot = new HashMap&lt;String, Object&gt;();
+        Enumeration&lt;?&gt; attrNames = request.getAttributeNames();
+        while (attrNames.hasMoreElements()) {
+            String attrName = (String) attrNames.nextElement();
+            if (this.cleanupAfterInclude || attrName.startsWith(&quot;org.springframework.web.servlet&quot;)) {
+                attributesSnapshot.put(attrName, request.getAttribute(attrName));
+            }
+        }
+    }
+
+    // 将 localResolver 、 themeResolveer 等设置在request属性中
+    // Make framework objects available to handlers and view objects.
+    request.setAttribute(WEB_APPLICATION_CONTEXT_ATTRIBUTE, getWebApplicationContext());
+    request.setAttribute(LOCALE_RESOLVER_ATTRIBUTE, this.localeResolver);
+    request.setAttribute(THEME_RESOLVER_ATTRIBUTE, this.themeResolver);
+    request.setAttribute(THEME_SOURCE_ATTRIBUTE, getThemeSource());
+
+    FlashMap inputFlashMap = this.flashMapManager.retrieveAndUpdate(request, response);
+    if (inputFlashMap != null) {
+        request.setAttribute(INPUT_FLASH_MAP_ATTRIBUTE, Collections.unmodifiableMap(inputFlashMap));
+    }
+    request.setAttribute(OUTPUT_FLASH_MAP_ATTRIBUTE, new FlashMap());
+    request.setAttribute(FLASH_MAP_MANAGER_ATTRIBUTE, this.flashMapManager);
+
+    try {
+        // 真正的请求跳转等逻辑
+        doDispatch(request, response);
+    }
+    finally {
+        if (!WebAsyncUtils.getAsyncManager(request).isConcurrentHandlingStarted()) {
+            // Restore the original attribute snapshot, in case of an include.
+            if (attributesSnapshot != null) {
+                restoreAttributesAfterInclude(request, attributesSnapshot);
+            }
+        }
+    }
+}
+</code></pre>
+
+<p><strong>DispatcherServlet#doDispatch</strong></p>
+
+<pre><code>protected void doDispatch(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    HttpServletRequest processedRequest = request;
+    HandlerExecutionChain mappedHandler = null;
+    boolean multipartRequestParsed = false;
+
+    WebAsyncManager asyncManager = WebAsyncUtils.getAsyncManager(request);
+
+    try {
+        ModelAndView mv = null;
+        Exception dispatchException = null;
+
+        try {
+            // 如果是MultipartContent类型的request，则转换request为MultipartHttpRequest类型的request
+            processedRequest = checkMultipart(request);
+            multipartRequestParsed = (processedRequest != request);
+
+            // Determine handler for the current request.
+            // 根据request信息寻找对应的Handler
+            mappedHandler = getHandler(processedRequest);
+            if (mappedHandler == null || mappedHandler.getHandler() == null) {
+                // 如果没有找到Handler，则通过response返回错误信息
+                noHandlerFound(processedRequest, response);
+                return;
+            }
+
+            // Determine handler adapter for the current request.
+            // 根据handle寻找对应的handlerAdapter
+            HandlerAdapter ha = getHandlerAdapter(mappedHandler.getHandler());
+
+            // Process last-modified header, if supported by the handler.
+            // 如果当前handler支持 last-modified 头处理，缓存处理
+            String method = request.getMethod();
+            boolean isGet = &quot;GET&quot;.equals(method);
+            if (isGet || &quot;HEAD&quot;.equals(method)) {
+                long lastModified = ha.getLastModified(request, mappedHandler.getHandler());
+                if (logger.isDebugEnabled()) {
+                    logger.debug(&quot;Last-Modified value for [&quot; + getRequestUri(request) + &quot;] is: &quot; + lastModified);
+                }
+                if (new ServletWebRequest(request, response).checkNotModified(lastModified) &amp;&amp; isGet) {
+                    return;
+                }
+            }
+
+            // 拦截器的preHandle方法调用
+            if (!mappedHandler.applyPreHandle(processedRequest, response)) {
+                return;
+            }
+
+            // Actually invoke the handler.
+            // 真正激活handler并返回试图
+            mv = ha.handle(processedRequest, response, mappedHandler.getHandler());
+
+            if (asyncManager.isConcurrentHandlingStarted()) {
+                return;
+            }
+            
+            // 试图名称转换用于需要添加前后缀的情况
+            applyDefaultViewName(processedRequest, mv);
+
+            // 应用所有拦截器的postHandle方法
+            mappedHandler.applyPostHandle(processedRequest, response, mv);
+        }
+        catch (Exception ex) {
+            dispatchException = ex;
+        }
+        catch (Throwable err) {
+            // As of 4.3, we're processing Errors thrown from handler methods as well,
+            // making them available for @ExceptionHandler methods and other scenarios.
+            dispatchException = new NestedServletException(&quot;Handler dispatch failed&quot;, err);
+        }
+
+        // 返回结果处理
+        processDispatchResult(processedRequest, response, mappedHandler, mv, dispatchException);
+    }
+    catch (Exception ex) {
+        triggerAfterCompletion(processedRequest, response, mappedHandler, ex);
+    }
+    catch (Throwable err) {
+        triggerAfterCompletion(processedRequest, response, mappedHandler,
+                new NestedServletException(&quot;Handler processing failed&quot;, err));
+    }
+    finally {
+        if (asyncManager.isConcurrentHandlingStarted()) {
+            // Instead of postHandle and afterCompletion
+            if (mappedHandler != null) {
+                mappedHandler.applyAfterConcurrentHandlingStarted(processedRequest, response);
+            }
+        }
+        else {
+            // Clean up any resources used by a multipart request.
+            if (multipartRequestParsed) {
+                cleanupMultipart(processedRequest);
+            }
+        }
+    }
+}
+
+</code></pre>
+
+<p><strong>DispatcherServlet#processDispatchResult</strong>
+processDispatchResult方法在doDispatch方法中被调用，用于处理返回结果</p>
+
+<pre><code>private void processDispatchResult(HttpServletRequest request, HttpServletResponse response,
+        HandlerExecutionChain mappedHandler, ModelAndView mv, Exception exception) throws Exception {
+
+    boolean errorView = false;
+
+    if (exception != null) {
+        if (exception instanceof ModelAndViewDefiningException) {
+            logger.debug(&quot;ModelAndViewDefiningException encountered&quot;, exception);
+            mv = ((ModelAndViewDefiningException) exception).getModelAndView();
+        }
+        else {
+            Object handler = (mappedHandler != null ? mappedHandler.getHandler() : null);
+            mv = processHandlerException(request, response, handler, exception);
+            errorView = (mv != null);
+        }
+    }
+
+    // Did the handler return a view to render?
+    // 如果Handler 实例的处理中返回了view，那么需要做页面的处理
+    if (mv != null &amp;&amp; !mv.wasCleared()) {
+        // 处理页面跳转
+        render(mv, request, response);
+        if (errorView) {
+            WebUtils.clearErrorRequestAttributes(request);
+        }
+    }
+    else {
+        if (logger.isDebugEnabled()) {
+            logger.debug(&quot;Null ModelAndView returned to DispatcherServlet with name '&quot; + getServletName() +
+                    &quot;': assuming HandlerAdapter completed request handling&quot;);
+        }
+    }
+
+    if (WebAsyncUtils.getAsyncManager(request).isConcurrentHandlingStarted()) {
+        // Concurrent handling started during a forward
+        return;
+    }
+
+    if (mappedHandler != null) {
+        // 完成处理激活触发器
+        mappedHandler.triggerAfterCompletion(request, response, null);
+    }
+}
+</code></pre>
+    </div>
+
+    
+    
+
+    
+    
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/weixin.jpg">
+        <span>微信打赏</span>
+      </label>
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div>
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://www.spilledyear.cn/tags/spring/">Spring</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/mybatis/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">Mybatis</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/springaop/">
+            <span class="next-text nav-default">SpringAOP</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+    
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+
+<div class="copyright">
+  
+
+  <span class="copyright-year">
+    &copy;
+    2019
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        spilledyear
+        
+      </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" crossorigin="anonymous"></script>
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

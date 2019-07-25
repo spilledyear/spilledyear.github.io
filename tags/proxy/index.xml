@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Proxy on spilledyear</title>
+    <link>https://www.spilledyear.cn/tags/proxy/</link>
+    <description>Recent content in Proxy on spilledyear</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 05 Jul 2018 18:49:01 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.spilledyear.cn/tags/proxy/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Proxy</title>
+      <link>https://www.spilledyear.cn/post/proxy/</link>
+      <pubDate>Thu, 05 Jul 2018 18:49:01 +0000</pubDate>
+      
+      <guid>https://www.spilledyear.cn/post/proxy/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.spilledyear.cn/pictures/home/298.jpg&#34; alt=&#34;index&#34; /&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

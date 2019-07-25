@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Ionic3 表单处理 - spilledyear</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="spilledyear" />
+  <meta name="description" content="" />
+
+  <meta name="keywords" content="Hugo, theme, spilledyear" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.6" />
+
+
+<link rel="canonical" href="https://www.spilledyear.cn/post/ionic3-%E8%A1%A8%E5%8D%95%E5%A4%84%E7%90%86/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.31c4b7729c8d71cc152f8de4203d90bfd8a04f7eab69372de7234ebf55b7701b.css" integrity="sha256-McS3cpyNccwVL43kID2Qv9igT36raTct5yNOv1W3cBs=" media="screen" crossorigin="anonymous">
+
+
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+
+<meta property="og:title" content="Ionic3 表单处理" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.spilledyear.cn/post/ionic3-%E8%A1%A8%E5%8D%95%E5%A4%84%E7%90%86/" />
+<meta property="article:published_time" content="2017-11-07T21:52:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-11-07T21:52:00&#43;00:00"/>
+
+<meta itemprop="name" content="Ionic3 表单处理">
+<meta itemprop="description" content="">
+
+
+<meta itemprop="datePublished" content="2017-11-07T21:52:00&#43;00:00" />
+<meta itemprop="dateModified" content="2017-11-07T21:52:00&#43;00:00" />
+<meta itemprop="wordCount" content="1341">
+
+
+
+<meta itemprop="keywords" content="Ionic," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ionic3 表单处理"/>
+<meta name="twitter:description" content=""/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">spilledyear</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/">主页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/post/">文章</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/categories/">分类</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/%E5%85%B3%E4%BA%8E%E6%88%91/">关于我</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://github.com/spilledyear" rel="noopener" target="_blank">
+              外部链接
+              
+              <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92 0 0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"></path>
+  <path d="M841.152 457.152c-30.528 0-54.784 24.512-54.784 54.656l0 274.752L237.696 786.56 237.696 237.696l206.016 0c6.656 0 10.752 0 13.248 0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128L183.04 128C153.216 128 128 152.576 128 182.848c0 3.136 0.256 6.272 0.768 9.28C128.256 195.136 128 198.272 128 201.408l0 639.488c0 0.064 0 0.192 0 0.256 0 0.128 0 0.192 0 0.32 0 30.528 24.512 54.784 54.784 54.784l646.976 0c6.592 0 9.728 0 11.712 0 28.736 0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344l0-20.352L896 561.408 896 512.128C896 481.792 871.424 457.152 841.152 457.152z"></path>
+</svg>
+
+              </i>
+            </a>
+          
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      spilledyear
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/">主页</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/post/">文章</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/categories/">分类</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/%E5%85%B3%E4%BA%8E%E6%88%91/">关于我</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://github.com/spilledyear" rel="noopener" target="_blank">
+              外部链接
+            </a>
+          
+
+        
+
+      </li>
+    
+
+    
+    
+
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">Ionic3 表单处理</h1>
+      
+      <div class="post-meta">
+        <time datetime="2017-11-07" class="post-time">
+          2017-11-07
+        </time>
+        <div class="post-category">
+            <a href="https://www.spilledyear.cn/categories/webapp/"> webapp </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#使用过程">使用过程</a></li>
+<li><a href="#自定义检验函数">自定义检验函数</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p><img src="/pictures/home/235.jpg" alt="index" /></p>
+
+<p>在项目中，可以使用angular中的 @angular/forms模块处理表单，但是并不需要在app.module中引用@angular/forms模块，因为在app.module中已经引入了@angular/platform-browser模块，而在@angular/platform-browser模块中又导出了 @angular/forms 。也就是说，引入@angular/platform-browser模块之后就可以直接使用@angular/forms模块中提供的组件等内容。</p>
+
+<h2 id="使用过程">使用过程</h2>
+
+<p>从@angular/forms中引入需要用到的内容</p>
+
+<pre><code>import {FormBuilder, Validators, FormGroup} from '@angular/forms';
+</code></pre>
+
+<p>对应的表单初始化如下：formBuilder.group中的字段就是form表单中对应的字段，Validators 用于校验，规则根据实际情况配置。</p>
+
+<pre><code>  constructor(private navCtrl: NavController,
+              private navParams: NavParams,
+              private formBuilder: FormBuilder,
+              private viewCtrl: ViewController,
+              private events: Events,
+              private httpService: HttpService,
+              private storageService: StorageService,
+              private nativeService: NativeService) {
+
+    this.loginForm = formBuilder.group({
+      username: ['', Validators.compose([Validators.minLength(0), Validators.maxLength(16), Validators.required,])],
+      password: ['', Validators.compose([Validators.required, Validators.minLength(0)])]
+    });
+    this.username = this.loginForm.controls['username'];
+    this.password = this.loginForm.controls['password'];
+  }
+</code></pre>
+
+<p>至此，表单初始化完成，下面是对应的 模板代码</p>
+
+<pre><code>    &lt;ion-row&gt;
+      &lt;ion-col&gt;
+        &lt;form [formGroup]=&quot;loginForm&quot; (ngSubmit)=&quot;login(loginForm.value)&quot; novalidate&gt;
+          &lt;ion-row&gt;
+            &lt;ion-col&gt;
+              &lt;ion-list inset class=&quot;no-border&quot;&gt;
+                &lt;ion-item  [class.error]=&quot;!username.valid &amp;&amp; username.touched&quot;&gt;
+                  &lt;ion-label fixed&gt;请输入账号&lt;/ion-label&gt;
+                  &lt;ion-input type=&quot;text&quot; [formControl]=&quot;username&quot; clearInput=true&gt;&lt;/ion-input&gt;
+                &lt;/ion-item&gt;
+                &lt;!--&lt;div *ngIf=&quot;username.hasError('required') &amp;&amp; username.touched&quot; class=&quot;error-message&quot;&gt;*请输入用户名&lt;/div&gt;--&gt;
+                &lt;!--&lt;div *ngIf=&quot;(username.hasError('minlength')||username.hasError('maxlength')||username.hasError('pattern')) &amp;&amp; username.touched&quot; class=&quot;error-message&quot;&gt;*请输入正确的电话号码&lt;/div&gt;--&gt;
+
+                &lt;ion-item&gt;
+                  &lt;ion-label fixed&gt;请输入密码&lt;/ion-label&gt;
+                  &lt;ion-input type=&quot;password&quot; [formControl]=&quot;password&quot; clearInput=true&gt;&lt;/ion-input&gt;
+                &lt;/ion-item&gt;
+                &lt;!--&lt;div *ngIf=&quot;password.hasError('required') &amp;&amp; password.touched&quot; class=&quot;error-message&quot;&gt;*请输入密码&lt;/div&gt;--&gt;
+                &lt;!--&lt;div *ngIf=&quot;(password.hasError('minlength')) &amp;&amp; password.touched&quot; class=&quot;error-message&quot;&gt;*密码长度最少为六位&lt;/div&gt;--&gt;
+
+              &lt;/ion-list&gt;
+            &lt;/ion-col&gt;
+          &lt;/ion-row&gt;
+
+          &lt;ion-row&gt;
+            &lt;ion-col&gt;
+              &lt;div style=&quot;text-align: center&quot;&gt;
+                &lt;button ion-button round type=&quot;submit&quot; class=&quot;login-button&quot; [disabled]=&quot;!loginForm.valid&quot;&gt;测&amp;nbsp;&amp;nbsp;试&lt;/button&gt;
+              &lt;/div&gt;
+            &lt;/ion-col&gt;
+          &lt;/ion-row&gt;
+        &lt;/form&gt;
+
+      &lt;/ion-col&gt;
+    &lt;/ion-row&gt;
+</code></pre>
+
+<p>对应的 表单提交函数如下</p>
+
+<pre><code>login(value) {
+    this.nativeService.showLoading('loading...');
+    let password = Md5.hashStr(this.password).toString(),
+      params = {
+        username: value.username,
+        password: value.password,
+      };
+    this.httpService.login('/oauth/token', params).then(result =&gt; {
+    //xxx
+    }).catch(error =&gt; {
+    //xxx
+    });
+  }
+</code></pre>
+
+<p>ngSubmit 是一个@output属性，将表单的值以键值对的方式组装成一个对象返回。</p>
+
+<h2 id="自定义检验函数">自定义检验函数</h2>
+
+<p>对以上代码稍做修改 login.ts</p>
+
+<pre><code>  constructor(private navCtrl: NavController,
+              private navParams: NavParams,
+              private formBuilder: FormBuilder,
+              private viewCtrl: ViewController,
+              private events: Events,
+              private httpService: HttpService,
+              private storageService: StorageService,
+              private nativeService: NativeService) {
+
+    this.loginForm = formBuilder.group({
+      username: ['', Validators.compose([Validators.minLength(0), Validators.maxLength(16), Validators.required, ])],
+      password: ['', Validators.compose([Validators.required, Validators.minLength(0), this.passValidator])]
+    });
+    this.username = this.loginForm.controls['username'];
+    this.password = this.loginForm.controls['password'];
+  }
+</code></pre>
+
+<p>注意上面用到了一个自定义校验函数  this.passValidator ，该函数内容如下</p>
+
+<pre><code>  /**
+   * 自定义检验函数
+   * @param {FormControl} control
+   * @returns {{username: {info: string}}}
+   */
+  passValidator(control: FormControl){
+    const value = control.value;
+    return value? null : {password: {info: '这是自定义校验函数检查出来的错误'}};
+  }
+</code></pre>
+
+<p>为了查看测试结果，需要修改一下模板文件 login.html</p>
+
+<pre><code>    &lt;ion-row&gt;
+      &lt;ion-col&gt;
+        &lt;form [formGroup]=&quot;loginForm&quot; (ngSubmit)=&quot;login(loginForm.value)&quot; novalidate&gt;
+          &lt;ion-row&gt;
+            &lt;ion-col&gt;
+              &lt;ion-list inset class=&quot;no-border&quot;&gt;
+                &lt;ion-item  [class.error]=&quot;!username.valid &amp;&amp; username.touched&quot;&gt;
+                  &lt;ion-label fixed&gt;请输入账号&lt;/ion-label&gt;
+                  &lt;ion-input type=&quot;text&quot; [formControl]=&quot;username&quot; clearInput=true&gt;&lt;/ion-input&gt;
+                &lt;/ion-item&gt;
+
+                &lt;ion-item&gt;
+                  &lt;ion-label fixed&gt;请输入密码&lt;/ion-label&gt;
+                  &lt;ion-input type=&quot;password&quot; [formControl]=&quot;password&quot; clearInput=true&gt;&lt;/ion-input&gt;
+                &lt;/ion-item&gt;
+                &lt;div *ngIf=&quot;password.hasError('required') &amp;&amp; password.touched&quot; class=&quot;error-message&quot;&gt;{{loginForm.getError('password', 'password')?.info}}&lt;/div&gt;
+
+              &lt;/ion-list&gt;
+            &lt;/ion-col&gt;
+          &lt;/ion-row&gt;
+
+          &lt;ion-row&gt;
+            &lt;ion-col&gt;
+              &lt;div style=&quot;text-align: center&quot;&gt;
+                &lt;button ion-button round type=&quot;submit&quot; class=&quot;login-button&quot; [disabled]=&quot;!loginForm.valid&quot;&gt;测&amp;nbsp;&amp;nbsp;试&lt;/button&gt;
+              &lt;/div&gt;
+            &lt;/ion-col&gt;
+          &lt;/ion-row&gt;
+        &lt;/form&gt;
+
+      &lt;/ion-col&gt;
+    &lt;/ion-row&gt;
+
+仅仅是加了 &lt;div *ngIf=&quot;password.hasError('required') &amp;&amp; password.touched&quot; class=&quot;error-message&quot;&gt;{{loginForm.getError('password', 'password')?.info}}&lt;/div&gt; 
+当校验不通过的时候，就会在这个div上显示 在 login.ts 中定义的 提示信息。
+</code></pre>
+
+<blockquote>
+<p>以下是测试结果，仔细看
+<img src="http://upload-images.jianshu.io/upload_images/3744244-9ad46babacce2e9d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+</blockquote>
+    </div>
+
+    
+    
+
+    
+    
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/weixin.jpg">
+        <span>微信打赏</span>
+      </label>
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div>
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://www.spilledyear.cn/tags/ionic/">Ionic</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/ionic3-%E5%AF%BC%E8%88%AA%E5%88%86%E6%9E%90/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">Ionic3 导航分析</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/ioonic3-%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B/">
+            <span class="next-text nav-default">Ioonic3 开发流程</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+    
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+
+<div class="copyright">
+  
+
+  <span class="copyright-year">
+    &copy;
+    2019
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        spilledyear
+        
+      </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" crossorigin="anonymous"></script>
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

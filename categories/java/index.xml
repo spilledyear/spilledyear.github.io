@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on spilledyear</title>
+    <link>https://www.spilledyear.cn/categories/java/</link>
+    <description>Recent content in Java on spilledyear</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 20 Jul 2019 18:49:01 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.spilledyear.cn/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dubbo源码之SPI机制</title>
+      <link>https://www.spilledyear.cn/post/dubbo%E6%BA%90%E7%A0%81%E4%B9%8Bspi%E6%9C%BA%E5%88%B6/</link>
+      <pubDate>Sat, 20 Jul 2019 18:49:01 +0000</pubDate>
+      
+      <guid>https://www.spilledyear.cn/post/dubbo%E6%BA%90%E7%A0%81%E4%B9%8Bspi%E6%9C%BA%E5%88%B6/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.spilledyear.cn/pictures/home/049.jpg&#34; alt=&#34;index&#34; /&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Mybatis</title>
+      <link>https://www.spilledyear.cn/post/mybatis/</link>
+      <pubDate>Sun, 19 Aug 2018 18:49:01 +0000</pubDate>
+      
+      <guid>https://www.spilledyear.cn/post/mybatis/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.spilledyear.cn/pictures/home/089.jpg&#34; alt=&#34;index&#34; /&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>SpringMVC</title>
+      <link>https://www.spilledyear.cn/post/springmvc/</link>
+      <pubDate>Sun, 12 Aug 2018 18:49:01 +0000</pubDate>
+      
+      <guid>https://www.spilledyear.cn/post/springmvc/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.spilledyear.cn/pictures/home/202.jpg&#34; alt=&#34;index&#34; /&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>SpringAOP</title>
+      <link>https://www.spilledyear.cn/post/springaop/</link>
+      <pubDate>Sun, 05 Aug 2018 18:49:01 +0000</pubDate>
+      
+      <guid>https://www.spilledyear.cn/post/springaop/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.spilledyear.cn/pictures/home/267.jpg&#34; alt=&#34;index&#34; /&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>SpringIOC</title>
+      <link>https://www.spilledyear.cn/post/springioc/</link>
+      <pubDate>Tue, 31 Jul 2018 18:49:01 +0000</pubDate>
+      
+      <guid>https://www.spilledyear.cn/post/springioc/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.spilledyear.cn/pictures/home/302.jpg&#34; alt=&#34;index&#34; /&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>JVM</title>
+      <link>https://www.spilledyear.cn/post/jvm/</link>
+      <pubDate>Sun, 22 Jul 2018 18:49:01 +0000</pubDate>
+      
+      <guid>https://www.spilledyear.cn/post/jvm/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.spilledyear.cn/pictures/home/297.jpg&#34; alt=&#34;index&#34; /&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Proxy</title>
+      <link>https://www.spilledyear.cn/post/proxy/</link>
+      <pubDate>Thu, 05 Jul 2018 18:49:01 +0000</pubDate>
+      
+      <guid>https://www.spilledyear.cn/post/proxy/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.spilledyear.cn/pictures/home/298.jpg&#34; alt=&#34;index&#34; /&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ThreadPool</title>
+      <link>https://www.spilledyear.cn/post/threadpool/</link>
+      <pubDate>Fri, 29 Jun 2018 18:49:01 +0000</pubDate>
+      
+      <guid>https://www.spilledyear.cn/post/threadpool/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.spilledyear.cn/pictures/home/262.jpg&#34; alt=&#34;index&#34; /&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

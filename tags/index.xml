@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on spilledyear</title>
+    <link>https://www.spilledyear.cn/tags/</link>
+    <description>Recent content in Tags on spilledyear</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 20 Jul 2019 18:49:01 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.spilledyear.cn/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>DUBBO</title>
+      <link>https://www.spilledyear.cn/tags/dubbo/</link>
+      <pubDate>Sat, 20 Jul 2019 18:49:01 +0000</pubDate>
+      
+      <guid>https://www.spilledyear.cn/tags/dubbo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mybatis</title>
+      <link>https://www.spilledyear.cn/tags/mybatis/</link>
+      <pubDate>Sun, 19 Aug 2018 18:49:01 +0000</pubDate>
+      
+      <guid>https://www.spilledyear.cn/tags/mybatis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spring</title>
+      <link>https://www.spilledyear.cn/tags/spring/</link>
+      <pubDate>Sun, 12 Aug 2018 18:49:01 +0000</pubDate>
+      
+      <guid>https://www.spilledyear.cn/tags/spring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JVM</title>
+      <link>https://www.spilledyear.cn/tags/jvm/</link>
+      <pubDate>Sun, 22 Jul 2018 18:49:01 +0000</pubDate>
+      
+      <guid>https://www.spilledyear.cn/tags/jvm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Proxy</title>
+      <link>https://www.spilledyear.cn/tags/proxy/</link>
+      <pubDate>Thu, 05 Jul 2018 18:49:01 +0000</pubDate>
+      
+      <guid>https://www.spilledyear.cn/tags/proxy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>多线程</title>
+      <link>https://www.spilledyear.cn/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</link>
+      <pubDate>Fri, 29 Jun 2018 18:49:01 +0000</pubDate>
+      
+      <guid>https://www.spilledyear.cn/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ionic</title>
+      <link>https://www.spilledyear.cn/tags/ionic/</link>
+      <pubDate>Thu, 09 Nov 2017 21:42:38 +0000</pubDate>
+      
+      <guid>https://www.spilledyear.cn/tags/ionic/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

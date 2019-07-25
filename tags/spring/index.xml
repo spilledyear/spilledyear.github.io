@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spring on spilledyear</title>
+    <link>https://www.spilledyear.cn/tags/spring/</link>
+    <description>Recent content in Spring on spilledyear</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 12 Aug 2018 18:49:01 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.spilledyear.cn/tags/spring/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SpringMVC</title>
+      <link>https://www.spilledyear.cn/post/springmvc/</link>
+      <pubDate>Sun, 12 Aug 2018 18:49:01 +0000</pubDate>
+      
+      <guid>https://www.spilledyear.cn/post/springmvc/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.spilledyear.cn/pictures/home/202.jpg&#34; alt=&#34;index&#34; /&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>SpringAOP</title>
+      <link>https://www.spilledyear.cn/post/springaop/</link>
+      <pubDate>Sun, 05 Aug 2018 18:49:01 +0000</pubDate>
+      
+      <guid>https://www.spilledyear.cn/post/springaop/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.spilledyear.cn/pictures/home/267.jpg&#34; alt=&#34;index&#34; /&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>SpringIOC</title>
+      <link>https://www.spilledyear.cn/post/springioc/</link>
+      <pubDate>Tue, 31 Jul 2018 18:49:01 +0000</pubDate>
+      
+      <guid>https://www.spilledyear.cn/post/springioc/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.spilledyear.cn/pictures/home/302.jpg&#34; alt=&#34;index&#34; /&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

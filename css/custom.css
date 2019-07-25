@@ -1,0 +1,12 @@
+pre{
+  background-color: black;
+}
+
+.post .post-content code {
+  background: black;
+  /* background: transparent; */
+}
+
+.post .post-footer .post-tags a::before{
+  content: '->';
+}

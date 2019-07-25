@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Ionic3 自动化发布 - spilledyear</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="spilledyear" />
+  <meta name="description" content="" />
+
+  <meta name="keywords" content="Hugo, theme, spilledyear" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.6" />
+
+
+<link rel="canonical" href="https://www.spilledyear.cn/post/ionic3-%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8F%91%E5%B8%83/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.31c4b7729c8d71cc152f8de4203d90bfd8a04f7eab69372de7234ebf55b7701b.css" integrity="sha256-McS3cpyNccwVL43kID2Qv9igT36raTct5yNOv1W3cBs=" media="screen" crossorigin="anonymous">
+
+
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+
+<meta property="og:title" content="Ionic3 自动化发布" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.spilledyear.cn/post/ionic3-%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8F%91%E5%B8%83/" />
+<meta property="article:published_time" content="2017-10-29T17:40:07&#43;00:00"/>
+<meta property="article:modified_time" content="2017-10-29T17:40:07&#43;00:00"/>
+
+<meta itemprop="name" content="Ionic3 自动化发布">
+<meta itemprop="description" content="">
+
+
+<meta itemprop="datePublished" content="2017-10-29T17:40:07&#43;00:00" />
+<meta itemprop="dateModified" content="2017-10-29T17:40:07&#43;00:00" />
+<meta itemprop="wordCount" content="2349">
+
+
+
+<meta itemprop="keywords" content="Ionic," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ionic3 自动化发布"/>
+<meta name="twitter:description" content=""/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">spilledyear</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/">主页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/post/">文章</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/categories/">分类</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/%E5%85%B3%E4%BA%8E%E6%88%91/">关于我</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://github.com/spilledyear" rel="noopener" target="_blank">
+              外部链接
+              
+              <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92 0 0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"></path>
+  <path d="M841.152 457.152c-30.528 0-54.784 24.512-54.784 54.656l0 274.752L237.696 786.56 237.696 237.696l206.016 0c6.656 0 10.752 0 13.248 0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128L183.04 128C153.216 128 128 152.576 128 182.848c0 3.136 0.256 6.272 0.768 9.28C128.256 195.136 128 198.272 128 201.408l0 639.488c0 0.064 0 0.192 0 0.256 0 0.128 0 0.192 0 0.32 0 30.528 24.512 54.784 54.784 54.784l646.976 0c6.592 0 9.728 0 11.712 0 28.736 0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344l0-20.352L896 561.408 896 512.128C896 481.792 871.424 457.152 841.152 457.152z"></path>
+</svg>
+
+              </i>
+            </a>
+          
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      spilledyear
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/">主页</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/post/">文章</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/categories/">分类</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/%E5%85%B3%E4%BA%8E%E6%88%91/">关于我</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://github.com/spilledyear" rel="noopener" target="_blank">
+              外部链接
+            </a>
+          
+
+        
+
+      </li>
+    
+
+    
+    
+
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">Ionic3 自动化发布</h1>
+      
+      <div class="post-meta">
+        <time datetime="2017-10-29" class="post-time">
+          2017-10-29
+        </time>
+        <div class="post-category">
+            <a href="https://www.spilledyear.cn/categories/webapp/"> webapp </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#jenkins安装">Jenkins安装</a></li>
+<li><a href="#创建jenkins任务">创建Jenkins任务</a></li>
+<li><a href="#发送邮件设置">发送邮件设置</a></li>
+<li><a href="#项目发送邮件">项目发送邮件</a></li>
+<li><a href="#邮件全局配置">邮件全局配置</a></li>
+<li><a href="#项目引用全局配置">项目引用全局配置</a></li>
+<li><a href="#项目自定义配置">项目自定义配置</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p><img src="/pictures/home/246.jpg" alt="index" /></p>
+
+<p>本文主要介绍使用Jenkins实现app应用的自动打包发布。每次执行jenkins任务的时候，大概流程如下：打包app应用》将app应用作为邮件附件发送给件给客户。
+不管你想体验Jenkins自动化部署带来的便捷，还是学习Jenkins 自动部署 app 这门技巧，这篇文章都适合你。如果恰好你所开发的app是在内部使用的，不需要每次都通过qq还是什么方式发送给客户，Jenkins帮你一键搞定。</p>
+
+<h2 id="jenkins安装">Jenkins安装</h2>
+
+<p>推荐使用简单的安装方法
+&gt;下载地址：<a href="https://jenkins.io/download/">https://jenkins.io/download/</a>   选择下载war包
+<img src="http://upload-images.jianshu.io/upload_images/3744244-4f5af0c20c018a3c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image01.png" />
+下载之后，准备好一个tomcat，然后将下载的war包放到 tomcat的webapps目录下，然后启动tomcat，这时候tomcat会自动解压这个war包。
+在启动的过程中，会提示输入密码，这个密码我暂时不知道干嘛的，参照提示输入就好了:
+<img src="http://upload-images.jianshu.io/upload_images/3744244-b74a6e71822c6eb7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image02.png" />
+这时候在浏览器中输入： localhost:8081/jenkins，会提示你输入密码，将命令行中的密码拷贝进去就好了。输入密码之后，进入到选择安装插件的界面，有两种方式，一种是建议安装，一种是自定义安装，直接选择建议安装。然后就是等待安装插件：
+<img src="http://upload-images.jianshu.io/upload_images/3744244-95ceded256470e3a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image03.png" />
+安装插件之后，提示创建用户：
+<img src="http://upload-images.jianshu.io/upload_images/3744244-50d2eeaf5188a2df.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image04.png" />
+创建用户之后：
+<img src="http://upload-images.jianshu.io/upload_images/3744244-d40d4d9881ceb9a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
+<img src="http://upload-images.jianshu.io/upload_images/3744244-6ca2ecfe6eb9d84b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
+至此Jenkins安装完成。</p>
+
+<h2 id="创建jenkins任务">创建Jenkins任务</h2>
+
+<p>进入jenkins首页后，点击创建一个新任务。
+&gt;<img src="http://upload-images.jianshu.io/upload_images/3744244-f509e840f4127e5c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
+接下来进入到详细配置界面。</p>
+
+<blockquote>
+<p>补充描述信息
+<img src="http://upload-images.jianshu.io/upload_images/3744244-e6590e45e6bf622d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+<p>配置代码仓库，这里选择git
+<img src="http://upload-images.jianshu.io/upload_images/3744244-5338cd9740e00b47.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+<p>省略这两个步骤
+<img src="http://upload-images.jianshu.io/upload_images/3744244-04246b188900930e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+<p>构建
+<img src="http://upload-images.jianshu.io/upload_images/3744244-27f9e51f98ab4b79.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
+<img src="http://upload-images.jianshu.io/upload_images/3744244-76b7717beeb91f11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+</blockquote>
+
+<p>保存之后跳转到enkins首页，运行我们刚刚创建的任务：
+&gt;<img src="http://upload-images.jianshu.io/upload_images/3744244-0a736be2d2b21aa4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
+同时，可以查看日志：
+<img src="http://upload-images.jianshu.io/upload_images/3744244-e730ad3d6d26e988.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
+<img src="http://upload-images.jianshu.io/upload_images/3744244-e82855f85bd7c62c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+<p>按理来说，我们是希望可以正常的打包出一个apk文件了，但是很不巧，失败了。下面来分析一下原因。
+&gt;我们知道我们的ionic项目是利用npm进行包管理的，npm是根据package.json文件安装依赖的。我们利用jenkins进行打包的时候，仅仅是从git上拉下了代码，下载需要的哪些jar包，这是一个原因。还有另外一个原因，我们打包apk文件的时候，是需要依赖SDk和安卓平台的，安卓平台我们一般是通过执行 ionic cordova platform add android 命令来添加，但是我们不可能把这个提交到git上，要不然这个项目太大了。这个时候，我们可以在 jenkins 构建的时候 执行这两个命令：
+npm install 和 ionic cordova platform add android
+这样确实可以，但是太慢了，每次执行 jenkins命令的时候执行上面两个命令，会浪费好多时间，得不偿失，那就找一个这折中的办法。在使用这种方法之前，先分析一下Jenkins执行 命令的 流程，这个过程可以通过日志分析出来，以下是在执行jenkins命令时候的日志：
+<img src="http://upload-images.jianshu.io/upload_images/3744244-c77796cac2852ee4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
+有这个日志就足够了，通过日志发现，jenkins有一个工作目录，在执行命令的时候创建的（第一次执行的时候创建，执行之后不会自动删除），目录的路径就是 当前用户/jenkins/任务名称。Jenkins在执行命令之前，会先从git上下载代码到这个目录，然后再执行命令。既然知道这个 那就 很简单那了 。我们可以第一次手动再这个目录下执行 npm install 和 ionic cordova pllatform add android 这两个命令，这样再打包的时候 就不会报错了。在执行这 两个 命令之后，再执行jenkins命令，通过日志可以发现，打包成功了，生成了apk文件。
+<img src="http://upload-images.jianshu.io/upload_images/3744244-ead2db4fcad2cfb6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
+<img src="http://upload-images.jianshu.io/upload_images/3744244-20d2703625f86d24.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+<p>同时，在 jenkins工作目录下，可以找到刚刚打包的apk文件。
+&gt;<img src="http://upload-images.jianshu.io/upload_images/3744244-961cb56cf8d91b82.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+<h2 id="发送邮件设置">发送邮件设置</h2>
+
+<p>在 成功打包apk文件之后，希望可以将apk文件通过邮件的形式发送给客户 ，客户在邮件中直接下载附件 即可。
+首先需要先配置好jenkins的邮件 发送功能。进入首页，点击系统管理：
+&gt;<img src="http://upload-images.jianshu.io/upload_images/3744244-7bc676a833dabb77.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
+然后再点击 系统设置
+<img src="http://upload-images.jianshu.io/upload_images/3744244-e2e6211944c9daa2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
+需要发送邮件，有这么几个选项需要配置：
+<img src="http://upload-images.jianshu.io/upload_images/3744244-c9d63ec3ae855e39.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
+系统管理员地址其实就是发送方的邮件地址
+<img src="http://upload-images.jianshu.io/upload_images/3744244-b04b4014bb4b51bc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
+而且上面哪些参数一定要注意，写错一个可能就发送 失败了
+<img src="http://upload-images.jianshu.io/upload_images/3744244-f73629a3817d9c10.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+<p>可以看到邮件发送成功，说明基本的邮件发送设置完成。</p>
+
+<h2 id="项目发送邮件">项目发送邮件</h2>
+
+<p>邮件通知的全局设置配好以后就可以在具体的项目中应用发送邮件通知了。首先需要安装插件，在系统管理→插件管理→可选插件 搜索找到 Email Extension Plugin  安装好后，点开要配置的项目配置。
+&gt;<img src="http://upload-images.jianshu.io/upload_images/3744244-ee84e6069ec75ac1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
+<img src="http://upload-images.jianshu.io/upload_images/3744244-9a712b995c87ab0b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
+配置收件人地址列表
+<img src="http://upload-images.jianshu.io/upload_images/3744244-f51e2340888a45d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
+如上，在任务构建 异常的时候就会发送邮件，为了看到效果，可以故意将上面的两个 命令写错，这样在构建的时候就会报错。
+<img src="http://upload-images.jianshu.io/upload_images/3744244-d1bde3ad06b4eab7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
+然后执行构建任务并 查看日志
+<img src="http://upload-images.jianshu.io/upload_images/3744244-ec89cfc37d9227e3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
+然后去 收件箱查收邮件
+<img src="http://upload-images.jianshu.io/upload_images/3744244-6adc326e29b544f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+<p>至此，项目发送发送邮件完成。</p>
+
+<h2 id="邮件全局配置">邮件全局配置</h2>
+
+<p>可以利用Email Extension Plugin插件全局配置发送邮件的基本配置。如果是在第一次打开jenkins主页的时候，选择安装了它建议安装的插件，那么这个插件已经有了，其它情况 不太清楚，如果没有就自己安装一下插件。配置方法如下：
+首页：系统管理 》系统设置
+找到Email Extension Plugin 设置
+&gt;<img src="http://upload-images.jianshu.io/upload_images/3744244-4954d6b4e195a0b5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
+这是基本配置，还有个高级设置，点击 “ 高级”
+<img src="http://upload-images.jianshu.io/upload_images/3744244-d727cd2181031fe5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
+<img src="http://upload-images.jianshu.io/upload_images/3744244-d6c874b1d6da75dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
+这个 和 “邮件通知” 中配置保持一致就好了
+<img src="http://upload-images.jianshu.io/upload_images/3744244-0b39563d37a06144.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
+这个地方有个Default Triggers. 用来设置发送 邮件的出发条件。我的 配置 如下：
+<img src="http://upload-images.jianshu.io/upload_images/3744244-ef7845a0f2dcdd15.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+<h2 id="项目引用全局配置">项目引用全局配置</h2>
+
+<p>在项目发送邮件的时候使用刚刚的 全局配置。先打开项目配置界面：
+&gt;<img src="http://upload-images.jianshu.io/upload_images/3744244-0f693ffe46d54744.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
+点击构建后操作并且选择Email Extension Plugin，如下所示：
+<img src="http://upload-images.jianshu.io/upload_images/3744244-5d825ff7b9a4306e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
+<img src="http://upload-images.jianshu.io/upload_images/3744244-c8c5777f62de518d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
+<img src="http://upload-images.jianshu.io/upload_images/3744244-ae1fd03620f7ba7b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
+如图所示，这时候还的默认使用了 全局的一些配置。点击保存，再次测试，构建任务。当任务执行成功之后，可以在收件箱查收邮件。因此在全局配置中设置了出发条件，always、success、fail。按理来说可以收到两封邮件。
+<img src="http://upload-images.jianshu.io/upload_images/3744244-7a42e1aa628849ba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
+<img src="http://upload-images.jianshu.io/upload_images/3744244-b5ea4372e63b97e8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+<p>发现收件箱收到两封邮件，测试成功。</p>
+
+<h2 id="项目自定义配置">项目自定义配置</h2>
+
+<p>如果该任务不想引用全局配置，需要自己定义配置怎么办？这里也有个项目自定义功能，如图：
+&gt;<img src="http://upload-images.jianshu.io/upload_images/3744244-31b72a01e0fbab3a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
+点击Advanced setting 即可自定义配置。而且这里的自定义配置，是根据触发条件分别设置的：
+<img src="http://upload-images.jianshu.io/upload_images/3744244-662a3c74367c0fd6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
+针对不同的触发条件，点击高级即可自定义配置了
+<img src="http://upload-images.jianshu.io/upload_images/3744244-657c8987328c4245.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
+下面对 “success” 进行设置，每次利用jenkins打包成功后，将apk文件作为邮件的附件发送给客户
+<img src="http://upload-images.jianshu.io/upload_images/3744244-fe36d69c6597a5b8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
+路径的选择请参照下面的提示
+保存之后执行构建任务，查看发件箱
+<img src="http://upload-images.jianshu.io/upload_images/3744244-df60ea37ecb5ed15.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+<p>邮件发送成功，附件发送成功。</p>
+    </div>
+
+    
+    
+
+    
+    
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/weixin.jpg">
+        <span>微信打赏</span>
+      </label>
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div>
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://www.spilledyear.cn/tags/ionic/">Ionic</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/ioonic3-%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">Ioonic3 开发流程</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/ionic3-%E6%8B%8D%E7%85%A7%E4%B8%8A%E4%BC%A0/">
+            <span class="next-text nav-default">Ionic3 拍照上传</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+    
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+
+<div class="copyright">
+  
+
+  <span class="copyright-year">
+    &copy;
+    2019
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        spilledyear
+        
+      </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" crossorigin="anonymous"></script>
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

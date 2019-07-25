@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>JVM - spilledyear</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="spilledyear" />
+  <meta name="description" content="" />
+
+  <meta name="keywords" content="Hugo, theme, spilledyear" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.6" />
+
+
+<link rel="canonical" href="https://www.spilledyear.cn/post/jvm/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.31c4b7729c8d71cc152f8de4203d90bfd8a04f7eab69372de7234ebf55b7701b.css" integrity="sha256-McS3cpyNccwVL43kID2Qv9igT36raTct5yNOv1W3cBs=" media="screen" crossorigin="anonymous">
+
+
+
+
+<link rel="stylesheet" href="/css/custom.css">
+
+
+<meta property="og:title" content="JVM" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.spilledyear.cn/post/jvm/" />
+<meta property="article:published_time" content="2018-07-22T18:49:01&#43;00:00"/>
+<meta property="article:modified_time" content="2018-07-22T18:49:01&#43;00:00"/>
+
+<meta itemprop="name" content="JVM">
+<meta itemprop="description" content="">
+
+
+<meta itemprop="datePublished" content="2018-07-22T18:49:01&#43;00:00" />
+<meta itemprop="dateModified" content="2018-07-22T18:49:01&#43;00:00" />
+<meta itemprop="wordCount" content="12975">
+
+
+
+<meta itemprop="keywords" content="JVM," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JVM"/>
+<meta name="twitter:description" content=""/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">spilledyear</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/">主页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/post/">文章</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/categories/">分类</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/%E5%85%B3%E4%BA%8E%E6%88%91/">关于我</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://github.com/spilledyear" rel="noopener" target="_blank">
+              外部链接
+              
+              <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92 0 0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"></path>
+  <path d="M841.152 457.152c-30.528 0-54.784 24.512-54.784 54.656l0 274.752L237.696 786.56 237.696 237.696l206.016 0c6.656 0 10.752 0 13.248 0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128L183.04 128C153.216 128 128 152.576 128 182.848c0 3.136 0.256 6.272 0.768 9.28C128.256 195.136 128 198.272 128 201.408l0 639.488c0 0.064 0 0.192 0 0.256 0 0.128 0 0.192 0 0.32 0 30.528 24.512 54.784 54.784 54.784l646.976 0c6.592 0 9.728 0 11.712 0 28.736 0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344l0-20.352L896 561.408 896 512.128C896 481.792 871.424 457.152 841.152 457.152z"></path>
+</svg>
+
+              </i>
+            </a>
+          
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      spilledyear
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/">主页</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/post/">文章</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/categories/">分类</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.spilledyear.cn/%E5%85%B3%E4%BA%8E%E6%88%91/">关于我</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://github.com/spilledyear" rel="noopener" target="_blank">
+              外部链接
+            </a>
+          
+
+        
+
+      </li>
+    
+
+    
+    
+
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">JVM</h1>
+      
+      <div class="post-meta">
+        <time datetime="2018-07-22" class="post-time">
+          2018-07-22
+        </time>
+        <div class="post-category">
+            <a href="https://www.spilledyear.cn/categories/java/"> Java </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#类加载机制">类加载机制</a>
+<ul>
+<li>
+<ul>
+<li><a href="#加载">加载</a></li>
+<li><a href="#验证">验证</a></li>
+<li><a href="#准备">准备</a></li>
+<li><a href="#解析">解析</a></li>
+<li><a href="#初始化">初始化</a></li>
+<li><a href="#jvm中的类加载器">JVM中的类加载器</a>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#classloader加载class文件方式">ClassLoader加载Class文件方式：</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#垃圾回收">垃圾回收</a>
+<ul>
+<li>
+<ul>
+<li><a href="#引用计数法">引用计数法</a></li>
+<li><a href="#标记清除算法">标记清除算法</a></li>
+<li><a href="#复制算法">复制算法</a></li>
+<li><a href="#标记整理算法">标记整理算法</a></li>
+<li><a href="#分代收集算法">分代收集算法</a></li>
+<li><a href="#新生代">新生代</a></li>
+<li><a href="#老年代">老年代</a></li>
+<li><a href="#永久代">永久代</a></li>
+<li><a href="#垃圾收集器">垃圾收集器</a></li>
+<li><a href="#内存分配与回收策略">内存分配与回收策略</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#jmm">JMM</a>
+<ul>
+<li>
+<ul>
+<li><a href="#主内存">主内存</a></li>
+<li><a href="#工作内存">工作内存</a></li>
+<li><a href="#jmm的承诺">JMM的承诺</a></li>
+<li><a href="#重排序">重排序</a></li>
+<li><a href="#as-if-serial-语义">as-if-serial 语义</a></li>
+<li><a href="#happens-before">happens- before</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#java内存区域">Java内存区域</a>
+<ul>
+<li>
+<ul>
+<li><a href="#方法区-method-area">方法区(Method Area)</a></li>
+<li><a href="#jvm堆-java-heap">JVM堆(Java Heap)</a></li>
+<li><a href="#程序计数器-program-counter-register">程序计数器(Program Counter Register)</a></li>
+<li><a href="#虚拟机栈-java-virtual-machine-stacks">虚拟机栈(Java Virtual Machine Stacks)</a></li>
+<li><a href="#本地方法栈-native-method-stacks">本地方法栈(Native Method Stacks)</a></li>
+<li><a href="#class常量池-todo">class常量池 todo</a></li>
+<li><a href="#方法区常量池-todo">方法区常量池  todo</a></li>
+<li><a href="#搞不清楚的string-todo">搞不清楚的String todo</a></li>
+<li><a href="#双等号-的含义">双等号==的含义</a></li>
+<li><a href="#包装类型">包装类型</a></li>
+<li><a href="#final">final</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p><img src="/pictures/home/297.jpg" alt="index" /></p>
+
+<h1 id="类加载机制">类加载机制</h1>
+
+<p>一般来说，Java虚拟机使用Java类的方式如下：.java 文件在经过 Java 编译器编译之后就被转换成 .class 文件。类加载器负责读取Java字节代码，并转换成 java.lang.Class类的一个实例。每个这样的实例用来表示一个 Java 类。通过此实例的 newInstance()方法就可以创建出该类的一个对象。流程如下图：</p>
+
+<p><img src="/pictures/JVM/post_002.png" alt="post_002" /></p>
+
+<h3 id="加载">加载</h3>
+
+<ul>
+<li>通过一个类的全限定名来获取定义此类的二进制字节流。</li>
+<li>将这个字节流所代表的静态存储结构转化为方法区的运行时数据结构。</li>
+<li>在内存中生成一个代表这个类的java.lang.Class对象，作为方法区这个类的各种数据的访问入口。</li>
+</ul>
+
+<h3 id="验证">验证</h3>
+
+<ul>
+<li><p>文件格式的验证
+主要验证字节流是否符合Class文件格式的规范，如果符合则把字节流加载到方法区中进行存储。文件头、主次版本验证等等。</p></li>
+
+<li><p>元数据验证
+主要对字节码描述的信息进行语义分析，保证其描述符合Java语言的要求。</p></li>
+
+<li><p>字节码验证
+最复杂的一个阶段。主要目的是通过数据量和控制流分析，确定程序语义是合法的，符合逻辑的。保证被校验类的方法在运行时不会做出危害虚拟机安全的事件。</p></li>
+</ul>
+
+<h3 id="准备">准备</h3>
+
+<p>准备阶段正式为类变量分配内存并设置初始值阶段。</p>
+
+<pre><code>public static int value=123; 
+</code></pre>
+
+<p>以上语句，value初始值为0。只有在初始化阶段才会给 value 初始化为 23</p>
+
+<p>对于static final类型，在准备阶段会被赋予正确的值</p>
+
+<pre><code>public static final value=123;v
+</code></pre>
+
+<p>以上语句，value初始值为123。</p>
+
+<p>如果是boolean值默认赋值为：false。
+如果是对象引用默认赋值为：null。</p>
+
+<p><strong>注意，此阶段只设置类中的静态变量(方法区中)，不包括实例变量(堆内存中)，实例变量是在对象实例化的时候初始化分配值的</strong></p>
+
+<h3 id="解析">解析</h3>
+
+<p>解析阶段是虚拟机将常量池内的符号引用替换为直接引用的过程。
+- 符号引用：简单的理解就是字符串，比如引用一个类，java.util.ArrayList 这就是一个符号引用，字符串引用的对象不一定被加载。
+- 直接引用：指针或者地址偏移量。引用对象一定在内存(已经加载)</p>
+
+<h3 id="初始化">初始化</h3>
+
+<p>1、执行类构造器<clinit>
+2、初始化静态变量、静态块中的数据等(一个类加载器只会初始化一次)
+3、子类的<clinit>调用前保证父类的<clinit>被调用</p>
+
+<p><strong><clinit>是线程安全的，执行<clinit>的线程需要先获取锁才能进行初始化操作，保证只有一个线程能执行<clinit>(利用此特性可以实现线程安全的懒汉单例模式)。</strong></p>
+
+<h3 id="jvm中的类加载器">JVM中的类加载器</h3>
+
+<ul>
+<li><p>启动类加载器(BootStrap ClassLoader)：引导类装入器是用本地代码实现的类装入器，它负责将 jdk中jre/lib下面的核心类库或-Xbootclasspath选项指定的jar包加载到内存中。由于引导类加载器涉及到虚拟机本地实现细节，开发者无法直接获取到启动类加载器的引用，所以不允许直接通过引用进行操作。</p></li>
+
+<li><p>扩展类加载器(Extension ClassLoader)：扩展类加载器是由Sun的ExtClassLoader(sun.misc.Launcher$ExtClassLoader)实现的。它负责将jdk中jre/lib/ext或者由系统变量-Djava.ext.dir指定位置中的类库加载到内存中。开发者可以直接使用标准扩展类加载器。</p></li>
+
+<li><p>系统类加载器(System ClassLoader)：系统类加载器是由Sun的AppClassLoader(sun.misc.Launcher$AppClassLoader)实现的。它负责将系统类路径java -classpath或-Djava.class.path变量所指的目录下的类库加载到内存中。开发者可以直接使用系统类加载器。</p></li>
+</ul>
+
+<p>加载的时候使用双亲委派机制：如果一个类加载器在接到加载类的请求时，它首先不会自己尝试去加载这个类，而是把这个请求任务委托给父类加载器去完成，依次递归，如果父类加载器可以完成类加载任务，就成功返回；只有父类加载器无法完成此加载任务时，才自己去加载。</p>
+
+<h6 id="classloader加载class文件方式">ClassLoader加载Class文件方式：</h6>
+
+<ul>
+<li>从本地系统中直接加载</li>
+<li>通过网络下载.class文件</li>
+<li>从zip，jar等归档文件中加载.class文件</li>
+<li>从专有数据库中提取.class文件</li>
+<li>将Java源文件动态编译为.class文件</li>
+</ul>
+
+<h1 id="垃圾回收">垃圾回收</h1>
+
+<p>常见的垃圾回收算法有</p>
+
+<h3 id="引用计数法">引用计数法</h3>
+
+<p>引用计数是垃圾收集器中的早期策略。在这种方法中，堆中每个对象实例都有一个引用计数。当一个对象被创建时，且将该对象实例分配给一个变量，该变量计数设置为1。当任何其它变量被赋值为这个对象的引用时，计数加1(a = b,则b引用的对象实例的计数器+1)，但当一个对象实例的某个引用超过了生命周期或者被设置为一个新值时，对象实例的引用计数器减1。任何引用计数器为0的对象实例可以被当作垃圾收集。当一个对象实例被垃圾收集时，它引用的任何对象实例的引用计数器减1。</p>
+
+<p>缺点：无法检测出循环引用。如父对象有一个对子对象的引用，子对象反过来引用父对象。这样，他们的引用计数永远不可能为0。</p>
+
+<h3 id="标记清除算法">标记清除算法</h3>
+
+<p>标记清除算法是从离散数学中的图论引入的，程序把所有的引用关系看作一张图，从一个节点GC ROOT开始，寻找对应的引用节点，找到这个节点以后，继续寻找这个节点的引用节点，当所有的引用节点寻找完毕之后，剩余的节点则被认为是没有被引用到的节点，即无用的节点。Java中可作为GC Root的对象有：
+1、虚拟机栈中引用的对象（本地变量表）
+2、方法区中静态属性引用的对象
+3、方法区中常量引用的对象
+4、本地方法栈中引用的对象(Native对象)</p>
+
+<p>标记-清除算法的主要不足有两个：
+- 效率问题：标记和清除两个过程的效率都不高。
+- 空间问题：标记-清除算法不需要进行对象的移动，并且仅对不存活的对象进行处理，因此标记清除之后会产生大量不连续的内存碎片，空间碎片太多可能会导致以后在程序运行过程中需要分配较大对象时，无法找到足够的连续内存而不得不提前触发另一次垃圾收集动作。</p>
+
+<h3 id="复制算法">复制算法</h3>
+
+<p>复制算法将可用内存按容量划分为大小相等的两块，每次只使用其中的一块。当这一块的内存用完了，就将还存活着的对象复制到另外一块上面，然后再把已使用过的内存空间一次清理掉。这种算法适用于对象存活率低的场景，比如新生代。这样使得每次都是对整个半区进行内存回收，内存分配时也就不用考虑内存碎片等复杂情况，只要移动堆顶指针，按顺序分配内存即可，实现简单，运行高效。</p>
+
+<p>事实上，现在商用的虚拟机都采用这种算法来回收新生代。因为研究发现，新生代中的对象每次回收都基本上只有10%左右的对象存活，所以需要复制的对象很少，效率还不错。实践中会将新生代内存分为一块较大的Eden空间和两块较小的Survivor空间 (如下图所示)，每次使用Eden和其中一块Survivor。当回收时，将Eden和Survivor中还存活着的对象一次地复制到另外一块Survivor空间上，最后清理掉Eden和刚才用过的Survivor空间。HotSpot虚拟机默认Eden和Survivor的大小比例是 8:1，也就是每次新生代中可用内存空间为整个新生代容量的90% (80%+10%)，只有10% 的内存会被“浪费”。</p>
+
+<h3 id="标记整理算法">标记整理算法</h3>
+
+<p>复制收集算法在对象存活率较高时就要进行较多的复制操作，效率将会变低。更关键的是，如果不想浪费50%的空间，就需要有额外的空间进行分配担保，以应对被使用的内存中所有对象都100%存活的极端情况，所以在老年代一般不能直接选用这种算法。标记整理算法的标记过程类似标记清除算法，但后续步骤不是直接对可回收对象进行清理，而是让所有存活的对象都向一端移动，然后直接清理掉端边界以外的内存，类似于磁盘整理的过程，该垃圾回收算法适用于对象存活率高的场景(老年代)。</p>
+
+<h3 id="分代收集算法">分代收集算法</h3>
+
+<p>对于一个大型的系统，当创建的对象和方法变量比较多时，堆内存中的对象也会比较多，如果逐一分析对象是否该回收，那么势必造成效率低下。分代收集算法是基于这样一个事实：不同的对象的生命周期(存活情况)是不一样的，而不同生命周期的对象位于堆中不同的区域，因此对堆内存不同区域采用不同的策略进行回收可以提高 JVM 的执行效率。当代商用虚拟机使用的都是分代收集算法：新生代对象存活率低，就采用复制算法；老年代存活率高，就用标记清除算法或者标记整理算法。Java堆内存一般可以分为新生代、老年代和永久代三个模块。</p>
+
+<p>Java堆内存一般可以分为新生代、老年代和永久代三个模块</p>
+
+<h3 id="新生代">新生代</h3>
+
+<p>新生代的目标就是尽可能快速的收集掉那些生命周期短的对象，一般情况下，所有新生成的对象首先都是放在新生代的。新生代内存按照 8:1:1 的比例分为一个eden区和两个survivor(survivor0，survivor1)区，大部分对象在Eden区中生成。在进行垃圾回收时，先将eden区存活对象复制到survivor0区，然后清空eden区，当这个survivor0区也满了时，则将eden区和survivor0区存活对象复制到survivor1区，然后清空eden和这个survivor0区，此时survivor0区是空的，然后交换survivor0区和survivor1区的角色(即下次垃圾回收时会扫描Eden区和survivor1区)，即保持survivor0区为空，如此往复。特别地，当survivor1区也不足以存放eden区和survivor0区的存活对象时，就将存活对象直接存放到老年代。如果老年代也满了，就会触发一次FullGC，也就是新生代、老年代都进行回收。注意，新生代发生的GC也叫做MinorGC，MinorGC发生频率比较高，不一定等 Eden区满了才触发。</p>
+
+<h3 id="老年代">老年代</h3>
+
+<p>老年代存放的都是一些生命周期较长的对象，就像上面所叙述的那样，在新生代中经历了N次垃圾回收后仍然存活的对象就会被放到老年代中。此外，老年代的内存也比新生代大很多(大概比例是2:1)，当老年代满时会触发Major GC(Full GC)，老年代对象存活时间比较长，因此FullGC发生的频率比较低。</p>
+
+<h3 id="永久代">永久代</h3>
+
+<p>永久代主要用于存放静态文件，如Java类、方法等。永久代对垃圾回收没有显著影响，但是有些应用可能动态生成或者调用一些class，例如使用反射、动态代理、CGLib等bytecode框架时，在这种时候需要设置一个比较大的永久代空间来存放这些运行过程中新增的类。</p>
+
+<h3 id="垃圾收集器">垃圾收集器</h3>
+
+<p>如果说垃圾收集算法是内存回收的方法论，那么垃圾收集器就是内存回收的具体实现。以下7种作用于不同分代的收集器，其中用于回收新生代的收集器包括Serial、PraNew、Parallel Scavenge，回收老年代的收集器包括Serial Old、Parallel Old、CMS，还有用于回收整个Java堆的G1收集器。</p>
+
+<ul>
+<li><p>Serial收集器（复制算法): 新生代单线程收集器，标记和清理都是单线程，优点是简单高效；</p></li>
+
+<li><p>Serial Old收集器 (标记-整理算法): 老年代单线程收集器，Serial收集器的老年代版本；</p></li>
+
+<li><p>ParNew收集器 (复制算法): 新生代收并行集器，实际上是Serial收集器的多线程版本，在多核CPU环境下有着比Serial更好的表现；</p></li>
+
+<li><p>Parallel Scavenge收集器 (复制算法): 新生代并行收集器，追求高吞吐量，高效利用 CPU。吞吐量 = 用户线程时间/(用户线程时间+GC线程时间)，高吞吐量可以高效率的利用CPU时间，尽快完成程序的运算任务，适合后台应用等对交互相应要求不高的场景；</p></li>
+
+<li><p>Parallel Old收集器 (标记-整理算法)： 老年代并行收集器，吞吐量优先，Parallel Scavenge收集器的老年代版本；</p></li>
+
+<li><p>CMS(Concurrent Mark Sweep)收集器（标记-清除算法）： 老年代并行收集器，以获取最短回收停顿时间为目标的收集器，具有高并发、低停顿的特点，追求最短GC回收停顿时间。</p></li>
+
+<li><p>G1(Garbage First)收集器 (标记-整理算法)： Java堆并行收集器，G1收集器是JDK1.7提供的一个新收集器，G1收集器基于“标记-整理”算法实现，也就是说不会产生内存碎片。此外，G1收集器不同于之前的收集器的一个重要特点是：G1回收的范围是整个Java堆(包括新生代，老年代)，而前六种收集器回收的范围仅限于新生代或老年代。</p></li>
+</ul>
+
+<h3 id="内存分配与回收策略">内存分配与回收策略</h3>
+
+<ul>
+<li><p>对象优先在Eden分配，当Eden区没有足够空间进行分配时，虚拟机将发起一次MinorGC</p></li>
+
+<li><p>大对象直接进入老年代</p></li>
+
+<li><p>长期存活的对象将进入老年代
+当对象在新生代中经历过一定次数（默认为15）的Minor GC后，就会被晋升到老年代中。</p></li>
+
+<li><p>动态对象年龄判定
+为了更好地适应不同程序的内存状况，虚拟机并不是永远地要求对象年龄必须达到了MaxTenuringThreshold才能晋升老年代，如果在Survivor空间中相同年龄所有对象大小的总和大于Survivor空间的一半，年龄大于或等于该年龄的对象就可以直接进入老年代，无须等到MaxTenuringThreshold中要求的年龄。</p></li>
+</ul>
+
+<h1 id="jmm">JMM</h1>
+
+<p><a href="https://blog.csdn.net/javazejian/article/details/72772461">Java内存模型</a> (即Java Memory Model，简称JMM)本身是一种抽象的概念，并不真实存在，它描述的是一组规则或规范，通过这组规范定义了程序中各个变量（包括实例字段，静态字段和构成数组对象的元素）的访问方式。由于JVM运行程序的实体是线程，而每个线程创建时JVM都会为其创建一个工作内存(有些地方称为栈空间)，用于存储线程私有的数据，而Java内存模型中规定所有变量都存储在主内存，主内存是共享内存区域，所有线程都可以访问，但线程对变量的操作(读取赋值等)必须在工作内存中进行，首先要将变量从主内存拷贝的自己的工作内存空间，然后对变量进行操作，操作完成后再将变量写回主内存，不能直接操作主内存中的变量，工作内存中存储着主内存中的变量副本拷贝，前面说过，工作内存是每个线程的私有数据区域，因此不同的线程间无法访问对方的工作内存，线程间的通信(传值)必须通过主内存来完成，其简要访问过程如下图</p>
+
+<p>需要注意的是，JMM与Java内存区域的划分是不同的概念层次，更恰当说JMM描述的是一组规则，通过这组规则控制程序中各个变量在共享数据区域和私有数据区域的访问方式，JMM是围绕原子性，有序性、可见性展开的(稍后会分析)。JMM与Java内存区域唯一相似点，都存在共享数据区域和私有数据区域，在JMM中主内存属于共享数据区域，从某个程度上讲应该包括了堆和方法区，而工作内存数据线程私有数据区域，从某个程度上讲则应该包括程序计数器、虚拟机栈以及本地方法栈。或许在某些地方，我们可能会看见主内存被描述为堆内存，工作内存被称为线程栈，实际上他们表达的都是同一个含义。关于JMM中的主内存和工作内存说明如下</p>
+
+<h3 id="主内存">主内存</h3>
+
+<p>主要存储的是Java实例对象，所有线程创建的实例对象都存放在主内存中，不管该实例对象是成员变量还是方法中的本地变量(也称局部变量)，当然也包括了共享的类信息、常量、静态变量。由于是共享数据区域，多条线程对同一个变量进行访问可能会发现线程安全问题。</p>
+
+<h3 id="工作内存">工作内存</h3>
+
+<p>主要存储当前方法的所有本地变量信息(工作内存中存储着主内存中的变量副本拷贝)，每个线程只能访问自己的工作内存，即线程中的本地变量对其它线程是不可见的，就算是两个线程执行的是同一段代码，它们也会各自在自己的工作内存中创建属于当前线程的本地变量，当然也包括了字节码行号指示器、相关Native方法的信息。注意由于工作内存是每个线程的私有数据，线程间无法相互访问工作内存，因此存储在工作内存的数据不存在线程安全问题。</p>
+
+<p>弄清楚主内存和工作内存后，接了解一下主内存与工作内存的数据存储类型以及操作方式，根据虚拟机规范，对于一个实例对象中的成员方法而言，如果方法中包含本地变量是基本数据类型（boolean,byte,short,char,int,long,float,double），将直接存储在工作内存的帧栈结构中，但倘若本地变量是引用类型，那么该变量的引用会存储在功能内存的帧栈中，而对象实例将存储在主内存(共享数据区域，堆)中。但对于实例对象的成员变量，不管它是基本数据类型或者包装类型(Integer、Double等)还是引用类型，都会被存储到堆区。至于static变量以及类本身相关信息将会存储在主内存中。需要注意的是，在主内存中的实例对象可以被多线程共享，倘若两个线程同时调用了同一个对象的同一个方法，那么两条线程会将要操作的数据拷贝一份到自己的工作内存中，执行完成操作后才刷新到主内存，简单示意图如下所示：</p>
+
+<h3 id="jmm的承诺">JMM的承诺</h3>
+
+<ul>
+<li><p>原子性
+原子性指的是一个操作是不可中断的，即使是在多线程环境下，一个操作一旦开始就不会被其他线程影响。比如对于一个静态变量int x，两条线程同时对他赋值，线程A赋值为1，而线程B赋值为2，不管线程如何运行，最终x的值要么是1，要么是2，线程A和线程B间的操作是没有干扰的，这就是原子性操作，不可被中断的特点。有点要注意的是，对于32位系统的来说，long类型数据和double类型数据(对于基本数据类型，byte,short,int,float,boolean,char读写是原子操作)，它们的读写并非原子性的，也就是说如果存在两条线程同时对long类型或者double类型的数据进行读写是存在相互干扰的，因为对于32位虚拟机来说，每次原子读写是32位的，而long和double则是64位的存储单元，这样会导致一个线程在写时，操作完前32位的原子操作后，轮到B线程读取时，恰好只读取到了后32位的数据，这样可能会读取到一个既非原值又不是线程修改值的变量，它可能是“半个变量”的数值，即64位数据被两个线程分成了两次读取。但也不必太担心，因为读取到“半个变量”的情况比较少见，至少在目前的商用的虚拟机中，几乎都把64位的数据的读写操作作为原子操作来执行，因此对于这个问题不必太在意，知道这么回事即可。</p></li>
+
+<li><p>可见性
+理解了指令重排现象后，可见性容易了，可见性指的是当一个线程修改了某个共享变量的值，其他线程是否能够马上得知这个修改的值。对于串行程序来说，可见性是不存在的，因为我们在任何一个操作中修改了某个变量的值，后续的操作中都能读取这个变量值，并且是修改过的新值。但在多线程环境中可就不一定了，前面我们分析过，由于线程对共享变量的操作都是线程拷贝到各自的工作内存进行操作后才写回到主内存中的，这就可能存在一个线程A修改了共享变量x的值，还未写回主内存时，另外一个线程B又对主内存中同一个共享变量x进行操作，但此时A线程工作内存中共享变量x对线程B来说并不可见，这种工作内存与主内存同步延迟现象就造成了可见性问题，另外指令重排以及编译器优化也可能导致可见性问题，通过前面的分析，我们知道无论是编译器优化还是处理器优化的重排现象，在多线程环境下，确实会导致程序轮序执行的问题，从而也就导致可见性问题。【volatile】</p></li>
+
+<li><p>有序性
+有序性是指对于单线程的执行代码，我们总是认为代码的执行是按顺序依次执行的，这样的理解并没有毛病，毕竟对于单线程而言确实如此，但对于多线程环境，则可能出现乱序现象，因为程序编译成机器码指令后可能会出现指令重排现象，重排后的指令与原指令的顺序未必一致，要明白的是，在Java程序中，倘若在本线程内，所有操作都视为有序行为，如果是多线程环境下，一个线程中观察另外一个线程，所有操作都是无序的，前半句指的是单线程内保证串行语义执行的一致性，后半句则指指令重排现象和工作内存与主内存同步延迟现象。【volatile】</p></li>
+</ul>
+
+<h3 id="重排序">重排序</h3>
+
+<h3 id="as-if-serial-语义">as-if-serial 语义</h3>
+
+<p>as-if-serial 语义的意思指：不管怎么重排序（编译器和处理器为了提高并行度），（单线程）程序的执行结果不能被改变。编译器，runtime 和处理器都必须遵守 as-if-serial 语义。</p>
+
+<h3 id="happens-before">happens- before</h3>
+
+<h1 id="java内存区域">Java内存区域</h1>
+
+<p>Java虚拟机在运行程序时会把其自动管理的内存划分为以上几个区域，每个区域都有其用途以及创建销毁的时机。</p>
+
+<h3 id="方法区-method-area">方法区(Method Area)</h3>
+
+<p>方法区属于线程共享的内存区域，又称Non-Heap(非堆)，主要用于存储已被虚拟机加载的类信息、常量、静态变量、即时编译器编译后的代码等数据，根据Java 虚拟机规范的规定，当方法区无法满足内存分配需求时，将抛出OutOfMemoryError 异常。值得注意的是在方法区中存在一个叫运行时常量池(Runtime Constant Pool）的区域，它主要用于存放编译器生成的各种字面量和符号引用，这些内容将在类加载后存放到运行时常量池中，以便后续使用。(共享)
+<strong>虚拟机加载的类信息、常量、静态变量、常量池</strong></p>
+
+<h3 id="jvm堆-java-heap">JVM堆(Java Heap)</h3>
+
+<p>Java 堆也是属于线程共享的内存区域，它在虚拟机启动时创建，是Java 虚拟机所管理的内存中最大的一块，主要用于存放对象实例，几乎所有的对象实例都在这里分配内存，注意Java堆是垃圾收集器管理的主要区域，因此很多时候也被称做GC堆，如果在堆中没有内存完成实例分配，并且堆也无法再扩展时，将会抛出OutOfMemoryError异常。(共享)</p>
+
+<h3 id="程序计数器-program-counter-register">程序计数器(Program Counter Register)</h3>
+
+<p>属于线程私有的数据区域，是一小块内存空间，主要代表当前线程所执行的字节码行号指示器。字节码解释器工作时，通过改变这个计数器的值来选取下一条需要执行的字节码指令，分支、循环、跳转、异常处理、线程恢复等基础功能都需要依赖这个计数器来完成。</p>
+
+<h3 id="虚拟机栈-java-virtual-machine-stacks">虚拟机栈(Java Virtual Machine Stacks)</h3>
+
+<p>属于线程私有的数据区域，与线程同时创建，总数与线程关联，代表Java方法执行的内存模型。每个方法执行时都会创建一个栈桢来存储方法的的变量表、操作数栈、动态链接方法、返回值、返回地址等信息。每个方法从调用直结束就对于一个栈桢在虚拟机栈中的入栈和出栈过程</p>
+
+<h3 id="本地方法栈-native-method-stacks">本地方法栈(Native Method Stacks)</h3>
+
+<p>本地方法栈属于线程私有的数据区域，这部分主要与虚拟机用到的 Native 方法相关，一般情况下，我们无需关心此区域。</p>
+
+<h3 id="class常量池-todo">class常量池 todo</h3>
+
+<p>在Class文件结构中，最头的4个字节用于存储魔数Magic Number，用于确定一个文件是否能被JVM接受；再接着4个字节用于存储版本号，前2个字节存储次版本号，后2个存储主版本号；再接着是用于存放常量的常量池，由于常量的数量是不固定的，所以常量池的入口放置一个U2类型的数据(constant_pool_count)存储常量池容量计数值。
+常量池主要用于存放两大类常量：字面量(Literal)和符号引用量(Symbolic References)，字面量相当于Java语言层面常量的概念，如文本字符串，声明为final的常量值等，符号引用则属于编译原理方面的概念，包括了如下三种类型的常量：
+- 类和接口的全限定名
+- 字段名称和描述符
+- 方法名称和描述符</p>
+
+<h3 id="方法区常量池-todo">方法区常量池  todo</h3>
+
+<p>class中的常量池将在类加载后进入方法区的运行时常量池中存放。运行时常量池相对于CLass文件常量池的另外一个重要特征是具备动态性，Java语言并不要求常量一定只有编译期才能产生，也就是并非预置入CLass文件中常量池的内容才能进入方法区运行时常量池，运行期间也可能将新的常量放入池中，这种特性被开发人员利用比较多的就是String类的intern()方法。</p>
+
+<p>运行时常量池是把Class文件常量池加载进来，每个类有一个独立的。刚开始运行时常量池里的链接都是符号链接，跟在Class文件里一样；边运行边就会把用到的常量转换成直接链接，例如说要Class A调用Foo.bar()方法，A.class文件里就会有对该方法的Methodref常量，是个符号链接（只有名字没有实体），加载到运行时常量池也还是一样是符号链接，等真的要调用该方法的时候该常量就会被resolve为一个直接链接(直接指向要调用的方法的实体)。</p>
+
+<p>又听说常量池在Java堆啊，怎么回事？</p>
+
+<h3 id="搞不清楚的string-todo">搞不清楚的String todo</h3>
+
+<pre><code>String a = &quot;我在哪&quot;;
+</code></pre>
+
+<p>找了很多博客，看了很多文章，还是没搞懂。上面这行代码，到底代表了什么？
+我能够理解的是：在栈中创建了一个引用变量a，它占有4个字节，它在内存中对应一个地址，我们暂且把这个地址叫做x001，现在不明白的的x001这个地址的对应的内存空间中，到底存了什么？是存了真实值 &ldquo;我在哪&rdquo;？还是又存了一个地址x002，然后 x002对应的内存空间中 才是存了真实值 &ldquo;我在哪&rdquo;？</p>
+
+<p>查了一些资料，觉得 x001对应的内存空间 里面 存的应该是 x002这个地址，然后 x002对应的内存空间里面存了真实值 &ldquo;我在哪&rdquo;。因为String 不是基本类型啊，不是基本类型那就是引用类型咯，引用类型不就是要new 出来吗？new 的时候不就会返回一个引用吗？所以，是不是可以这样理解：在执行 String a = &ldquo;我在哪&rdquo;; 的时候，jvm 在堆中自动 new 了一个String 变量， String o = new String(&ldquo;我在哪&rdquo;); o 在内存中对应的地址是 x111，x111对应的地址空间存的是 x002, x002对应的地址空间里面 寸的是 &ldquo;我在哪&rdquo;，然后新建一个引用变量a，然后在a对应的内存空间存 o 的地址，即 x111？瞎扯把，应该不是这样吧？如果这样不是得  x111 &ndash;&gt; x002 才能找到值？
+不过又有点像，假如现在又一条语句 String b = &ldquo;我在哪&rdquo;；这时候根据 &ldquo;我在哪&rdquo; 找到了 o, 然后将o赋值给b。只是因为new 出来的那个 o 没有被回收，所以叫做常量池吗？</p>
+
+<p>如果上面的代码换成这样:</p>
+
+<pre><code>int a = 1000;
+</code></pre>
+
+<p>这个应该比较好理解：在栈中创建了一个变量a，a对应得存储空间内 存放的值是1000。这就是所谓的基础类型，a指向的是 字面值对应的真实地址。</p>
+
+<p>不管啦不管啦，还是自己看书吧，先把疑问抛在这里 。</p>
+
+<ul>
+<li>只要使用new方法，就会在堆中创建新对象，返回一个4字节的引用，该引用的内存空间内 存放的是一个地址，那个地址指向真正在堆中new出来的那个实例。</li>
+<li>只有使用引号包含文本的方式创建的String对象之间使用“+”连接产生的新对象才会被加入字符串池中。</li>
+
+<li><p>对于所有包含new方式新建对象（包括null）的“+”连接表达式，它所产生的新对象都不会被加入字符串池中。</p>
+
+<pre><code>String str1 = &quot;str&quot;;
+String str2 = &quot;ing&quot;;
+
+String str3 = &quot;str&quot; + &quot;ing&quot;;
+String str4 = str1 + str2;
+System.out.println(str3 == str4);//false
+
+String str5 = &quot;string&quot;;
+System.out.println(str3 == str5);//true
+</code></pre></li>
+</ul>
+
+<p>运行时常量池相对于CLass文件常量池的另外一个重要特征是具备动态性，Java语言并不要求常量一定只有编译期才能产生，也就是并非预置入CLass文件中常量池的内容才能进入方法区运行时常量池，运行期间也可能将新的常量放入池中，这种特性被开发人员利用比较多的就是String类的intern()方法。
+String的intern()方法会查找在常量池中是否存在一份equal相等的字符串,如果有则返回该字符串的引用,如果没有则添加自己的字符串进入常量池。</p>
+
+<pre><code>public static void main(String[] args) {
+    String s1 = new String(&quot;计算机&quot;);
+    String s2 = s1.intern();
+    String s3 = &quot;计算机&quot;;
+    System.out.println(&quot;s1 == s2? &quot; + (s1 == s2));
+    System.out.println(&quot;s3 == s2? &quot; + (s3 == s2));
+}
+s1 == s2? false
+s3 == s2? true
+</code></pre>
+
+<p><strong>不过，那个常量池到底在内存中是什么样的啊？常量池到底在哪个位置呢？堆里面一个独立的内存空间吗？String a = &ldquo;666&rdquo;; 在执行这行代码的时候，先去常量池里面找 &ldquo;666&rdquo;，如果没找到，就在堆中new 一个String 对象， 同时将 &ldquo;666&rdquo; 维护到常量池中吗？ 那这样不就相当于有两份了吗？</strong></p>
+
+<p>java中基本类型的包装类的大部分都实现了常量池技术，这些类是Byte,Short,Integer,Long,Character,Boolean,另外两种浮点数类型的包装类则没有实现。另外Byte,Short,Integer,Long,Character这5种整型的包装类也只是在对应值小于等于127时才可使用对象池，也即对象不负责创建和管理大于127的这些类的对象。
+java中的常量池技术，是为了方便快捷地创建某些对象而出现的，当需要一个对象时，就可以从池中取一个出来（如果池中没有则创建一个），则在需要重复重复创建相等变量时节省了很多时间。常量池其实也就是一个内存空间，不同于使用new关键字创建的对象所在的堆空间。</p>
+
+<p>什么是常量? 常量是用final修饰的成员变量!常量在类编译时期载入类的常量池中。即final修饰的成员变量（实例变量）和静态变量（静态变量也只能是用static修饰的成员变量），那么用final修饰的局部变量(方法内)，我们也可以称之为不可变变量(存储在栈中)。
+Java中的常量池，实际上分为两种形态：静态常量池和运行时常量池：
+- 静态常量池 ：*.class文件中的常量池，class文件中的常量池不仅仅包含字符串(数字)字面量，还包含类、方法的信息，占用class文件绝大部分空间(编译时期)。
+- 运行时常量池 ：jvm虚拟机在完成类装载操作后，将class文件中的常量池载入到内存中，并保存在方法区中，我们常说的常量池，就是指方法区中的运行时常量池(运行时期)。运行时常量池中的常量，基本来源于各个class文件中的常量池(即每个class文件都有对应的常量池)</p>
+
+<h3 id="双等号-的含义">双等号==的含义</h3>
+
+<p>基本数据类型之间应用双等号，比较的是他们的数值。
+复合数据类型(类)之间应用双等号，比较的是他们在内存中的存放地址。</p>
+
+<h3 id="包装类型">包装类型</h3>
+
+<p>同时，Java中基本类型的包装类的大部分都实现了常量池技术：Byte，Short，Integer，Long，Character，Boolean
+这5种包装类默认创建了数值[-128，127]的相应类型的缓存数据，但是超出此范围仍然会去创建新的对象。</p>
+
+<pre><code>//Integer 缓存代码 ：
+public static Integer valueOf(int i) {
+    assert IntegerCache.high &gt;= 127;
+    if (i &gt;= IntegerCache.low &amp;&amp; i &lt;= IntegerCache.high)
+        return IntegerCache.cache[i + (-IntegerCache.low)];
+    return new Integer(i);
+}
+
+
+// 示例
+Integer i1 = 40;
+Integer i2 = 40;
+System.out.println(i1==i2);//输出TRUE
+
+
+Integer i1 = 400;
+Integer i2 = 400;
+System.out.println(i1==i2);//输出false
+- Integer i1=40；Java在编译的时候会直接将代码封装成Integer i1=Integer.valueOf(40);，从而使用常量池中的对象。
+- Integer i1 = new Integer(40);这种情况下会创建新的对象。
+</code></pre>
+
+<p>下面是更丰富的示例</p>
+
+<pre><code>Integer i1 = 40;
+Integer i2 = 40;
+Integer i3 = 0;
+Integer i4 = new Integer(40);
+Integer i5 = new Integer(40);
+Integer i6 = new Integer(0);
+
+System.out.println(&quot;i1=i2   &quot; + (i1 == i2));
+System.out.println(&quot;i1=i2+i3   &quot; + (i1 == i2 + i3));
+System.out.println(&quot;i1=i4   &quot; + (i1 == i4));
+System.out.println(&quot;i4=i5   &quot; + (i4 == i5));
+System.out.println(&quot;i4=i5+i6   &quot; + (i4 == i5 + i6));   
+System.out.println(&quot;40=i5+i6   &quot; + (40 == i5 + i6));
+
+
+i1=i2   true
+i1=i2+i3   true
+i1=i4   false
+i4=i5   false
+i4=i5+i6   true
+40=i5+i6   true
+</code></pre>
+
+<p>语句i4 == i5 + i6，因为+这个操作符不适用于Integer对象，首先i5和i6进行自动拆箱操作，进行数值相加，即i4 == 40。然后Integer对象无法与数值进行直接比较，所以i4自动拆箱转为int值40，最终这条语句转为40 == 40进行数值比较。</p>
+
+<p>两种浮点数类型的包装类Float,Double并没有实现常量池技术</p>
+
+<pre><code>Double i1=1.2;
+Double i2=1.2;
+System.out.println(i1==i2);//输出false
+</code></pre>
+
+<h3 id="final">final</h3>
+
+<ul>
+<li><p>当final修饰类
+final修饰类，更多从设计（Design）的角度去考虑吧，一个被final修饰的类无法子类化，即不能被继承。并且，final修饰类，类中的方法默认都是final 修饰的。</p></li>
+
+<li><p>当final修饰在方法上
+对于Java虚拟机来说编译器在编译期间会自动进行内联优化，这是由编译器决定的，对于我们开发人员来说，我们一定要设计好break-even的平衡，不要滥用final。内联就相当于是优化，是一种替换，消除了更多方法的调用，以空间换时间的优化，例如：</p></li>
+</ul>
+
+<p>优化前的原始代码：</p>
+
+<pre><code>public static class Car {
+    double price;
+    final double getPrice() {
+        return price;
+    }
+}
+
+public void countDiscount() {
+    y = car.getPrice();
+    // ...
+    z = car.getPrice();
+    discount = y - z;
+}
+</code></pre>
+
+<p>内联后的代码：</p>
+
+<pre><code>public void countDiscount() {
+    y = car.price;
+    // ...
+    z = car.price;
+    discount = y - z;
+}
+</code></pre>
+
+<ul>
+<li>final修饰静态变量
+当我们用final来修饰一个基本数据类型的时候，一般有以下两种情况：</li>
+<li>程序编译期间的常量，它永远不会变。</li>
+<li>在运行期间为一个final修饰的域初始化一个值，不希望它会发生变化。</li>
+</ul>
+
+<p>在编译后得到的.class文件中，有这么一块内容，叫常量池。那么一个类中被final修饰的域在这个时候就会被放入这个大池子中。至于为什么这么做？原因很简单，为了效率。
+一个编译期间的类文件中，常量池中的基本数据类型的常量是不知道具体的值是什么，换句话说，在文件编译过后，虽然知道一个域是常量，但是至于这个常量的具体内容是什么，此时是无从知晓的，只有当运行时，常量才会真正的被赋值。
+对于static和没有static修饰的基本数据类型来说，是有差异的，差异就在于static修饰的域是在类载入的时候进行初始化的，所有实例共享同一个常量，同时Java虚拟机没有把它当作类变量，在使用它的任何类的常量池或者字节码流中直接存放的是它表示的常量值。</p>
+    </div>
+
+    
+    
+
+    
+    
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/weixin.jpg">
+        <span>微信打赏</span>
+      </label>
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div>
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://www.spilledyear.cn/tags/jvm/">JVM</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/springioc/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">SpringIOC</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/proxy/">
+            <span class="next-text nav-default">Proxy</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+    
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+
+<div class="copyright">
+  
+
+  <span class="copyright-year">
+    &copy;
+    2019
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        spilledyear
+        
+      </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" crossorigin="anonymous"></script>
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
